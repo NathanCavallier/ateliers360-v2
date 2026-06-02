@@ -110,19 +110,16 @@ const Header = () => {
       "sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/90 shadow-2xl shadow-slate-950/20 backdrop-blur-xl transition-all duration-300"
     )}>
       {/* MOBILE HEADER - Ultra minimal */}
-      <div className="md:hidden flex items-center justify-between px-4 py-3 gap-3">
-        <Logo />
-        <div className="flex items-center gap-2">
+      <div className="md:hidden flex items-center justify-between px-3 py-2 gap-2">
+        <div className="scale-90 origin-left">
+          <Logo />
+        </div>
+        <div className="flex items-center gap-1">
           <LocaleSwitcher />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-10 w-10" aria-label={t('toggle_menu')}>
+              <Button variant="ghost" size="icon" className="h-9 w-9" aria-label={t('toggle_menu')}>
                 <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label={t('toggle_menu')}>
-                <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] overflow-y-auto px-4 py-6">
@@ -136,7 +133,7 @@ const Header = () => {
 
               {/* Mobile-only info banner */}
               <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                <p className="font-semibold">📱 Version Mobile Limitée</p>
+                <p className="font-semibold">Version Mobile Limitée</p>
                 <p className="mt-1">Accès informatif et prise de contact uniquement.</p>
               </div>
 
@@ -175,6 +172,81 @@ const Header = () => {
               </div>
             </SheetContent>
           </Sheet>
+        </div>
+      </div>
+
+      {/* DESKTOP HEADER */}
+      <div className="hidden md:flex items-center justify-between px-6 py-4 gap-8">
+        <Logo />
+
+        <nav className="flex items-center gap-1">
+          {primaryLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={`/${locale}${href}`}
+              className={cn(
+                'px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}${href}`
+                  ? 'bg-emerald-400 text-slate-950'
+                  : 'text-muted-foreground hover:text-white hover:bg-slate-800/50'
+              )}
+            >
+              {label}
+            </Link>
+          ))}
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="text-sm font-medium text-accent-foreground">
+                Plus <ChevronDown className="ml-1 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48">
+              {secondaryLinks.map(({ href, label }) => (
+                <DropdownMenuItem key={href} asChild>
+                  <Link href={`/${locale}${href}`}>
+                    {label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </nav>
+
+        <div className="flex items-center gap-3 ml-auto">
+          <LocaleSwitcher />
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Users className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem disabled>
+                  {user.email}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={handleLogout}>
+                  {t('log_out')}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button
+              asChild
+              variant="ghost"
+              className="text-sm text-accent-foreground hover:bg-orange-600/80"
+            >
+              <Link href={`/${locale}${authButton.href}`}>
+                {authButton.label}
+              </Link>
+            </Button>
+          )}
+          <Button asChild className="bg-emerald-400 hover:bg-emerald-500 text-slate-950">
+            <Link href={`/${locale}${ctaLink.href}`}>
+              {ctaLink.label}
+            </Link>
+          </Button>
         </div>
       </div>
     </header>

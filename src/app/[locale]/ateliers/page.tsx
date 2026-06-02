@@ -140,28 +140,28 @@ export default function AtelierListPage({
             className="object-cover opacity-20"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-slate-950/85 to-slate-950/95" />
         </div>
-        <div className="container px-4 md:px-6 relative z-10">
-          <div className="max-w-3xl rounded-[2rem] border border-white/10 bg-slate-950/90 p-10 shadow-2xl">
-            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              {t('title')}
-            </h1>
-            <p className="mt-4 text-lg text-slate-200/90 max-w-2xl leading-relaxed">
-              {t('hero_subtitle')}
-            </p>
-            <div className="mt-8 relative max-w-xl">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
-              <Input
-                type="search"
-                placeholder={t('search_placeholder')}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 h-14 rounded-3xl bg-white/95 text-slate-900 shadow-sm border border-slate-200 focus:border-accent"
-              />
+          <div className="container px-4 md:px-6 relative z-10">
+            <div className="max-w-3xl rounded-[2rem] border border-white/10 bg-slate-950/90 p-10 shadow-2xl">
+              <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                {t('title')}
+              </h1>
+              <p className="mt-4 text-lg text-slate-200/90 max-w-2xl leading-relaxed">
+                {t('hero_subtitle')}
+              </p>
+              {/* Future search bar - For now we rely on filters
+              <div className="mt-8 relative max-w-xl">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
+                <Input
+                  type="search"
+                  placeholder={t('search_placeholder')}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 h-14 rounded-3xl bg-white/95 text-slate-900 shadow-sm border border-slate-200 focus:border-accent"
+                />
+              </div>*/}
             </div>
           </div>
-        </div>
       </section>
 
       <section className="w-full py-10 bg-slate-50">
@@ -326,19 +326,36 @@ export default function AtelierListPage({
                   <Route className="h-3 w-3" />
                   {t('format')}
                 </Label>
-                <div className="flex flex-wrap gap-2">
-                  {formats.map((format) => (
-                    <Button
-                      key={format.id}
-                      variant={selectedFormats.includes(format.id) ? 'default' : 'outline'}
-                      size="sm"
-                      onClick={() => toggleFormat(format.id)}
-                      className="text-xs"
-                    >
-                      {format.label}
-                    </Button>
-                  ))}
-                </div>
+                <Select
+                  value={selectedFormats.length > 0 ? selectedFormats[0] : 'all'}
+                  onValueChange={(value) => {
+                    if (value === 'all') {
+                      setSelectedFormats([]);
+                    } else if (selectedFormats.includes(value)) {
+                      toggleFormat(value);
+                    } else {
+                      // Clear previous and set new
+                      selectedFormats.forEach((f) => {
+                        if (f !== value) toggleFormat(f);
+                      });
+                      toggleFormat(value);
+                    }
+                  }}
+                >
+                  <SelectTrigger className="w-full text-xs">
+                    <SelectValue placeholder={t('format')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">
+                      {t('format')} - Tous
+                    </SelectItem>
+                    {formats.map((format) => (
+                      <SelectItem key={format.id} value={format.id}>
+                        {format.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
           </div>
