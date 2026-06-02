@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "robotics-1",
+      "description": "A group of children collaborating to build a robot.",
+      "imageUrl": "https://images.unsplash.com/photo-1625572378353-21be27ee2561?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaGlsZHJlbiUyMGJ1aWxkaW5nJTIwcm9ib3RzfGVufDB8fHx8MTc2NTYzNDUwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children building robots"
+    },
+    {
+      "id": "ai-1",
+      "description": "A futuristic user interface with glowing nodes and connections.",
+      "imageUrl": "https://images.unsplash.com/photo-1720962158937-7ea890052166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmdXR1cmlzdGljJTIwVUl8ZW58MHx8fHwxNzY1NTg4MDM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "futuristic UI"
+    },
+    {
+      "id": "physics-1",
+      "description": "A child looking with wonder at a plasma ball.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685734030-a31d96462eec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaGlsZCUyMHNjaWVuY2UlMjBleHBlcmltZW50fGVufDB8fHx8MTc2NTYzNDUwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child science experiment"
+    },
+    {
+      "id": "coding-1",
+      "description": "Close-up on a laptop screen with colorful blocks of code.",
+      "imageUrl": "https://images.unsplash.com/photo-1565229284535-2cbbe3049123?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxibG9jayUyMGNvZGluZ3xlbnwwfHx8fDE3NjU2MzQ1MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "block coding"
+    },
+    {
+      "id": "engineering-1",
+      "description": "Children working together to build a bridge structure with wooden blocks.",
+      "imageUrl": "https://images.unsplash.com/photo-1633946201410-980690cbbd37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGlsZHJlbiUyMGJ1aWxkaW5nJTIwYnJpZGdlfGVufDB8fHx8MTc2NTYzNDUwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children building bridge"
+    },
+    {
+      "id": "science-1",
+      "description": "A colorful chemical reaction in a beaker.",
+      "imageUrl": "https://images.unsplash.com/photo-1608037222011-cbf484177126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaGVtaXN0cnklMjBleHBlcmltZW50fGVufDB8fHx8MTc2NTYzNDUwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chemistry experiment"
+    }
+  ]
+}

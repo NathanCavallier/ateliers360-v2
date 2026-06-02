@@ -1,0 +1,733 @@
+<h2 class="sr-only">
+  Page publique de présentation du système de récompenses d'Ateliers 360
+</h2>
+
+<style>
+  .rwd-root {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+  }
+  .hero {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem 2rem 2rem;
+    margin-bottom: 2rem;
+    border: 0.5px solid var(--color-border-tertiary);
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  .hero p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.7;
+  }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 0.5px solid;
+  }
+  .pill-teal {
+    background: #e1f5ee;
+    color: #0f6e56;
+    border-color: #5dcaa5;
+  }
+  .pill-purple {
+    background: #eeedfe;
+    color: #3c3489;
+    border-color: #afa9ec;
+  }
+  .pill-amber {
+    background: #faeeda;
+    color: #633806;
+    border-color: #ef9f27;
+  }
+  .pill-coral {
+    background: #faece7;
+    color: #712b13;
+    border-color: #f0997b;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin: 2rem 0 1rem;
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--color-border-tertiary);
+    margin: 2rem 0;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem;
+  }
+  .card-icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  .card h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 6px;
+  }
+  .card p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0 0 12px;
+    line-height: 1.6;
+  }
+  .card-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 0.5px solid;
+  }
+  .tag-virtual {
+    background: #eeedfe;
+    color: #3c3489;
+    border-color: #afa9ec;
+  }
+  .tag-physical {
+    background: #faeeda;
+    color: #633806;
+    border-color: #ef9f27;
+  }
+  .tag-both {
+    background: #e1f5ee;
+    color: #0f6e56;
+    border-color: #5dcaa5;
+  }
+
+  .level-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 0.5px solid var(--color-border-tertiary);
+  }
+  .level {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    border-right: 0.5px solid var(--color-border-tertiary);
+  }
+  .level:last-child {
+    border-right: none;
+  }
+  .level-num {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 4px;
+  }
+  .level-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .level-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+  }
+  .lv1 {
+    background: #f1efe8;
+  }
+  .lv2 {
+    background: #e6f1fb;
+  }
+  .lv3 {
+    background: #eeedfe;
+  }
+  .lv4 {
+    background: #faeeda;
+  }
+
+  .example-cert {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .cert-logo {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .cert-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 6px;
+  }
+  .cert-sub {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.2rem;
+  }
+  .cert-name {
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: 0.5px solid var(--color-border-secondary);
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-bottom: 1rem;
+  }
+  .cert-chips {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .cert-chip {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: #e1f5ee;
+    color: #0f6e56;
+    border: 0.5px solid #5dcaa5;
+  }
+  .cert-footer {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+  }
+  .cert-qr {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: 4px;
+    margin: 0 auto 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .qr-dots {
+    display: grid;
+    grid-template-columns: repeat(5, 6px);
+    gap: 2px;
+    padding: 5px;
+  }
+  .qr-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-text-primary);
+    border-radius: 1px;
+    opacity: 0.8;
+  }
+  .qr-dot.e {
+    opacity: 0;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 1.25rem;
+    position: relative;
+  }
+  .tl-item:last-child {
+    padding-bottom: 0;
+  }
+  .tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    min-width: 32px;
+  }
+  .tl-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .tl-line {
+    flex: 1;
+    width: 1px;
+    background: var(--color-border-tertiary);
+    min-height: 20px;
+  }
+  .tl-item:last-child .tl-line {
+    display: none;
+  }
+  .tl-content h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 4px 0 3px;
+  }
+  .tl-content p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .stat {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 0.9rem;
+    text-align: center;
+  }
+  .stat-n {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .stat-l {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 2px;
+  }
+
+  .faq-item {
+    border-top: 0.5px solid var(--color-border-tertiary);
+    padding: 14px 0;
+  }
+  .faq-item:last-child {
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+  }
+  .faq-q {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .faq-a {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .cta-block {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .cta-block h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+  .cta-block p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin: 0 0 1rem;
+  }
+  .cta-btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 9px 22px;
+    border-radius: var(--border-radius-md);
+    border: 0.5px solid var(--color-border-secondary);
+    cursor: pointer;
+    background: var(--color-background-primary);
+    color: var(--color-text-primary);
+  }
+</style>
+
+<div class="rwd-root">
+  <div class="hero">
+    <div class="hero-eyebrow">Reconnaissance des apprentissages</div>
+    <h1>
+      Chaque atelier compte.<br />Chaque compétence mérite d'être reconnue.
+    </h1>
+    <p>
+      À la fin de chaque atelier ou cycle, les participants repartent avec une
+      preuve concrète de ce qu'ils ont appris — numérique ou physique.
+    </p>
+    <div class="badge-row">
+      <span class="pill pill-teal"
+        ><i
+          class="ti ti-rosette"
+          style="font-size: 13px; vertical-align: -1px; margin-right: 4px"
+          aria-hidden="true"
+        ></i
+        >Badges compétences</span
+      >
+      <span class="pill pill-purple"
+        ><i
+          class="ti ti-file-certificate"
+          style="font-size: 13px; vertical-align: -1px; margin-right: 4px"
+          aria-hidden="true"
+        ></i
+        >Attestations PDF</span
+      >
+      <span class="pill pill-amber"
+        ><i
+          class="ti ti-trophy"
+          style="font-size: 13px; vertical-align: -1px; margin-right: 4px"
+          aria-hidden="true"
+        ></i
+        >Trophées hackathon</span
+      >
+      <span class="pill pill-coral"
+        ><i
+          class="ti ti-stars"
+          style="font-size: 13px; vertical-align: -1px; margin-right: 4px"
+          aria-hidden="true"
+        ></i
+        >Portfolio numérique</span
+      >
+    </div>
+  </div>
+
+  <div class="section-label">Récompenses virtuelles</div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-icon">
+        <i
+          class="ti ti-rosette"
+          style="font-size: 26px; color: #3c3489"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <h3>Badges de compétences</h3>
+      <p>
+        Un badge numérique par compétence validée. Affiché sur ton profil et
+        exportable.
+      </p>
+      <span class="card-tag tag-virtual">Virtuel</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i
+          class="ti ti-file-certificate"
+          style="font-size: 26px; color: #0f6e56"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <h3>Attestation PDF signée</h3>
+      <p>
+        Nom, atelier, date, compétences validées et QR code vérifiable.
+        Téléchargeable immédiatement.
+      </p>
+      <span class="card-tag tag-virtual">Virtuel</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i
+          class="ti ti-layout-grid"
+          style="font-size: 26px; color: #633806"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <h3>Portfolio automatique</h3>
+      <p>
+        Chaque projet réalisé alimente un portfolio partageable — utile pour
+        Parcoursup ou un stage.
+      </p>
+      <span class="card-tag tag-virtual">Virtuel</span>
+    </div>
+  </div>
+
+  <div class="section-label">Récompenses physiques</div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-icon">
+        <i
+          class="ti ti-sticker"
+          style="font-size: 26px; color: #712b13"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <h3>Stickers thématiques</h3>
+      <p>
+        Collection par domaine : robot, code, chimie, espace. À collectionner et
+        coller partout.
+      </p>
+      <span class="card-tag tag-physical">Physique</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i
+          class="ti ti-medal"
+          style="font-size: 26px; color: #633806"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <h3>Médaille imprimée en 3D</h3>
+      <p>
+        Conçue parfois pendant l'atelier lui-même. Unique, personnalisée, remise
+        en fin de cycle.
+      </p>
+      <span class="card-tag tag-physical">Physique</span>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i
+          class="ti ti-trophy"
+          style="font-size: 26px; color: #3c3489"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <h3>Trophée hackathon</h3>
+      <p>
+        Podium avec mention dans le book de références. Remis devant le groupe
+        lors d'une cérémonie courte.
+      </p>
+      <span class="card-tag tag-physical">Physique</span>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-label">Les 4 niveaux de progression</div>
+  <div class="level-row">
+    <div class="level lv1">
+      <div class="level-num">Niv. 1</div>
+      <div class="level-name">Explorateur</div>
+      <div class="level-desc">Premier atelier réalisé</div>
+    </div>
+    <div class="level lv2">
+      <div class="level-num">Niv. 2</div>
+      <div class="level-name">Maker</div>
+      <div class="level-desc">3 ateliers ou 1 cycle</div>
+    </div>
+    <div class="level lv3">
+      <div class="level-num">Niv. 3</div>
+      <div class="level-name">Bâtisseur</div>
+      <div class="level-desc">Projet fil rouge livré</div>
+    </div>
+    <div class="level lv4">
+      <div class="level-num">Niv. 4</div>
+      <div class="level-name">Expert</div>
+      <div class="level-desc">Hackathon + mentorat</div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-label">Exemple d'attestation</div>
+  <div class="example-cert">
+    <div class="cert-logo">ATELIERS 360 · Académie Nancy-Metz</div>
+    <div class="cert-title">Attestation de participation</div>
+    <div class="cert-sub">Délivrée à l'issue de l'atelier</div>
+    <div class="cert-name">Prénom Nom</div>
+    <div style="font-size: 14px; margin-bottom: 12px">
+      a participé à l'atelier <strong>Robotique Ludique</strong><br />
+      <span style="font-size: 13px; color: var(--color-text-secondary)"
+        >3h · Collège · 14 mai 2026</span
+      >
+    </div>
+    <div class="cert-chips">
+      <span class="cert-chip">Montage robot</span>
+      <span class="cert-chip">Programmation capteurs</span>
+      <span class="cert-chip">Travail en équipe</span>
+    </div>
+    <div class="cert-qr">
+      <div class="qr-dots">
+        <div class="qr-dot"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot e"></div>
+        <div class="qr-dot"></div>
+        <div class="qr-dot"></div>
+      </div>
+    </div>
+    <div class="cert-footer">
+      Vérifiable sur ateliers360.fr · Nathan Imogo, fondateur
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-label">Comment ça se passe</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot" style="background: #e1f5ee; color: #0f6e56">1</div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <h4>Tu participes à un atelier</h4>
+        <p>Séance unique, demi-journée, cycle ou hackathon — tout compte.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot" style="background: #eeedfe; color: #3c3489">2</div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <h4>L'animateur valide les compétences</h4>
+        <p>Par observation directe ou quiz court en fin de séance.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot" style="background: #faeeda; color: #633806">3</div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <h4>Tu reçois ton attestation</h4>
+        <p>PDF téléchargeable depuis ton espace, envoyé aussi par email.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-left">
+        <div class="tl-dot" style="background: #faece7; color: #712b13">4</div>
+        <div class="tl-line"></div>
+      </div>
+      <div class="tl-content">
+        <h4>Ton portfolio s'enrichit</h4>
+        <p>
+          Chaque projet et badge s'ajoute à ton profil partageable en ligne.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-label">En chiffres</div>
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat-n">24</div>
+      <div class="stat-l">ateliers certifiants</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">60+</div>
+      <div class="stat-l">badges disponibles</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">4</div>
+      <div class="stat-l">niveaux de progression</div>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <div class="section-label">Questions fréquentes</div>
+  <div class="faq-item">
+    <div class="faq-q">L'attestation a-t-elle une valeur officielle ?</div>
+    <div class="faq-a">
+      Elle n'est pas un diplôme national, mais elle est vérifiable via QR code
+      et reconnue par nos établissements partenaires. Elle peut accompagner un
+      dossier Parcoursup ou une candidature de stage.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Les parents peuvent-ils accéder aux attestations ?</div>
+    <div class="faq-a">
+      Oui, depuis l'espace en ligne de l'enfant, avec ses identifiants. Chaque
+      attestation est téléchargeable à tout moment.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">
+      Les récompenses physiques sont-elles incluses dans le prix ?
+    </div>
+    <div class="faq-a">
+      Les stickers sont inclus. La médaille 3D est prévue en fin de cycle (10+
+      séances). Le trophée hackathon est remis lors des événements dédiés.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Peut-on perdre un niveau ou un badge ?</div>
+    <div class="faq-a">
+      Non — les acquis restent acquis. Les badges et niveaux ne sont jamais
+      retirés.
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <h3>Envie de commencer à collecter ?</h3>
+    <p>
+      Découvre nos ateliers et réserve ta première séance — ton premier badge
+      t'attend.
+    </p>
+    <button
+      class="cta-btn"
+      onclick="
+        sendPrompt(
+          'Montre-moi les ateliers disponibles pour commencer à obtenir des badges'
+        )
+      "
+    >
+      Voir les ateliers ↗
+    </button>
+  </div>
+</div>
