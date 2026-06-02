@@ -127,7 +127,7 @@ const Header = () => {
                 <Logo />
                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                   <span className="sr-only">{t('close_menu')}</span>
-                  <ChevronDown className="h-6 w-6 rotate-180" />
+                  <ChevronDown className="h-6 w-6 rotate-180 bg-amber-50" />
                 </Button>
               </div>
 
@@ -237,7 +237,7 @@ const Header = () => {
               variant="ghost"
               className="text-sm text-accent-foreground hover:bg-orange-600/80"
             >
-              <Link href={`/${locale}${authButton.href}`}>
+              <Link href={`/${authButton.href}`}>
                 {authButton.label}
               </Link>
             </Button>

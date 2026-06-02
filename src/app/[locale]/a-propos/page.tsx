@@ -222,10 +222,10 @@ export default async function AProposPage({ params }: any) {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 max-w-3xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {/* Founder */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow hover:border-accent/50">
-              <div className="h-64 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
+              <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
                 <Image
                   src="https://orzfuxasrbpkcaqvgvah.supabase.co/storage/v1/object/sign/images/nathan.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV80MzVkYjM4Ni1kN2Q5LTQwZWEtYmE5Mi04MTMwOTRhZjg2YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbmF0aGFuLmpwZWciLCJpYXQiOjE3Nzg1OTI3MjAsImV4cCI6MTg3MzIwMDcyMH0.z_84_axZg4noCmW8HY7eZoKvo1hpkWWyCECpPiDxYdk"
                   alt={t('founder_name')}
@@ -234,37 +234,98 @@ export default async function AProposPage({ params }: any) {
                 />
               </div>
               <CardHeader className="text-center">
-                <CardTitle>{t('founder_name')}</CardTitle>
-                <p className="text-accent font-semibold text-sm mt-1">
+                <CardTitle className="text-base">{t('founder_name')}</CardTitle>
+                <p className="text-accent font-semibold text-xs mt-1">
                   {t('founder_role')}
                 </p>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed text-xs">
                   {t('founder_bio')}
                 </p>
               </CardContent>
             </Card>
 
-            {/* Future Team Member */}
+            {/* Futur: Pédagogie et Animation */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow hover:border-accent/50">
-              <div className="h-64 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
-                <Image
-                  src=""
-                  alt={t('alternant_name')}
-                  fill
-                  className="object-cover"
-                />
+              <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
+                <div className="flex flex-col items-center gap-2">
+                  <Lightbulb className="w-12 h-12 text-accent/40" />
+                  <span className="text-xs text-muted-foreground font-medium">À venir</span>
+                </div>
               </div>
               <CardHeader className="text-center">
-                <CardTitle>{t('alternant_name')}</CardTitle>
-                <p className="text-accent font-semibold text-sm mt-1">
-                  {t('alternant_role')}
+                <CardTitle className="text-base">{t('team_member1_title') || 'Pédagogie et Animation'}</CardTitle>
+                <p className="text-accent font-semibold text-xs mt-1">
+                  {t('team_member1_role') || 'Rejoignez l\'aventure'}
                 </p>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-muted-foreground leading-relaxed text-sm">
-                  {t('alternant_bio')}
+                <p className="text-muted-foreground leading-relaxed text-xs">
+                  {t('team_member1_desc') || 'Nous cherchons un ou une passionné(e) par l\'animation et la pédagogie pour concevoir et animer nos ateliers.'}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Futur: Sciences et Médiation */}
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow hover:border-accent/50">
+              <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
+                <div className="flex flex-col items-center gap-2">
+                  <Zap className="w-12 h-12 text-accent/40" />
+                  <span className="text-xs text-muted-foreground font-medium">À venir</span>
+                </div>
+              </div>
+              <CardHeader className="text-center">
+                <CardTitle className="text-base">{t('team_member2_title') || 'Sciences et Médiation'}</CardTitle>
+                <p className="text-accent font-semibold text-xs mt-1">
+                  {t('team_member2_role') || 'Rejoignez l\'aventure'}
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground leading-relaxed text-xs">
+                  {t('team_member2_desc') || 'Un profil scientifique ayant la passion de transmettre et de vulgariser les sciences.'}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Futur: Numérique et Technologies */}
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow hover:border-accent/50">
+              <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
+                <div className="flex flex-col items-center gap-2">
+                  <Rocket className="w-12 h-12 text-accent/40" />
+                  <span className="text-xs text-muted-foreground font-medium">À venir</span>
+                </div>
+              </div>
+              <CardHeader className="text-center">
+                <CardTitle className="text-base">{t('team_member3_title') || 'Numérique et Technologies'}</CardTitle>
+                <p className="text-accent font-semibold text-xs mt-1">
+                  {t('team_member3_role') || 'Rejoignez l\'aventure'}
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground leading-relaxed text-xs">
+                  {t('team_member3_desc') || 'Un expert en technologie qui souhaite partager sa passion pour l\'informatique et l\'innovation.'}
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Futur: Communication et Partenariats */}
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow hover:border-accent/50">
+              <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center relative">
+                <div className="flex flex-col items-center gap-2">
+                  <Users className="w-12 h-12 text-accent/40" />
+                  <span className="text-xs text-muted-foreground font-medium">À venir</span>
+                </div>
+              </div>
+              <CardHeader className="text-center">
+                <CardTitle className="text-base">{t('team_member4_title') || 'Communication et Partenariats'}</CardTitle>
+                <p className="text-accent font-semibold text-xs mt-1">
+                  {t('team_member4_role') || 'Rejoignez l\'aventure'}
+                </p>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground leading-relaxed text-xs">
+                  {t('team_member4_desc') || 'Un profil polyvalent en communication, gestion de projet ou développement de partenariats.'}
                 </p>
               </CardContent>
             </Card>
