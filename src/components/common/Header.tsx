@@ -75,6 +75,13 @@ const Header = () => {
   const moreLinks = secondaryLinks;
   const mobileLinks = [...primaryLinks, ...moreLinks, ctaLink];
 
+  // Mobile: only show essential links
+  const mobilePrimaryLinks = [
+    { href: '/', label: t('home') || 'Accueil' },
+    { href: '/a-propos', label: t('about') },
+    { href: '/contact', label: t('contact') },
+  ];
+
   useEffect(() => {
     if (!supabase) return;
     const {
@@ -100,131 +107,19 @@ const Header = () => {
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/90 shadow-2xl shadow-slate-950/20 backdrop-blur-xl transition-all duration-300",
-      !isHeaderVisible && "md:translate-y-0 -translate-y-full md:-translate-y-1/2"
+      "sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/90 shadow-2xl shadow-slate-950/20 backdrop-blur-xl transition-all duration-300"
     )}>
-      <div className="container mx-auto flex flex-col gap-4 px-4 py-4 sm:px-6">
-        {/* Top row: Logo + Auth / always visible */}
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 sm:gap-4">
-            <Logo />
-            <div className="hidden sm:flex flex-col leading-tight">
-              <span className="text-xs uppercase tracking-[0.35em] text-slate-500">
-                {t('brand_name')}
-              </span>
-              <span className="text-sm font-semibold text-slate-100">
-                {t('brand_tagline')}
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2 rounded-full border border-slate-800/70 bg-slate-900/70 px-3 py-2 text-sm text-slate-300 shadow-inner">
-              <span className="rounded-full bg-emerald-400 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-950">
-                {t('new_badge')}
-              </span>
-              <span>{t('catalogue_label')}</span>
-            </div>
-            <div className="hidden md:flex items-center gap-2">
-              <LocaleSwitcher />
-              {user ? (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm" className="inline-flex items-center gap-2">
-                      <Users className="h-4 w-4" />
-                      {t('account')}
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem asChild>
-                      <Link href={`/${locale}/dashboard`}>{t('account')}</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={handleLogout}>{t('logout')}</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Button asChild size="sm">
-                  <Link href={authButton.href}>{authButton.label}</Link>
-                </Button>
-              )}
-            </div>
-            <div className="md:hidden">
-              <LocaleSwitcher />
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation row: hidden on scroll (mobile), visible on desktop */}
-        <div className={cn(
-          "flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between transition-all duration-300",
-          !isHeaderVisible && "md:block hidden"
-        )}>
-          <nav className="order-2 flex flex-wrap justify-center gap-2 text-sm sm:order-1">
-            {primaryLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={`/${locale}${href}`}
-                className={cn(
-                  'rounded-full px-4 py-2 font-semibold transition duration-200 ease-out whitespace-nowrap shadow-sm',
-                  pathname === `/${locale}${href}`
-                    ? 'bg-emerald-400 text-slate-950 shadow-emerald-400/20'
-                    : 'border border-slate-800/80 bg-slate-900/80 text-slate-200 hover:border-emerald-400/40 hover:bg-slate-900/95 hover:text-white'
-                )}
-              >
-                {label}
-              </Link>
-            ))}
-
-            <DropdownMenu>
-              <DropdownMenuTrigger className="inline-flex items-center gap-2 rounded-full border border-slate-800/80 bg-slate-900/80 px-4 py-2 text-sm font-semibold text-slate-200 transition duration-200 hover:border-emerald-400/40 hover:bg-slate-900/95 hover:text-white">
-                {t('more')}
-                <ChevronDown className="h-4 w-4 text-slate-400" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                {moreLinks.map(({ href, label }) => (
-                  <DropdownMenuItem key={href} asChild>
-                    <Link
-                      href={`/${locale}${href}`}
-                      className={cn(
-                        'w-full cursor-pointer',
-                        pathname === `/${locale}${href}` ? 'font-semibold text-emerald-600' : ''
-                      )}
-                    >
-                      {label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/** Espacement horizontal */}
-            <div className="px-5"></div>
-
-            <div className="order-1 flex flex-wrap items-center justify-center gap-3 sm:order-2 lg:justify-end">
-              <Button variant="secondary" size="sm" asChild>
-                <Link href={`/${locale}${ctaLink.href}`}>{ctaLink.label}</Link>
-              </Button>
-              <div className="hidden md:flex items-center gap-2 rounded-full border border-slate-800/70 bg-slate-900/75 px-3 py-2 text-sm text-slate-400">
-                <span className="font-semibold text-slate-100">{t('ready_to_book')}</span>
-              </div>
-            </div>
-
-          </nav>
-        </div>
-
-        {/* Description section: hidden on mobile scroll */}
-        <div className={cn(
-          "rounded-[2rem] border border-white/10 bg-slate-900/80 px-5 py-3 text-sm text-slate-300 shadow-inner sm:px-6 transition-all duration-300",
-          !isHeaderVisible && "md:block hidden"
-        )}>
-          <p className="text-center text-slate-300">
-            {t('header_description')}
-          </p>
-        </div>
-
-        {/* Mobile menu toggle */}
-        <div className="md:hidden">
+      {/* MOBILE HEADER - Ultra minimal */}
+      <div className="md:hidden flex items-center justify-between px-4 py-3 gap-3">
+        <Logo />
+        <div className="flex items-center gap-2">
+          <LocaleSwitcher />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-10 w-10" aria-label={t('toggle_menu')}>
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label={t('toggle_menu')}>
                 <Menu className="h-6 w-6" />
@@ -238,8 +133,15 @@ const Header = () => {
                   <ChevronDown className="h-6 w-6 rotate-180" />
                 </Button>
               </div>
+
+              {/* Mobile-only info banner */}
+              <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
+                <p className="font-semibold">📱 Version Mobile Limitée</p>
+                <p className="mt-1">Accès informatif et prise de contact uniquement.</p>
+              </div>
+
               <nav className="space-y-3">
-                {mobileLinks.map(({ href, label }) => (
+                {mobilePrimaryLinks.map(({ href, label }) => (
                   <Link
                     key={href}
                     href={`/${locale}${href}`}
@@ -254,35 +156,18 @@ const Header = () => {
                     {label}
                   </Link>
                 ))}
-                <div className="mt-4 rounded-2xl bg-slate-900/80 p-4 text-sm text-slate-300">
-                  {user ? (
-                    <>
-                      <Link
-                        href={`/${locale}/dashboard`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block rounded-xl bg-slate-950 px-3 py-2 font-semibold text-white"
-                      >
-                        {t('account')}
-                      </Link>
-                      <button
-                        onClick={() => {
-                          handleLogout();
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="mt-3 w-full rounded-xl bg-emerald-400 px-3 py-2 text-left font-semibold text-slate-950"
-                      >
-                        {t('logout')}
-                      </button>
-                    </>
-                  ) : (
-                    <Link
-                      href={authButton.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block rounded-xl bg-emerald-400 px-3 py-2 text-center font-semibold text-slate-950"
-                    >
-                      {authButton.label}
+                <div className="mt-6 rounded-2xl bg-gradient-to-br from-slate-900/80 to-slate-950/80 p-4 space-y-3">
+                  <p className="text-xs text-slate-400 font-semibold uppercase">Prise de contact</p>
+                  <Button asChild className="w-full bg-emerald-400 hover:bg-emerald-500 text-slate-950">
+                    <Link href={`/${locale}/contact`} onClick={() => setIsMobileMenuOpen(false)}>
+                      Nous contacter
                     </Link>
-                  )}
+                  </Button>
+                  <Button asChild variant="secondary" className="w-full">
+                    <Link href={`/${locale}/reserver`} onClick={() => setIsMobileMenuOpen(false)}>
+                      Réserver
+                    </Link>
+                  </Button>
                 </div>
               </nav>
               <div className="mt-6 border-t border-slate-800/70 pt-4">

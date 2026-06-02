@@ -7,6 +7,7 @@ import Footer from "@/components/common/Footer";
 import { CookieConsent } from "@/components/common/CookieConsent";
 import BottomTabBar from '@/components/common/BottomTabBar';
 import ServiceWorkerRegister from '@/components/common/ServiceWorkerRegister';
+import MobileRestrictedPage from '@/components/common/MobileRestrictedPage';
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 
@@ -66,7 +67,9 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="relative flex min-h-screen flex-col">
             <Header />
-              <main className="flex-1 pb-20 pb-safe md:pb-0">{children}</main>
+            <MobileRestrictedPage>
+              <main className="flex-1 pb-safe md:pb-0">{children}</main>
+            </MobileRestrictedPage>
               <BottomTabBar />
             <Footer />
           </div>

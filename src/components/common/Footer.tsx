@@ -13,7 +13,7 @@ const Footer = () => {
   const withLocale = (path: string) => `/${locale}${path}`;
 
   return (
-    <footer className="border-t border-slate-200 bg-background/95 text-slate-800">
+    <footer className="hidden md:block border-t border-slate-200 bg-background/95 text-slate-800">
       <div className="container mx-auto px-4 py-14">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div className="space-y-5">
