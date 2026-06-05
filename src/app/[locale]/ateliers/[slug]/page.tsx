@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { MarkdownContent } from "@/components/common/MarkdownContent";
 import {
   ArrowRight,
   Briefcase,
@@ -395,9 +396,7 @@ export default async function WorkshopDetailPage(props: Props) {
               {view.longDescription && (
                 <div>
                   <h2 className="text-2xl font-bold mb-4">{t("description")}</h2>
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                    {view.longDescription}
-                  </p>
+                  <MarkdownContent content={view.longDescription} />
                 </div>
               )}
 
