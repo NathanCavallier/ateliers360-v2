@@ -15,14 +15,14 @@
 | **Architecture Site** | Refactoriser navigation (Ateliers 360 + Passerelle) | 🔴 Haute | 🟡 En cours | - | - |
 | **Pages Web** | Page "Nos activités" (2 pôles) | 🔴 Haute | ✅ Fait | - | - |
 | **Pages Web** | Page "Passerelle Jeunesse" détaillée | 🔴 Haute | ✅ Fait | - | - |
-| **Pages Web** | Page "Le Projet" (vision unifiée) | 🔴 Haute | ⚪ À faire | - | - |
+| **Pages Web** | Page "Le Projet" (vision unifiée) | 🔴 Haute | ✅ Fait | - | - |
 | **Pages Web** | Page "Demander une mission" (formulaire) | 🔴 Haute | 🟡 En cours | - | - |
 | **Pages Web** | Page "FAQ" Passerelle + Ateliers | 🟠 Moyenne | ⚪ À faire | - | - |
 | **Traductions** | Audit des contenus à traduire (site unifié) | 🟠 Moyenne | ⚪ À faire | - | - |
 | **Traductions** | Implémentation i18n (next-intl) | 🟠 Moyenne | ⚪ À faire | - | - |
-| **Documents légaux** | CGV mise à jour (2 pôles) | 🔴 Haute | ⚪ À faire | - | - |
-| **Documents légaux** | Mentions légales mises à jour | 🔴 Haute | ⚪ À faire | - | - |
-| **Documents légaux** | Politique de confidentialité | 🟠 Moyenne | ⚪ À faire | - | - |
+| **Documents légaux** | CGV mise à jour (2 pôles) | 🔴 Haute | ✅ Fait | - | - |
+| **Documents légaux** | Mentions légales mises à jour | 🔴 Haute | ✅ Fait | - | - |
+| **Documents légaux** | Politique de confidentialité | 🟠 Moyenne | ✅ Fait | - | - |
 | **Documents administratifs** | Contrat d'accompagnement Passerelle | 🔴 Haute | ⚪ À faire | - | - |
 | **Documents administratifs** | Autorisation parentale | 🔴 Haute | ⚪ À faire | - | - |
 | **Documents administratifs** | Fiche de renseignements jeune | 🔴 Haute | ⚪ À faire | - | - |
@@ -82,7 +82,7 @@
 
 ### CGV (Conditions Générales de Vente)
 
-- [ ] **CGV - Mise à jour**
+- [x] **CGV - Mise à jour**
   - Fichier existant : `src/components/cgv.tsx` (platform-v2)
   - Ajouter sections Passerelle Jeunesse (accompagnement mobilité)
   - Clarifier les deux pôles d'activité distincts
@@ -94,7 +94,7 @@
 
 ### Mentions Légales
 
-- [ ] **Mentions légales - Mise à jour**
+- [x] **Mentions légales - Mise à jour**
   - Fichier existant : `src/components/mentions-legales.tsx` (platform-v2)
   - Ajouter entreprise Ateliers 360 comme entité légale unique
   - Clarifier les deux marques/pôles (Ateliers 360 + Passerelle Jeunesse)
@@ -107,7 +107,7 @@
 
 ### Politique de confidentialité
 
-- [ ] **Politique de confidentialité**
+- [x] **Politique de confidentialité**
   - Nouveau composant : `src/components/politique-confidentialite.tsx` (platform-v2)
   - Route : `src/app/politique-confidentialite/page.tsx` (platform-v2)
   - Conformité RGPD
@@ -168,7 +168,7 @@
   - Localisation : `src/app/passerelle-jeunesse/page.tsx` (platform-v2)
   - Composant : `src/components/passerelle-jeunesse.tsx`
 
-- [ ] **Page "Le Projet"**
+- [x] **Page "Le Projet"**
   - Vision unifiée Ateliers 360 + Passerelle Jeunesse
   - Valeurs communes
   - Objectifs long terme

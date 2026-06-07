@@ -15,6 +15,7 @@ export default function PolitiqueConfidentialitePage() {
     { label: t('data5'), value: t('data5_details') },
     { label: t('data6'), value: t('data6_details') },
     { label: t('data7'), value: t('data7_details') },
+    { label: t('data8'), value: t('data8_details') },
   ];
 
   return (
@@ -92,6 +93,15 @@ export default function PolitiqueConfidentialitePage() {
                     <li>{t('right8_desc')}</li>
                   </ul>
                   <p className="font-semibold">{t('section6_contact')}</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border border-slate-200 bg-white shadow-sm">
+                <CardHeader>
+                  <CardTitle>{t('section7')}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-sm leading-7 text-slate-600">
+                  {t('section7_desc')}
                 </CardContent>
               </Card>
             </div>

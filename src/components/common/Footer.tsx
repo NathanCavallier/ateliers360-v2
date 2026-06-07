@@ -53,6 +53,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href={withLocale("/le-projet")} className="hover:text-primary">
+                  {tNav("project")}
+                </Link>
+              </li>
+              <li>
                 <Link href={withLocale("/demander-mission")} className="hover:text-primary">
                   {tNav("request_mission")}
                 </Link>

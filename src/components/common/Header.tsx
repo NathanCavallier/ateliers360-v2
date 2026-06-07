@@ -52,6 +52,7 @@ const Header = () => {
   const primaryLinks = [
     { href: '/nos-activites', label: t('activities') },
     { href: '/passerelle-jeunesse', label: t('passerelle') },
+    { href: '/le-projet', label: t('project') },
     { href: '/ateliers', label: t('workshops_list') },
     { href: '/catalogues', label: t('catalogues') },
     { href: '/contact', label: t('contact') },
@@ -83,6 +84,7 @@ const Header = () => {
     { href: '/', label: t('home') || 'Accueil' },
     { href: '/nos-activites', label: t('activities') },
     { href: '/passerelle-jeunesse', label: t('passerelle') },
+    { href: '/le-projet', label: t('project') },
     { href: '/a-propos', label: t('about') },
     { href: '/contact', label: t('contact') },
   ];
