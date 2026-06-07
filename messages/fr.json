@@ -344,6 +344,9 @@
   },
   "Navigation": {
     "home": "Accueil",
+    "activities": "Nos activités",
+    "passerelle": "Passerelle Jeunesse",
+    "request_mission": "Demander une mission",
     "workshops": "Ateliers",
     "workshops_list": "Ateliers",
     "catalogues": "Catalogues",

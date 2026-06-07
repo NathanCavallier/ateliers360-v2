@@ -14,6 +14,7 @@ import {
   Compass,
   Euro,
   FileText,
+  GitBranch,
   Route,
   School,
   Sparkles,
@@ -250,6 +251,78 @@ export default function Home() {
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-background py-12 md:py-20">
+        <div className="container px-4 md:px-6">
+          <div className="mb-10 max-w-3xl">
+            <Badge variant="outline" className="mb-3">
+              Deux pôles, une même mission
+            </Badge>
+            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
+              Ateliers 360 et Passerelle Jeunesse
+            </h2>
+            <p className="mt-3 text-muted-foreground md:text-lg leading-relaxed">
+              Un site unique pour découvrir les ateliers scientifiques et numériques, puis organiser l'accompagnement concret des jeunes quand la mobilité devient un frein.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="border-primary/20 transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-2xl">Ateliers 360</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <p className="text-muted-foreground leading-relaxed">
+                  Des formats sciences, robotique, code, IA et projets élèves pour les écoles, familles, structures et entreprises.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {['Ateliers clés en main', 'Modules progressifs', 'Packs et cycles', 'Interventions sur mesure'].map((item) => (
+                    <div key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <Button asChild>
+                  <Link href={`/${locale}/ateliers`}>
+                    Explorer Ateliers 360
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-emerald-500/30 bg-emerald-50/60 transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-700">
+                  <GitBranch className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-2xl">Passerelle Jeunesse</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <p className="text-muted-foreground leading-relaxed">
+                  Un pôle d'accompagnement pour sécuriser les trajets, soutenir l'autonomie et relier les jeunes aux activités éducatives du territoire.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {['Accompagnement mobilité', 'Missions encadrées', 'Lien familles et structures', 'Parcours jeunesse à venir'].map((item) => (
+                    <div key={item} className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm font-medium text-emerald-900">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <Button asChild className="bg-emerald-600 text-white hover:bg-emerald-700">
+                  <Link href={`/${locale}/demander-mission`}>
+                    Demander une mission
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@
 **Dernière révision :** 2026-06-06
 **Objectif :** Refactoriser le site Ateliers 360 (platform-v2) pour intégrer Passerelle Jeunesse comme pôle d'activité complémentaire
 **Approche :** ✅ Site unique avec deux pôles (Ateliers 360 + Passerelle Jeunesse), plutôt que deux sites séparés
-**Statut global :** 🟡 En préparation
+**Statut global :** 🟡 Implémentation démarrée
 
 ---
 
@@ -12,11 +12,11 @@
 
 | Catégorie | Tâche | Priorité | Statut | Assigné | Deadline |
 |-----------|-------|----------|--------|---------|----------|
-| **Architecture Site** | Refactoriser navigation (Ateliers 360 + Passerelle) | 🔴 Haute | ⚪ À faire | - | - |
-| **Pages Web** | Page "Nos activités" (2 pôles) | 🔴 Haute | ⚪ À faire | - | - |
-| **Pages Web** | Page "Passerelle Jeunesse" détaillée | 🔴 Haute | ⚪ À faire | - | - |
+| **Architecture Site** | Refactoriser navigation (Ateliers 360 + Passerelle) | 🔴 Haute | 🟡 En cours | - | - |
+| **Pages Web** | Page "Nos activités" (2 pôles) | 🔴 Haute | ✅ Fait | - | - |
+| **Pages Web** | Page "Passerelle Jeunesse" détaillée | 🔴 Haute | ✅ Fait | - | - |
 | **Pages Web** | Page "Le Projet" (vision unifiée) | 🔴 Haute | ⚪ À faire | - | - |
-| **Pages Web** | Page "Demander une mission" (formulaire) | 🔴 Haute | ⚪ À faire | - | - |
+| **Pages Web** | Page "Demander une mission" (formulaire) | 🔴 Haute | 🟡 En cours | - | - |
 | **Pages Web** | Page "FAQ" Passerelle + Ateliers | 🟠 Moyenne | ⚪ À faire | - | - |
 | **Traductions** | Audit des contenus à traduire (site unifié) | 🟠 Moyenne | ⚪ À faire | - | - |
 | **Traductions** | Implémentation i18n (next-intl) | 🟠 Moyenne | ⚪ À faire | - | - |
@@ -58,19 +58,19 @@
 
 ### Refactorisation Navigation
 
-- [ ] **Header/Navigation refactorisée**
+- [x] **Header/Navigation refactorisée**
   - Intégrer menu Ateliers 360 (ateliers, tarifs, contact)
   - Intégrer section Passerelle Jeunesse (présentation, services, demander une mission)
   - Options de sélection entre les deux pôles (onglets ou dropdown)
   - Localisation : `src/components/header.tsx` (platform-v2)
 
-- [ ] **Footer mis à jour**
+- [x] **Footer mis à jour**
   - Liens pour les deux pôles
   - CGV, mentions légales, politique confidentiel
   - Réseaux sociaux (Ateliers + Passerelle)
   - Localisation : `src/components/footer.tsx` (platform-v2)
 
-- [ ] **Homepage refactorisée**
+- [x] **Homepage refactorisée**
   - Présentation des deux pôles
   - CTAs distincts : "Explorer Ateliers 360" + "Demander une mission Passerelle Jeunesse"
   - Section "Notre vision" (écosystème unifié)
@@ -153,14 +153,14 @@
 
 ### Pages web Ateliers 360 (refactorisées)
 
-- [ ] **Page "Nos activités"**
+- [x] **Page "Nos activités"**
   - Présentation des deux pôles côte à côte
   - Section 1 : Ateliers 360 (sciences, numérique, robotique)
   - Section 2 : Passerelle Jeunesse (accompagnement, mobilité, futurs ateliers)
   - Localisation : `src/app/nos-activites/page.tsx` (platform-v2)
   - Composant : `src/components/nos-activites.tsx`
 
-- [ ] **Page "Passerelle Jeunesse"**
+- [x] **Page "Passerelle Jeunesse"**
   - Présentation détaillée du pôle
   - Services disponibles aujourd'hui (accompagnement mobilité)
   - Vision à long terme (ateliers, accueil, escape games)
@@ -179,6 +179,8 @@
 ### Pages web formulaires & contact
 
 - [ ] **Page "Demander une mission" (Passerelle)**
+  - [x] Route et formulaire front-end initial
+  - [ ] Intégration API, email et Stripe
   - Formulaire enrichi pour demande d'accompagnement
   - Champs : nom jeune, âge, dates souhaitées, trajets, nombre jeunes
   - Intégration avec Stripe (acompte/paiement)
@@ -581,4 +583,3 @@ Ce document doit être mis à jour :
 ---
 
 **Bonne chance avec la refactorisation ! 🚀**
-

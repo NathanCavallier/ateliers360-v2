@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ChevronDown, Menu, Users } from 'lucide-react';
+import { ChevronDown, GitBranch, Menu, Users } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
@@ -50,17 +50,20 @@ const Header = () => {
   }, [locale, pathname, t]);
 
   const primaryLinks = [
+    { href: '/nos-activites', label: t('activities') },
+    { href: '/passerelle-jeunesse', label: t('passerelle') },
     { href: '/ateliers', label: t('workshops_list') },
     { href: '/catalogues', label: t('catalogues') },
-    { href: '/constructeur', label: t('constructor') },
-    { href: '/contrats', label: t('contracts') },
-    { href: '/familles', label: t('families') },
     { href: '/contact', label: t('contact') },
   ];
 
-  const ctaLink = { href: '/reserver', label: t('reserve') };
+  const ctaLink = { href: '/demander-mission', label: t('request_mission') };
 
   const secondaryLinks = [
+    { href: '/reserver', label: t('reserve') },
+    { href: '/constructeur', label: t('constructor') },
+    { href: '/contrats', label: t('contracts') },
+    { href: '/familles', label: t('families') },
     { href: '/disciplines', label: t('disciplines') },
     { href: '/modules', label: t('modules') },
     { href: '/packs', label: t('packs') },
@@ -78,6 +81,8 @@ const Header = () => {
   // Mobile: only show essential links
   const mobilePrimaryLinks = [
     { href: '/', label: t('home') || 'Accueil' },
+    { href: '/nos-activites', label: t('activities') },
+    { href: '/passerelle-jeunesse', label: t('passerelle') },
     { href: '/a-propos', label: t('about') },
     { href: '/contact', label: t('contact') },
   ];
@@ -133,8 +138,8 @@ const Header = () => {
 
               {/* Mobile-only info banner */}
               <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                <p className="font-semibold">Version Mobile Limitée</p>
-                <p className="mt-1">Accès informatif et prise de contact uniquement.</p>
+                <p className="font-semibold">Ateliers 360 + Passerelle Jeunesse</p>
+                <p className="mt-1">Ateliers éducatifs, accompagnement mobilité et prise de contact.</p>
               </div>
 
               <nav className="space-y-3">
@@ -156,8 +161,9 @@ const Header = () => {
                 <div className="mt-6 rounded-2xl bg-gradient-to-br from-slate-900/80 to-slate-950/80 p-4 space-y-3">
                   <p className="text-xs text-slate-400 font-semibold uppercase">Prise de contact</p>
                   <Button asChild className="w-full bg-emerald-400 hover:bg-emerald-500 text-slate-950">
-                    <Link href={`/${locale}/contact`} onClick={() => setIsMobileMenuOpen(false)}>
-                      Nous contacter
+                    <Link href={`/${locale}/demander-mission`} onClick={() => setIsMobileMenuOpen(false)}>
+                      <GitBranch className="h-4 w-4" />
+                      Demander une mission
                     </Link>
                   </Button>
                   <Button asChild variant="secondary" className="w-full">
@@ -254,4 +260,3 @@ const Header = () => {
 };
 
 export default Header;
-

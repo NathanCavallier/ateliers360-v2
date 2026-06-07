@@ -343,6 +343,9 @@
   },
   "Navigation": {
     "home": "Home",
+    "activities": "Our Activities",
+    "passerelle": "Passerelle Jeunesse",
+    "request_mission": "Request a Mission",
     "workshops": "Workshops",
     "workshops_list": "Browse Workshops",
     "catalogues": "Catalogs",

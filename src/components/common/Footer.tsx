@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin, Route } from "lucide-react";
 
 import { useLocale, useTranslations } from "next-intl";
 
@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="space-y-5">
             <Logo />
             <p className="max-w-md text-sm leading-7 text-slate-600">
-              {t("description")}
+              {t("description")} Passerelle Jeunesse complète cette mission avec un accompagnement mobilité pour les jeunes.
             </p>
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
               <div className="flex items-center gap-3">
@@ -30,6 +30,10 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 text-primary" />
                 <span>France</span>
               </div>
+              <div className="mt-3 flex items-center gap-3">
+                <Route className="h-4 w-4 text-primary" />
+                <span>Ateliers éducatifs et accompagnement mobilité</span>
+              </div>
             </div>
           </div>
 
@@ -38,6 +42,21 @@ const Footer = () => {
               {t("discover")}
             </h3>
             <ul className="space-y-3 text-sm text-slate-600">
+              <li>
+                <Link href={withLocale("/nos-activites")} className="hover:text-primary">
+                  {tNav("activities")}
+                </Link>
+              </li>
+              <li>
+                <Link href={withLocale("/passerelle-jeunesse")} className="hover:text-primary">
+                  {tNav("passerelle")}
+                </Link>
+              </li>
+              <li>
+                <Link href={withLocale("/demander-mission")} className="hover:text-primary">
+                  {tNav("request_mission")}
+                </Link>
+              </li>
               <li>
                 <Link href={withLocale("/ateliers")} className="hover:text-primary">
                   {tNav("workshops_list")}
