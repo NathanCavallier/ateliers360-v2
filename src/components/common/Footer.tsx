@@ -87,6 +87,11 @@ const Footer = () => {
                   {tNav("contact")}
                 </Link>
               </li>
+              <li>
+                <Link href={withLocale("/faq")} className="hover:text-primary">
+                  {tNav("faq") || "FAQ"}
+                </Link>
+              </li>
             </ul>
           </div>
 

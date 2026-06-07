@@ -36,6 +36,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/contact',
     '/mentions-legales',
     '/politique-confidentialite',
+    '/nos-activites',
+    '/passerelle-jeunesse',
+    '/le-projet',
+    '/demander-mission',
+    '/faq',
   ];
 
   const staticRoutes: MetadataRoute.Sitemap = staticPages.flatMap((page) => [

@@ -74,6 +74,7 @@ const Header = () => {
     { href: '/tarifs', label: t('pricing') },
     { href: '/recompenses', label: t('rewards') },
     { href: '/a-propos', label: t('about') },
+    { href: '/faq', label: t('faq') || 'FAQ' },
   ];
 
   const moreLinks = secondaryLinks;

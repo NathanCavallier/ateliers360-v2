@@ -1,19 +1,88 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
-import { Calendar, Mail, MapPin, Send, ShieldCheck, UserRound } from 'lucide-react';
+import { FormEvent, useState, useRef } from 'react';
+import { Calendar, Mail, MapPin, Send, ShieldCheck, UserRound, AlertCircle, CheckCircle, Loader } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 
-export default function MissionForm() {
-  const [status, setStatus] = useState<'idle' | 'ready'>('idle');
+type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+export default function MissionForm() {
+  const [status, setStatus] = useState<SubmitStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [successMessage, setSuccessMessage] = useState<string>('');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus('ready');
+    setStatus('loading');
+    setErrorMessage('');
+    setSuccessMessage('');
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      const missionData = {
+        guardianName: formData.get('guardianName') as string,
+        email: formData.get('email') as string,
+        phone: formData.get('phone') as string,
+        youngName: formData.get('youngName') as string,
+        age: parseInt(formData.get('age') as string),
+        dates: formData.get('dates') as string,
+        departure: formData.get('departure') as string,
+        arrival: formData.get('arrival') as string,
+        details: formData.get('details') as string,
+      };
+
+      // Valider les données
+      if (!missionData.guardianName || !missionData.email || !missionData.phone ||
+          !missionData.youngName || !missionData.age || !missionData.dates ||
+          !missionData.departure || !missionData.arrival || !missionData.details) {
+        setErrorMessage('Tous les champs sont obligatoires.');
+        setStatus('error');
+        return;
+      }
+
+      if (missionData.age < 6 || missionData.age > 25) {
+        setErrorMessage('L\'âge doit être entre 6 et 25 ans.');
+        setStatus('error');
+        return;
+      }
+
+      // Créer la mission
+      const response = await fetch('/api/missions/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(missionData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Erreur lors de la création de la mission');
+      }
+
+      const result = await response.json();
+
+      setStatus('success');
+      setSuccessMessage('✓ Votre demande a été reçue avec succès ! Un email de confirmation a été envoyé. Notre équipe vous contactera dans les 48 heures.');
+
+      // Réinitialiser le formulaire
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+
+      // Redirection vers détails après 3 secondes
+      setTimeout(() => {
+        window.location.href = `/fr/passerelle-jeunesse?missionId=${result.missionId}`;
+      }, 3000);
+
+    } catch (error) {
+      console.error('Erreur:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Une erreur est survenue. Veuillez réessayer.');
+      setStatus('error');
+    }
   }
 
   return (
@@ -39,42 +108,95 @@ export default function MissionForm() {
                 <CardTitle>Informations de mission</CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid gap-5 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="guardianName">Nom du responsable</Label>
-                      <Input id="guardianName" name="guardianName" required placeholder="Nom et prenom" />
+                      <Input
+                        id="guardianName"
+                        name="guardianName"
+                        required
+                        placeholder="Nom et prenom"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" name="email" type="email" required placeholder="contact@example.com" />
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="contact@example.com"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Telephone</Label>
-                      <Input id="phone" name="phone" type="tel" required placeholder="06..." />
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        placeholder="06..."
+                        disabled={status === 'loading'}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="youngName">Jeune concerne</Label>
-                      <Input id="youngName" name="youngName" required placeholder="Prenom du jeune" />
+                      <Input
+                        id="youngName"
+                        name="youngName"
+                        required
+                        placeholder="Prenom du jeune"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="age">Age</Label>
-                      <Input id="age" name="age" type="number" min="6" max="25" required placeholder="14" />
+                      <Input
+                        id="age"
+                        name="age"
+                        type="number"
+                        min="6"
+                        max="25"
+                        required
+                        placeholder="14"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="dates">Dates souhaitees</Label>
-                      <Input id="dates" name="dates" required placeholder="Ex : mercredis de juin, 8h-10h" />
+                      <Input
+                        id="dates"
+                        name="dates"
+                        required
+                        placeholder="Ex : mercredis de juin, 8h-10h"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                   </div>
 
                   <div className="grid gap-5 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="departure">Depart</Label>
-                      <Input id="departure" name="departure" required placeholder="Adresse de depart" />
+                      <Input
+                        id="departure"
+                        name="departure"
+                        required
+                        placeholder="Adresse de depart"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="arrival">Arrivee</Label>
-                      <Input id="arrival" name="arrival" required placeholder="Adresse d'arrivee" />
+                      <Input
+                        id="arrival"
+                        name="arrival"
+                        required
+                        placeholder="Adresse d'arrivee"
+                        disabled={status === 'loading'}
+                      />
                     </div>
                   </div>
 
@@ -86,17 +208,39 @@ export default function MissionForm() {
                       required
                       rows={6}
                       placeholder="Precisez le contexte, les contraintes horaires, les contacts sur place, les informations medicales utiles ou les documents deja disponibles."
+                      disabled={status === 'loading'}
                     />
                   </div>
 
-                  <Button type="submit" className="bg-emerald-600 text-white hover:bg-emerald-700">
-                    <Send className="h-4 w-4" />
-                    Preparer la demande
+                  <Button
+                    type="submit"
+                    className="bg-emerald-600 text-white hover:bg-emerald-700"
+                    disabled={status === 'loading'}
+                  >
+                    {status === 'loading' ? (
+                      <>
+                        <Loader className="h-4 w-4 animate-spin" />
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4" />
+                        Soumettre la demande
+                      </>
+                    )}
                   </Button>
 
-                  {status === 'ready' && (
-                    <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-950">
-                      La demande est prete cote interface. Prochaine etape technique : connecter ce formulaire a une route API, a l'envoi email et au paiement Stripe.
+                  {status === 'error' && errorMessage && (
+                    <div className="flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-950">
+                      <AlertCircle className="h-5 w-5 shrink-0 text-red-600 mt-0.5" />
+                      <p>{errorMessage}</p>
+                    </div>
+                  )}
+
+                  {status === 'success' && successMessage && (
+                    <div className="flex items-start gap-3 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-950">
+                      <CheckCircle className="h-5 w-5 shrink-0 text-emerald-600 mt-0.5" />
+                      <p>{successMessage}</p>
                     </div>
                   )}
                 </form>
