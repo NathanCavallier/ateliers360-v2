@@ -53,8 +53,8 @@ const Header = () => {
     { href: '/nos-activites', label: t('activities') },
     { href: '/passerelle-jeunesse', label: t('passerelle') },
     { href: '/le-projet', label: t('project') },
-    { href: '/ateliers', label: t('workshops_list') },
     { href: '/catalogues', label: t('catalogues') },
+    { href: '/tarifs', label: t('pricing') },
     { href: '/contact', label: t('contact') },
   ];
 
@@ -71,7 +71,6 @@ const Header = () => {
     { href: '/pour-les-entreprises', label: t('companies') },
     { href: '/pour-les-structures', label: t('structures') },
     { href: '/pour-les-ecoles', label: t('schools') },
-    { href: '/tarifs', label: t('pricing') },
     { href: '/recompenses', label: t('rewards') },
     { href: '/a-propos', label: t('about') },
     { href: '/faq', label: t('faq') || 'FAQ' },

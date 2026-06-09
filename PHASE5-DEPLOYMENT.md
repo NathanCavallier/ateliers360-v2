@@ -48,6 +48,7 @@ CREATE POLICY "Service role inserts missions" ON mission_requests
 ```
 
 **Exécuter:**
+
 - Copier le SQL
 - Coller dans SQL Editor
 - Cliquer "Run"
@@ -71,21 +72,72 @@ CREATE POLICY "Service role inserts missions" ON mission_requests
 7. Copiez le **Signing secret** (commence par `whsec_`)
 
 **Ajouter à `.env.local`:**
+
 ```bash
 STRIPE_WEBHOOK_SECRET=whsec_xxx...
 ```
 
 ---
 
-### 3️⃣ Resend — Vérifier la Clé API
+### 3️⃣ Resend — Configurer le Domaine + Clé API
+
+#### 🔑 Récupérer la Clé API
 
 **Dans Resend Dashboard:**
 
 1. Allez à **API Keys**
 2. Copiez la clé (commence par `re_`)
-3. Vérifiez dans `.env.local`:
+3. Notez-la (vous la mettrez dans `.env.local` plus tard)
+
+---
+
+#### 📧 Configurer le Sous-Domaine pour les Emails
+
+**Étape 1: Dans Resend Dashboard → Domains**
+
+1. Cliquez **Add domain**
+2. Entrez: `noreply.ateliers360.fr` *(meilleure pratique pour préserver la réputation)*
+3. Resend génère les enregistrements DNS:
+   - CNAME (vérification)
+   - MX (mail exchanger)
+   - SPF (authentification)
+   - DKIM (authentification)
+   - DMARC (politique)
+
+⚠️ **Ne fermez pas cette page** — vous aurez besoin de ces enregistrements
+
+---
+
+**Étape 2: Dans OVH Dashboard**
+
+1. Allez à [ovh.com](https://ovh.com) → **Domaines** → **ateliers360.fr**
+2. Onglet **Zone DNS**
+3. Pour chaque enregistrement de Resend, créez une entrée correspondante:
+
+| Type | Sous-domaine | Cible | TTL |
+|------|--------------|--------|-----|
+| CNAME | `noreply` | *(valeur Resend)* | 3600 |
+| MX | `noreply` | *(valeur Resend)* | 3600 |
+| TXT (SPF) | `noreply` | *(valeur Resend)* | 3600 |
+| TXT (DKIM) | `default._domainkey.noreply` | *(valeur Resend)* | 3600 |
+| TXT (DMARC) | `_dmarc.noreply` | *(valeur Resend)* | 3600 |
+
+---
+
+**Étape 3: Vérifier dans Resend**
+
+1. Retour à Resend Dashboard → Domains
+2. Cliquez **Verify domain** sur `noreply.ateliers360.fr`
+3. ⏳ Attendre 5-30 minutes pour la propagation DNS
+4. ✅ Vous recevrez une confirmation
+
+---
+
+#### 🔐 Mise à Jour `.env.local`
+
 ```bash
 RESEND_API_KEY=re_xxx...
+FROM_EMAIL=noreply@ateliers360.fr
 ```
 
 ---
@@ -171,6 +223,7 @@ az apphosting service deploy --app-name ateliers360 --service-name platform-v2
    - ✅ Message de succès s'affiche
    - ✅ Email de confirmation reçu (Resend)
    - ✅ Mission stockée en Supabase:
+
      ```sql
      SELECT * FROM mission_requests
      WHERE email = 'votre-email@example.com'
@@ -199,16 +252,19 @@ WHERE tablename = 'mission_requests';
 ### Test 3: Vérifier les Emails
 
 **Resend Test:**
+
 ```bash
 # Allez à https://resend.com/emails
 # Vérifiez que les emails s'affichent dans "Emails"
 ```
 
 **Email Guardian:**
+
 - Subject: "Votre demande de mission Passerelle Jeunesse - Confirmation"
 - Contient: Mission details, next steps, CTA
 
 **Email Team:**
+
 - Subject: "[NOUVELLE MISSION] Test Parent - Alice"
 - Contient: Tous les détails de la demande
 
@@ -245,18 +301,46 @@ curl -X POST http://localhost:3000/api/missions/create \
 ### Email non reçu
 
 **Vérifications:**
+
 - [ ] `RESEND_API_KEY` présent dans `.env.local`
-- [ ] `FROM_EMAIL` configuré (`noreply@ateliers360.fr`)
-- [ ] Vérifier les logs Resend dashboard
+- [ ] Domaine `noreply.ateliers360.fr` vérifié dans Resend (statut ✅)
+- [ ] `FROM_EMAIL=noreply@ateliers360.fr` configuré
+- [ ] Enregistrements DNS correctement ajoutés dans OVH
+- [ ] Vérifier les logs Resend dashboard → **Emails**
 - [ ] Vérifier le dossier spam
+
+**Déboguer les enregistrements DNS:**
+
+```bash
+# Vérifier les enregistrements MX
+dig noreply.ateliers360.fr MX
+
+# Vérifier les enregistrements TXT (SPF, DKIM, DMARC)
+dig noreply.ateliers360.fr TXT
+
+# Vérifier les enregistrements CNAME
+dig noreply.ateliers360.fr CNAME
+```
+
+### Domaine ne se vérifie pas dans Resend
+
+**Vérifications:**
+
+- [ ] Les enregistrements DNS sont présents dans OVH
+- [ ] TTL a expiré (attendre 5-30 min supplémentaires)
+- [ ] Valeurs des enregistrements copiées exactement depuis Resend
+- [ ] Pas d'erreurs de typage (majuscules/minuscules)
+- [ ] Essayer "Verify domain" à nouveau après propagation
 
 ### Stripe webhook ne déclenche pas
 
 **Vérifications:**
+
 - [ ] `STRIPE_WEBHOOK_SECRET` correct
 - [ ] Endpoint HTTPS (pas HTTP)
 - [ ] Vérifier les logs Stripe dashboard → Webhooks → Eventsleur
 - [ ] Tester avec Stripe CLI:
+
 ```bash
 stripe listen --forward-to localhost:3000/api/missions/webhook
 stripe trigger payment_intent.succeeded
@@ -265,6 +349,7 @@ stripe trigger payment_intent.succeeded
 ### Mission non stockée en Supabase
 
 **Vérifications:**
+
 - [ ] Table `mission_requests` existe
 - [ ] `SUPABASE_SERVICE_ROLE_KEY` correct
 - [ ] Pas d'erreur RLS (Row Level Security)
@@ -273,6 +358,7 @@ stripe trigger payment_intent.succeeded
 ### Erreur TypeScript
 
 **Solution:**
+
 ```bash
 npm run typecheck
 # Corriger les erreurs affichées
@@ -285,9 +371,9 @@ npm run build
 
 ### Dashboards
 
-- **Supabase:** https://app.supabase.com → mission_requests table
-- **Stripe:** https://dashboard.stripe.com → Payment status
-- **Resend:** https://resend.com/emails → Email logs
+- **Supabase:** <https://app.supabase.com> → mission_requests table
+- **Stripe:** <https://dashboard.stripe.com> → Payment status
+- **Resend:** <https://resend.com/emails> → Email logs
 - **Azure AppHosting:** Azure Portal → Logs
 
 ### Logs en Développement
