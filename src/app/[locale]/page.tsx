@@ -451,10 +451,11 @@ export default function Home() {
       </section>
 
       {/* Section CTA - Réservation et Calendrier */}
+      {/**
       <section className="w-full py-12 md:py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-            {/* CTA Calendrier */}
+            {/* CTA Calendrier
             <Card className="border-2 border-primary/20 hover:border-primary/40 transition-colors">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-3">
@@ -480,7 +481,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* CTA Réservation */}
+            {/* CTA Réservation
             <Card className="border-2 border-accent/20 hover:border-accent/40 transition-colors bg-gradient-to-br from-accent/5 to-transparent">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-3">
@@ -508,7 +509,7 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full py-12 md:py-20 bg-background">
         <div className="container px-4 md:px-6">
@@ -547,6 +548,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/*
       {cataloguesLinks.catalogue_ateliers && (
         <section className="w-full py-12 md:py-20 bg-muted/30">
           <div className="container px-4 md:px-6">
@@ -573,7 +575,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       <section className="w-full py-16 md:py-20 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0">

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCA Pépinière - Document de cadrage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F1E6;
+    --cream-deep:#EFE7D6;
+    --navy:#1F3052;
+    --navy-soft:#3A4D72;
+    --lavande:#9C8AA8;
+    --lavande-deep:#7A6A87;
+    --lavande-pale:#E7E1ED;
+    --scarlet:#A8412E;
+    --gold:#C19A49;
+    --ink:#2B2620;
+    --line:#DCD2BC;
+    --good:#4F7A5C;
+    --good-pale:#EAF1E8;
+    --bad:#A8412E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    color:var(--navy);
+    margin:0;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--lavande-deep);
+    font-weight:500;
+  }
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy) 55%, var(--navy-soft) 100%);
+    color:var(--cream);
+    padding:2.4rem 1.4rem 2rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(135deg, rgba(193,154,73,.05) 0 18px, transparent 18px 36px);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:880px; margin:0 auto; position:relative;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(1.9rem, 6vw, 2.9rem);
+    margin:.3rem 0 .4rem;
+    letter-spacing:.01em;
+  }
+  .hero .sub{
+    max-width:50ch;
+    color:var(--cream-deep);
+    font-size:1rem;
+    margin-bottom:1.6rem;
+  }
+  .hero .motto{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.75rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--lavande-pale);
+    border-top:1px solid rgba(255,255,255,.18);
+    padding-top:.9rem;
+    margin-top:1.6rem;
+  }
+  /* ---------- VIVIER DIAGRAM (signature element) ---------- */
+  .vivier{
+    margin-top:.6rem;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);
+    border-radius:14px;
+    padding:1.3rem 1.1rem 1.2rem;
+  }
+  .vivier-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.7rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--cream-deep);
+    margin-bottom:1.1rem;
+  }
+  .lane{display:flex; align-items:center; gap:.7rem; flex-wrap:wrap;}
+  .lane-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--cream-deep); min-width:74px;
+  }
+  .box{
+    border-radius:10px; padding:.55rem .9rem; font-size:.84rem; text-align:center; line-height:1.3;
+  }
+  .box span{display:block; font-size:.7rem; opacity:.8; margin-top:.1rem; font-family:'IBM Plex Mono', monospace;}
+  .box.outline{border:1px dashed rgba(255,255,255,.35); color:var(--cream-deep);}
+  .box.pep{background:var(--lavande); color:#fff;}
+  .box.ele{background:var(--scarlet); color:#fff;}
+  .arrow{font-size:1.2rem; color:var(--cream-deep);}
+  .connector-down{
+    text-align:center; font-family:'IBM Plex Mono', monospace; font-size:.68rem;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--gold);
+    margin:.7rem 0; display:flex; align-items:center; gap:.5rem; padding-left:74px;
+  }
+  .connector-down::before{content:"↓"; font-size:1rem;}
+
+  /* ---------- TABS ---------- */
+  .tabs{
+    max-width:880px; margin:0 auto;
+    display:flex; gap:.4rem; overflow-x:auto;
+    padding:1rem 1.4rem .6rem;
+    position:sticky; top:0; background:var(--cream);
+    z-index:10; border-bottom:1px solid var(--line);
+  }
+  .tab-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.74rem; letter-spacing:.06em;
+    text-transform:uppercase;
+    background:transparent; border:1px solid var(--line);
+    color:var(--navy-soft); padding:.55rem .9rem;
+    border-radius:999px; cursor:pointer; white-space:nowrap;
+    transition:all .15s ease;
+  }
+  .tab-btn:hover{border-color:var(--lavande);}
+  .tab-btn.active{
+    background:var(--navy); color:#fff; border-color:var(--navy);
+  }
+
+  /* ---------- MAIN / PANELS ---------- */
+  main{max-width:880px; margin:0 auto; padding:1.4rem;}
+  .panel{display:none; animation:fade .25s ease;}
+  .panel.active{display:block;}
+  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+  .panel h2{
+    font-size:1.5rem; margin-bottom:.3rem;
+  }
+  .panel .lead{
+    color:var(--navy-soft); margin-bottom:1.4rem; font-size:.98rem; max-width:62ch;
+  }
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:1.1rem 1.2rem; margin-bottom:1rem;
+  }
+  .card h3{
+    font-size:1.05rem; margin-bottom:.5rem;
+    display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+  }
+  .card h3 .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:.65rem;
+    letter-spacing:.1em; text-transform:uppercase;
+    padding:.18rem .5rem; border-radius:5px; font-weight:600;
+  }
+  .tag.pep{background:var(--lavande-pale); color:var(--lavande-deep);}
+  .tag.extra{background:var(--good-pale); color:var(--good);}
+
+  .pillars{display:grid; grid-template-columns:1fr; gap:.8rem; margin:1.2rem 0;}
+  @media(min-width:680px){.pillars{grid-template-columns:1fr 1fr 1fr;}}
+  .pillar{
+    border:1px solid var(--line); border-radius:12px; padding:1rem;
+    background:#fff;
+  }
+  .pillar .num{
+    font-family:'IBM Plex Mono', monospace; font-size:.7rem;
+    color:var(--lavande-deep); letter-spacing:.1em; text-transform:uppercase;
+  }
+  .pillar h4{font-size:1.02rem; margin:.3rem 0 .35rem;}
+  .pillar p{font-size:.88rem; color:#56504a; margin:0;}
+
+  .kpi-row{display:grid; grid-template-columns:repeat(2,1fr); gap:.7rem; margin:1.2rem 0;}
+  @media(min-width:680px){.kpi-row{grid-template-columns:repeat(4,1fr);}}
+  .kpi{
+    border:1px solid var(--line); border-radius:10px; padding:.8rem .9rem; background:#fff;
+  }
+  .kpi .val{font-family:'Fraunces',serif; font-weight:700; font-size:1.4rem; color:var(--navy);}
+  .kpi .lbl{font-size:.76rem; color:#7a7264; margin-top:.15rem;}
+
+  table{width:100%; border-collapse:collapse; font-size:.88rem;}
+  th,td{text-align:left; padding:.55rem .6rem; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{font-family:'IBM Plex Mono', monospace; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--navy-soft); font-weight:600;}
+  tr:last-child td{border-bottom:none;}
+  td.num, th.num{text-align:right; font-family:'IBM Plex Mono', monospace;}
+
+  .note{
+    font-size:.85rem; color:#7a7264; border-left:3px solid var(--gold);
+    padding:.5rem .8rem; background:var(--cream-deep); border-radius:0 8px 8px 0; margin-top:.8rem;
+  }
+
+  /* ---------- ORG CHART ---------- */
+  .org{display:flex; flex-direction:column; align-items:center; gap:.6rem; margin:1.2rem 0;}
+  .org-box{
+    border:1.5px solid var(--navy); border-radius:10px; padding:.6rem 1rem;
+    background:#fff; text-align:center; font-size:.88rem; min-width:200px;
+  }
+  .org-box.dir{border-color:var(--navy); background:var(--navy); color:#fff;}
+  .org-box.lead{border-color:var(--lavande); background:var(--lavande-pale);}
+  .org-box .role{font-weight:600;}
+  .org-box .etp{font-family:'IBM Plex Mono', monospace; font-size:.72rem; opacity:.75;}
+  .org-row{display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem;}
+  .connector{width:2px; height:18px; background:var(--line);}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative; padding-left:1.6rem; margin-top:1rem;}
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:2px; background:var(--line);
+  }
+  .tl-item{position:relative; padding-bottom:1.3rem;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-1.6rem; top:3px; width:11px; height:11px; border-radius:50%;
+    background:var(--lavande); border:2px solid #fff; box-shadow:0 0 0 2px var(--lavande);
+  }
+  .tl-item.milestone::before{background:var(--scarlet); box-shadow:0 0 0 2px var(--scarlet);}
+  .tl-period{font-family:'IBM Plex Mono', monospace; font-size:.7rem; color:var(--lavande-deep); letter-spacing:.06em; text-transform:uppercase;}
+  .tl-item h4{font-size:.96rem; margin:.15rem 0 .2rem;}
+  .tl-item p{font-size:.86rem; color:#56504a; margin:0;}
+
+  /* ---------- SIMULATOR ---------- */
+  .scenario-bar{display:flex; gap:.5rem; margin-bottom:1.1rem; flex-wrap:wrap;}
+  .scenario-btn{
+    flex:1; min-width:100px;
+    font-family:'IBM Plex Mono', monospace; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase;
+    border:1px solid var(--line); background:#fff; color:var(--navy);
+    padding:.6rem; border-radius:8px; cursor:pointer; transition:.15s;
+  }
+  .scenario-btn:hover{border-color:var(--lavande);}
+  .scenario-btn.active{background:var(--lavande); color:#fff; border-color:var(--lavande);}
+
+  .slider-group{margin-bottom:1.3rem;}
+  .slider-group h4{font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; font-family:'IBM Plex Mono', monospace; color:var(--navy-soft); margin-bottom:.6rem; font-weight:600;}
+  .slider-row{margin-bottom:.85rem;}
+  .slider-row label{
+    display:flex; justify-content:space-between; gap:.6rem; font-size:.86rem; margin-bottom:.3rem; color:var(--ink);
+  }
+  .slider-row label .v{font-family:'IBM Plex Mono', monospace; color:var(--lavande-deep); font-weight:600; white-space:nowrap;}
+  input[type=range]{
+    width:100%; -webkit-appearance:none; height:4px; border-radius:2px;
+    background:var(--line); outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:18px; height:18px; border-radius:50%;
+    background:var(--lavande); border:2px solid #fff; box-shadow:0 0 0 1px var(--lavande); cursor:pointer;
+  }
+  input[type=range]::-moz-range-thumb{
+    width:18px; height:18px; border-radius:50%; background:var(--lavande); border:2px solid #fff; box-shadow:0 0 0 1px var(--lavande); cursor:pointer;
+  }
+
+  .result-card{
+    border:1.5px solid var(--navy); border-radius:12px; padding:1rem 1.1rem; background:#fff;
+  }
+  .result-line{display:flex; justify-content:space-between; padding:.35rem 0; font-size:.9rem; border-bottom:1px solid var(--line);}
+  .result-line.total{font-weight:700; border-bottom:none; padding-top:.6rem;}
+  .result-line .v{font-family:'IBM Plex Mono', monospace;}
+  .result-final{
+    margin-top:.8rem; padding-top:.8rem; border-top:2px solid var(--navy);
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .result-final .lbl{font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem; color:var(--navy);}
+  .result-final .val{font-family:'IBM Plex Mono', monospace; font-size:1.4rem; font-weight:600;}
+  .val.good{color:var(--good);}
+  .val.bad{color:var(--bad);}
+
+  footer{
+    max-width:880px; margin:0 auto; padding:1.4rem 1.4rem 2.4rem;
+    font-size:.78rem; color:#9a9182; border-top:1px solid var(--line); margin-top:1rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">NCA — Phase 0 · Filiale dédiée · ALSH périscolaire</div>
+    <h1>NCA Pépinière</h1>
+    <p class="sub">Accueil périscolaire (6-11 ans) à Metz, ouvert dès le départ aux enfants scolarisés ailleurs — la vitrine NCA qui constitue, en parallèle, le vivier de familles pour NCA Élémentaire.</p>
+
+    <div class="vivier">
+      <div class="vivier-label">Le vivier, en parallèle dès aujourd'hui</div>
+      <div class="lane">
+        <span class="lane-tag">Aujourd'hui</span>
+        <div class="box outline">École d'origine<span>CP-CM2, hors NCA</span></div>
+        <span class="arrow">→</span>
+        <div class="box pep">NCA Pépinière<span>périscolaire 6-11 ans</span></div>
+      </div>
+      <div class="connector-down">passerelle</div>
+      <div class="lane">
+        <span class="lane-tag">Demain</span>
+        <div class="box ele">NCA Élémentaire<span>CP-CM2</span></div>
+      </div>
+    </div>
+
+    <div class="motto">Knowledge · Craft · Service — après l'école</div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="concept">Concept</button>
+  <button class="tab-btn" data-tab="reglementation">Cadre réglementaire</button>
+  <button class="tab-btn" data-tab="locaux">Locaux</button>
+  <button class="tab-btn" data-tab="rh">Équipe</button>
+  <button class="tab-btn" data-tab="entreprises">Partenariats entreprises</button>
+  <button class="tab-btn" data-tab="financier">Modèle financier</button>
+  <button class="tab-btn" data-tab="planning">Planning</button>
+</nav>
+
+<main>
+
+  <!-- ============ CONCEPT ============ -->
+  <section id="concept" class="panel active">
+    <h2>Positionnement</h2>
+    <p class="lead">NCA Pépinière est une filiale SAS dédiée, portant une déclaration ALSH (accueil de loisirs sans hébergement) unique — pas d'agrément PMI, pas de volet 0-6 ans. Accueil avant/après l'école, le mercredi et pendant les vacances, pour des enfants de 6 à 11 ans scolarisés dans d'autres établissements de Metz.</p>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="val">25-35</div><div class="lbl">places périscolaire (6-11 ans)</div></div>
+      <div class="kpi"><div class="val">5</div><div class="lbl">personnes au lancement (toi + 4)</div></div>
+      <div class="kpi"><div class="val">ALSH seul</div><div class="lbl">déclaration SDJES, sans PMI</div></div>
+      <div class="kpi"><div class="val">~6 mois</div><div class="lbl">de la création de la filiale à l'ouverture</div></div>
+    </div>
+
+    <h2 style="margin-top:1.6rem;">Trois piliers</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h4>Périscolaire ALSH</h4>
+        <p>Accueil matin/soir les jours d'école, journées complètes le mercredi et pendant les vacances scolaires. Cadre réglementaire unique et léger : déclaration SDJES, ratio 1 animateur pour 14 enfants.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h4>Équipe resserrée</h4>
+        <p>5 personnes au lancement, profils BAFA/BAFD exclusivement. Capacité 25-35 places avec une marge confortable pour absorber la rotation, les mercredis et les vacances sans recours systématique à l'intérim.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h4>Vivier en parallèle</h4>
+        <p>Les familles accueillies ont déjà des enfants en âge CP-CM2, scolarisés ailleurs — exactement le profil ciblé pour NCA Élémentaire. La relation de confiance se construit dès aujourd'hui, pas dans 1-2 ans.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Identité visuelle <span class="tag pep">Lavande NCA</span></h3>
+      <p style="font-size:.92rem; margin:0;">NCA Pépinière conserve le nom, la typographie et les codes structurels NCA (navy, doré, crème), avec une teinte dédiée — lavande/héliotrope — distincte des couleurs de cycle scolaire (rouge Élémentaire, vert Primaire, bleu Collège, doré Lycée). Cette teinte signale le statut de filiale séparée tout en restant dans la famille visuelle NCA.</p>
+    </div>
+
+    <div class="note">Pour mémoire : une version multi-accueil (crèche + garderie, 0-6 ans, agrément PMI) avait été envisagée puis abandonnée au profit de cette version périscolaire seule, plus simple à lancer avec une équipe de 5 et mieux alignée sur l'objectif de vivier.</div>
+  </section>
+
+  <!-- ============ REGLEMENTATION ============ -->
+  <section id="reglementation" class="panel">
+    <h2>Cadre réglementaire</h2>
+    <p class="lead">Un régime unique : l'accueil de loisirs sans hébergement (ALSH), qui couvre à la fois le périscolaire (jours d'école) et l'extrascolaire (mercredis, vacances) sous la même déclaration.</p>
+
+    <div class="card">
+      <h3>Accueil de loisirs <span class="tag pep">Périscolaire</span><span class="tag extra">Extrascolaire</span></h3>
+      <table>
+        <tr><th>Tutelle</th><td>Déclaration auprès de la SDJES (ex-DDCS) avec attribution d'un numéro d'organisateur — pas d'autorisation préalable type PMI</td></tr>
+        <tr><th>Encadrement</th><td>1 animateur pour 14 enfants de 6 ans et plus (taux applicable pour la totalité du public visé, 6-11 ans)</td></tr>
+        <tr><th>Direction</th><td>BAFD, BPJEPS LTP ou DEJEPS — ou équivalent reconnu par la SDJES</td></tr>
+        <tr><th>Animateurs</th><td>Au moins 50 % titulaires du BAFA ; le reste en cours de formation ou stagiaire (max 20 % sans qualification)</td></tr>
+        <tr><th>Rythmes</th><td><strong>Périscolaire</strong> : matin (≈1h30) et soir (≈2h) les jours d'école &nbsp;·&nbsp; <strong>Extrascolaire</strong> : journée complète (≈8h) les mercredis et pendant les vacances scolaires</td></tr>
+        <tr><th>Locaux</th><td>ERP conforme sécurité incendie et accessibilité ; espaces modulables selon les créneaux, pas d'exigence de dortoir ni de biberonnerie</td></tr>
+        <tr><th>Financement</th><td>Participation des familles (tarification directe NCA) + prestation de service CAF (PSO ALSH) si éligibilité confirmée + subventions complémentaires éventuelles (commune, CTG)</td></tr>
+      </table>
+      <div class="note">Délai d'instruction nettement plus court qu'un agrément PMI : la déclaration ALSH peut généralement être finalisée en quelques semaines une fois le local et l'équipe identifiés, contre plusieurs mois pour un agrément multi-accueil.</div>
+    </div>
+  </section>
+
+  <!-- ============ LOCAUX ============ -->
+  <section id="locaux" class="panel">
+    <h2>Locaux</h2>
+    <p class="lead">Un local nettement plus simple que pour un multi-accueil : pas de dortoirs, pas de biberonnerie, pas d'unités d'âge séparées. La contrainte principale devient la proximité avec les écoles d'origine des enfants.</p>
+
+    <div class="card">
+      <h3>Surfaces indicatives</h3>
+      <table>
+        <tr><th>Espace</th><th class="num">Surface</th><th>Notes</th></tr>
+        <tr><td>Salle(s) d'activités modulables</td><td class="num">≈ 120-150 m²</td><td>Accueil principal, jeux, ateliers ; divisible en 2 espaces pour différencier les âges au sein du 6-11 ans</td></tr>
+        <tr><td>Espace calme / devoirs / lecture</td><td class="num">≈ 30 m²</td><td>Utile pour les jours d'école (devoirs après la classe)</td></tr>
+        <tr><td>Salle de restauration / goûter</td><td class="num">≈ 35-40 m²</td><td>Goûter quotidien, repas les mercredis et vacances (liaison froide ou prestataire)</td></tr>
+        <tr><td>Sanitaires</td><td class="num">≈ 20 m²</td><td>Normes ERP standard, pas de besoin spécifique « change »</td></tr>
+        <tr><td>Bureau direction &amp; rangements</td><td class="num">≈ 15 m²</td><td></td></tr>
+        <tr><td>Circulations, locaux techniques</td><td class="num">≈ 25 m²</td><td></td></tr>
+        <tr><td><strong>Total intérieur</strong></td><td class="num"><strong>≈ 245-280 m²</strong></td><td>Environ 40 % de moins que la version multi-accueil envisagée précédemment</td></tr>
+        <tr><td>Espace extérieur (cour / jardin clos)</td><td class="num">≈ 150-200 m²</td><td>Important pour les activités extrascolaires (journées complètes)</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Critères de recherche</h3>
+      <table>
+        <tr><td>Localisation</td><td>Zone urbaine de Metz, à proximité immédiate d'une ou plusieurs écoles élémentaires existantes — critère désormais central, puisque les enfants viennent d'écoles tierces</td></tr>
+        <tr><td>Modalités de transfert</td><td>À clarifier : implantation à distance de marche encadrée des écoles partenaires, ou navette courte organisée par l'équipe NCA Pépinière</td></tr>
+        <tr><td>Configuration</td><td>Rez-de-chaussée ou accès facile ; extérieur clos attenant souhaitable</td></tr>
+        <tr><td>Classement ERP</td><td>Type R, probablement 5ᵉ catégorie selon effectif accueilli</td></tr>
+        <tr><td>Accès</td><td>Desserte piétonne sécurisée ; stationnement/dépose-minute pour les familles aux horaires de pointe</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ EQUIPE ============ -->
+  <section id="rh" class="panel">
+    <h2>Équipe de lancement</h2>
+    <p class="lead">5 personnes au démarrage : toi en direction générale, et 4 collaboratrices couvrant l'encadrement ALSH. Profils 100 % BAFA/BAFD — pas de qualification petite enfance nécessaire.</p>
+
+    <div class="org">
+      <div class="org-box dir">
+        <div class="role">Toi — Direction générale NCA Pépinière</div>
+        <div class="etp">Lien NCA Group, gestion, développement, présence renforcée mercredis/vacances</div>
+      </div>
+      <div class="connector"></div>
+      <div class="org-box lead">
+        <div class="role">Directrice ALSH — BAFD ou BPJEPS LTP</div>
+        <div class="etp">1 ETP · pédagogie, encadrement quotidien, déclaration et lien SDJES/CAF/commune</div>
+      </div>
+      <div class="connector"></div>
+      <div class="org-row">
+        <div class="org-box"><span class="role">Animatrice référente</span><br><span class="etp">1 ETP · BAFA + BAFD en cours, supplée la direction</span></div>
+        <div class="org-box"><span class="role">Animatrice — sport &amp; extérieur</span><br><span class="etp">1 ETP · BAFA</span></div>
+        <div class="org-box"><span class="role">Animatrice — arts &amp; culture</span><br><span class="etp">1 ETP · BAFA</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Vérification du ratio</h3>
+      <table>
+        <tr><th>Agrément</th><th>Capacité</th><th>Ratio réglementaire</th><th class="num">ETP encadrement requis</th><th class="num">ETP prévus</th></tr>
+        <tr><td>ALSH (6-11 ans)</td><td>30 places</td><td>1 animateur pour 14 enfants</td><td class="num">≈ 2,15</td><td class="num">4</td></tr>
+      </table>
+      <div class="note">4 ETP pour un besoin réglementaire de ~2,15 : la marge couvre la rotation entre périscolaire (matin/soir) et extrascolaire (journées complètes mercredi/vacances), les absences et congés, sans recours systématique à l'intérim. Toi (direction générale) n'es pas compté dans ces 4 ETP — ton rôle est piloté au niveau NCA Group.</div>
+    </div>
+
+    <div class="card">
+      <h3>Formations &amp; obligations</h3>
+      <table>
+        <tr><td>BAFA / BAFD</td><td>À vérifier individuellement ; prévoir le financement du BAFD en cours pour l'animatrice référente</td></tr>
+        <tr><td>PSC1</td><td>Premiers secours, recommandé pour l'ensemble de l'équipe</td></tr>
+        <tr><td>Hygiène alimentaire (HACCP)</td><td>Pour la gestion du goûter et des repas extrascolaires</td></tr>
+        <tr><td>Sensibilisation handicap</td><td>Pour l'accueil inclusif, conformément aux exigences SDJES</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ PARTENARIATS ENTREPRISES ============ -->
+  <section id="entreprises" class="panel">
+    <h2>Partenariats entreprises</h2>
+    <p class="lead">Un nombre de places défini, proposé par des entreprises locales à leurs salariés comme avantage social — un levier de recettes prévisibles qui complète la fréquentation familiale directe, sans s'y substituer.</p>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="val">5-8</div><div class="lbl">places plafond par entreprise</div></div>
+      <div class="kpi"><div class="val">60-70 %</div><div class="lbl">du plafond facturé en minimum garanti</div></div>
+      <div class="kpi"><div class="val">9-12</div><div class="lbl">places, plafond de sécurité global (30-40 % de la capacité)</div></div>
+      <div class="kpi"><div class="val">1 an</div><div class="lbl">scolaire, reconductible, revoyure trimestrielle</div></div>
+    </div>
+
+    <div class="card">
+      <h3>Modèle retenu <span class="tag pep">Hybride</span></h3>
+      <p style="font-size:.92rem; margin-bottom:.8rem;">Plafond de places prioritaires par entreprise, avec un minimum garanti facturé même en cas de sous-utilisation, et une facturation à l'usage réel au-delà de ce minimum jusqu'au plafond. Équilibre entre prévisibilité de recettes (pour NCA Pépinière) et risque financier maîtrisé (pour l'entreprise signataire).</p>
+      <table>
+        <tr><th>Paramètre</th><th>Valeur indicative</th><th>Logique</th></tr>
+        <tr><td>Plafond prioritaire / entreprise</td><td>5-8 places</td><td>Évite qu'une seule entreprise verrouille trop de capacité</td></tr>
+        <tr><td>Minimum garanti facturé</td><td>~60-70 % du plafond</td><td>Sécurise une recette plancher sans décourager la signature</td></tr>
+        <tr><td>Tarif places garanties</td><td>Tarif périscolaire standard, légèrement réduit (volume)</td><td>Argument commercial pour l'entreprise</td></tr>
+        <tr><td>Tarif usage au-delà du minimum</td><td>Tarif standard à l'unité, jusqu'au plafond</td><td>Pas de surcoût pour NCA Pépinière si usage faible</td></tr>
+        <tr><td>Durée d'engagement</td><td>1 an scolaire, reconductible</td><td>Aligné sur le rythme scolaire, pas le calendrier civil</td></tr>
+        <tr><td>Clause de revoyure</td><td>Trimestrielle (année 1)</td><td>Permet d'ajuster vite si le pilote sous- ou sur-performe</td></tr>
+      </table>
+    </div>
+
+    <h2 style="margin-top:1.6rem;">Trois modèles envisagés</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">Modèle A</div>
+        <h4>Places réservées fermes</h4>
+        <p>L'entreprise paie pour un nombre de places données, utilisées ou non. Recette garantie et prévisible, mais l'entreprise paie même les jours sans présence — sauf forfait bien calibré (périscolaire seul vs périscolaire + extrascolaire).</p>
+      </div>
+      <div class="pillar">
+        <div class="num">Modèle B</div>
+        <h4>Places prioritaires à l'usage réel</h4>
+        <p>Accès prioritaire garanti sur un plafond de places, facturation au prorata de la présence effective. Argument de vente plus facile, mais aucune garantie de recette pour NCA Pépinière au-delà de l'usage réel.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">Modèle C</div>
+        <h4>Subvention de participation</h4>
+        <p>L'entreprise ne réserve rien ; elle cofinance une partie du tarif facturé aux familles salariées (type CESU). Zéro engagement de capacité, mise en place simple, mais effet « vivier garanti » plus dilué.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Mise en œuvre progressive</h3>
+      <table>
+        <tr><td>Étape 1 — Pilote</td><td>Un premier accord avec une seule entreprise, plafond modeste (5-8 places), pour observer le taux d'usage réel pendant 2-3 mois avant de calibrer la suite</td></tr>
+        <tr><td>Étape 2 — Calibrage</td><td>Ajustement du plafond global toutes entreprises confondues sur la base de données réelles, plutôt qu'une estimation à l'aveugle</td></tr>
+        <tr><td>Étape 3 — Extension</td><td>Signature d'accords additionnels dans la limite du plafond de sécurité global, pour préserver la capacité destinée à la demande familiale directe (le vivier principal vers NCA Élémentaire)</td></tr>
+      </table>
+    </div>
+
+    <div class="note">Cibles potentielles à Metz : grandes administrations, hôpitaux (CHR Metz-Thionville), entreprises à horaires décalés ou contraignants (cadres en déplacement, soignants). À vérifier séparément : cadres CESU préfinancé ou titres-services pour rendre l'offre plus attractive sans surcoût net pour l'entreprise, et clauses contractuelles (engagement minimum, condition de revoyure, clause de sortie) à valider avec un expert-comptable ou juriste.</div>
+  </section>
+
+  <!-- ============ FINANCIER ============ -->
+  <section id="financier" class="panel">
+    <h2>Modèle financier</h2>
+    <p class="lead">Simulateur léger à trois scénarios. Le périscolaire ALSH génère structurellement moins d'heures facturables qu'un multi-accueil — la ligne « subventions &amp; produits complémentaires » (CAF, commune, ou contribution NCA Group au titre de l'investissement vivier) est ici le levier déterminant.</p>
+
+    <div class="scenario-bar">
+      <button class="scenario-btn" data-scenario="prudent">Prudent</button>
+      <button class="scenario-btn active" data-scenario="nominal">Nominal</button>
+      <button class="scenario-btn" data-scenario="optimal">Optimal</button>
+    </div>
+
+    <div class="slider-group">
+      <h4>Activité — 30 places (fourchette 25-35)</h4>
+      <div class="slider-row">
+        <label>Taux d'occupation moyen (places familiales) <span class="v" id="v-tauxPeri">55 %</span></label>
+        <input type="range" id="tauxPeri" min="40" max="80" step="1" value="55">
+      </div>
+      <div class="slider-row">
+        <label>Tarif horaire moyen perçu (participation famille + PSO éventuelle) <span class="v" id="v-tarifPeri">6,00 €/h</span></label>
+        <input type="range" id="tarifPeri" min="4" max="8" step="0.5" value="6">
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <h4>Partenariats entreprises (modèle hybride)</h4>
+      <div class="slider-row">
+        <label>Places engagées (plafond, sur les 30 places) <span class="v" id="v-placesB2B">0</span></label>
+        <input type="range" id="placesB2B" min="0" max="12" step="1" value="0">
+      </div>
+      <div class="slider-row">
+        <label>Taux d'usage réel des places engagées <span class="v" id="v-usageB2B">65 %</span></label>
+        <input type="range" id="usageB2B" min="40" max="100" step="5" value="65">
+      </div>
+      <div class="slider-row">
+        <label>Tarif horaire places entreprises (légèrement réduit) <span class="v" id="v-tarifB2B">5,50 €/h</span></label>
+        <input type="range" id="tarifB2B" min="4" max="7.5" step="0.5" value="5.5">
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <h4>Charges de personnel (4 ETP)</h4>
+      <div class="slider-row">
+        <label>Coût moyen chargé / ETP <span class="v" id="v-coutPeri">26 000 €</span></label>
+        <input type="range" id="coutPeri" min="22000" max="30000" step="1000" value="26000">
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <h4>Charges fixes &amp; produits complémentaires</h4>
+      <div class="slider-row">
+        <label>Loyer + charges locatives annuelles <span class="v" id="v-loyer">60 000 €</span></label>
+        <input type="range" id="loyer" min="45000" max="85000" step="2500" value="60000">
+      </div>
+      <div class="slider-row">
+        <label>Autres charges (goûter, fournitures, assurances, formation) <span class="v" id="v-autres">30 000 €</span></label>
+        <input type="range" id="autres" min="20000" max="40000" step="1000" value="30000">
+      </div>
+      <div class="slider-row">
+        <label>Subventions &amp; produits complémentaires (CAF, commune, NCA Group) <span class="v" id="v-subventions">50 000 €</span></label>
+        <input type="range" id="subventions" min="0" max="100000" step="5000" value="50000">
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-line"><span>Produits — tarification familles</span><span class="v" id="r-prodPeri">—</span></div>
+      <div class="result-line"><span>Produits — partenariats entreprises</span><span class="v" id="r-prodB2B">—</span></div>
+      <div class="result-line"><span>Subventions &amp; produits complémentaires</span><span class="v" id="r-subv">—</span></div>
+      <div class="result-line total"><span>Total produits</span><span class="v" id="r-totalProd">—</span></div>
+
+      <div class="result-line" style="margin-top:.6rem;"><span>Masse salariale (4 ETP)</span><span class="v" id="r-salPeri">—</span></div>
+      <div class="result-line"><span>Loyer &amp; charges locatives</span><span class="v" id="r-loyer">—</span></div>
+      <div class="result-line"><span>Autres charges</span><span class="v" id="r-autres">—</span></div>
+      <div class="result-line total"><span>Total charges</span><span class="v" id="r-totalCharges">—</span></div>
+
+      <div class="result-final">
+        <span class="lbl">Résultat annuel estimé</span>
+        <span class="val" id="r-resultat">—</span>
+      </div>
+    </div>
+
+    <div class="note">Lecture : le curseur « Places engagées » réserve une partie des 30 places au modèle hybride entreprises (minimum garanti + usage réel) ; les places restantes suivent le taux d'occupation familiale classique. Augmenter les places B2B avec un bon taux d'usage améliore la prévisibilité des recettes sans alourdir la masse salariale (toujours 4 ETP). Le scénario « Nominal » reste en léger déficit (~-35 k€) sans partenariat entreprise, ce qui est cohérent avec une logique de Phase 0 — un investissement dans le vivier plutôt qu'un centre de profit. À clarifier en priorité avec la SDJES, la CAF et la mairie de Metz : l'éligibilité PSO ALSH pour une structure privée et les éventuelles subventions municipales.</div>
+  </section>
+
+  <!-- ============ PLANNING ============ -->
+  <section id="planning" class="panel">
+    <h2>Planning de mise en œuvre</h2>
+    <p class="lead">Environ 6 mois entre le lancement du montage et l'ouverture — environ deux fois plus court que la version multi-accueil, grâce à l'absence d'agrément PMI.</p>
+
+    <div class="timeline">
+      <div class="tl-item milestone">
+        <div class="tl-period">Mois 0-1</div>
+        <h4>Montage juridique &amp; étude de marché</h4>
+        <p>Création de la filiale SAS NCA Pépinière. Identification des écoles élémentaires de Metz à proximité desquelles s'implanter, et de leur demande périscolaire actuelle.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Mois 1-3</div>
+        <h4>Recherche &amp; négociation du local</h4>
+        <p>Visites selon les critères de surface et de proximité scolaire, avant-projet d'aménagement, négociation du bail.</p>
+      </div>
+      <div class="tl-item milestone">
+        <div class="tl-period">Mois 2-4</div>
+        <h4>Déclaration ALSH</h4>
+        <p>Constitution et dépôt de la déclaration auprès de la SDJES, en parallèle des démarches sur le local. Premiers échanges avec la CAF et la mairie sur l'éligibilité aux financements complémentaires.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Mois 3-5</div>
+        <h4>Aménagement &amp; recrutement</h4>
+        <p>Travaux légers de mise en conformité ERP, équipement des salles. Recrutement de l'équipe de 4, vérification des qualifications BAFA/BAFD, formations complémentaires (PSC1, HACCP).</p>
+      </div>
+      <div class="tl-item milestone">
+        <div class="tl-period">Mois 5-6</div>
+        <h4>Visite de conformité &amp; ouverture</h4>
+        <p>Visite de conformité ERP, finalisation de la déclaration ALSH, ouverture avec les écoles partenaires identifiées, montée en charge progressive.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Année 1</div>
+        <h4>Partenariats &amp; ancrage local</h4>
+        <p>Construction de relations avec les écoles d'origine des enfants accueillis, ajustement des modalités de transfert, stabilisation de l'équipe et du taux d'occupation.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Année 2</div>
+        <h4>Activation du vivier vers NCA Élémentaire</h4>
+        <p>Communication ciblée auprès des familles de la Pépinière sur l'ouverture de NCA Élémentaire — ces familles ont déjà des enfants en âge CP-CM2, prêts à basculer dès la rentrée suivante.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  NCA Pépinière — Document de cadrage interactif · Phase 0 du projet Nathan Cavalier Academy · Chiffres et hypothèses indicatifs, à affiner avec la SDJES, la CAF et la mairie de Metz.
+</footer>
+
+<script>
+  // Tab switching
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  // ---------- Financial simulator ----------
+  const CAPACITE_PERI = 30;
+  const HEURES_THEO_PERI = 1100; // jours d'école (matin+soir) + mercredis + vacances, plafond théorique
+  const ETP_PERI = 4;
+
+  const ids = ['tauxPeri','tarifPeri','placesB2B','usageB2B','tarifB2B','coutPeri','loyer','autres','subventions'];
+  const sliders = {};
+  ids.forEach(id => sliders[id] = document.getElementById(id));
+
+  const scenarios = {
+    prudent:  { tauxPeri:40, tarifPeri:5,   placesB2B:0,  usageB2B:55, tarifB2B:5,   coutPeri:29000, loyer:75000, autres:35000, subventions:25000 },
+    nominal:  { tauxPeri:55, tarifPeri:6,   placesB2B:6,  usageB2B:65, tarifB2B:5.5, coutPeri:26000, loyer:60000, autres:30000, subventions:50000 },
+    optimal:  { tauxPeri:70, tarifPeri:7,   placesB2B:10, usageB2B:80, tarifB2B:6,   coutPeri:24000, loyer:50000, autres:25000, subventions:70000 }
+  };
+
+  function eur(n){
+    return Math.round(n).toLocaleString('fr-FR') + ' €';
+  }
+
+  function formatSliderLabel(id, val){
+    switch(id){
+      case 'tauxPeri':
+      case 'usageB2B': return val + ' %';
+      case 'tarifPeri':
+      case 'tarifB2B': return parseFloat(val).toFixed(2).replace('.', ',') + ' €/h';
+      case 'placesB2B': return val;
+      default: return eur(val);
+    }
+  }
+
+  function updateSliderLabels(){
+    ids.forEach(id => {
+      document.getElementById('v-' + id).textContent = formatSliderLabel(id, sliders[id].value);
+    });
+  }
+
+  function compute(){
+    const tauxPeri = parseFloat(sliders.tauxPeri.value) / 100;
+    const tarifPeri = parseFloat(sliders.tarifPeri.value);
+    const placesB2B = parseFloat(sliders.placesB2B.value);
+    const usageB2B = parseFloat(sliders.usageB2B.value) / 100;
+    const tarifB2B = parseFloat(sliders.tarifB2B.value);
+    const coutPeri = parseFloat(sliders.coutPeri.value);
+    const loyer = parseFloat(sliders.loyer.value);
+    const autres = parseFloat(sliders.autres.value);
+    const subventions = parseFloat(sliders.subventions.value);
+
+    const placesFamiliales = Math.max(CAPACITE_PERI - placesB2B, 0);
+
+    const heuresFamiliales = placesFamiliales * HEURES_THEO_PERI * tauxPeri;
+    const heuresB2B = placesB2B * HEURES_THEO_PERI * usageB2B;
+
+    const prodPeri = heuresFamiliales * tarifPeri;
+    const prodB2B = heuresB2B * tarifB2B;
+    const totalProd = prodPeri + prodB2B + subventions;
+
+    const salPeri = ETP_PERI * coutPeri;
+    const totalCharges = salPeri + loyer + autres;
+
+    const resultat = totalProd - totalCharges;
+
+    document.getElementById('r-prodPeri').textContent = eur(prodPeri);
+    document.getElementById('r-prodB2B').textContent = eur(prodB2B);
+    document.getElementById('r-subv').textContent = eur(subventions);
+    document.getElementById('r-totalProd').textContent = eur(totalProd);
+
+    document.getElementById('r-salPeri').textContent = eur(salPeri);
+    document.getElementById('r-loyer').textContent = eur(loyer);
+    document.getElementById('r-autres').textContent = eur(autres);
+    document.getElementById('r-totalCharges').textContent = eur(totalCharges);
+
+    const resultEl = document.getElementById('r-resultat');
+    resultEl.textContent = (resultat >= 0 ? '+' : '') + eur(resultat);
+    resultEl.classList.toggle('good', resultat >= 0);
+    resultEl.classList.toggle('bad', resultat < 0);
+  }
+
+  function applyScenario(name){
+    const s = scenarios[name];
+    ids.forEach(id => sliders[id].value = s[id]);
+    updateSliderLabels();
+    compute();
+    document.querySelectorAll('.scenario-btn').forEach(b => b.classList.toggle('active', b.dataset.scenario === name));
+  }
+
+  ids.forEach(id => sliders[id].addEventListener('input', () => {
+    updateSliderLabels();
+    compute();
+    document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+  }));
+
+  document.querySelectorAll('.scenario-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyScenario(btn.dataset.scenario));
+  });
+
+  // init
+  updateSliderLabels();
+  compute();
+</script>
+
+</body>
+</html>

@@ -223,6 +223,7 @@ const Header = () => {
 
         <div className="flex items-center gap-3 ml-auto">
           <LocaleSwitcher />
+          {/*
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -249,7 +250,7 @@ const Header = () => {
                 {authButton.label}
               </Link>
             </Button>
-          )}
+          )} */}
           <Button asChild className="bg-emerald-400 hover:bg-emerald-500 text-slate-950">
             <Link href={`/${locale}${ctaLink.href}`}>
               {ctaLink.label}
