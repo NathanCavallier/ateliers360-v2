@@ -154,6 +154,71 @@ export default function TarifsPage() {
         </div>
       </section>
 
+      <section className="w-full py-12 md:py-20">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-6xl mx-auto space-y-6">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <Badge className="bg-accent text-accent-foreground">
+                {t('poles_badge')}
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight">
+                {t('poles_title')}
+              </h2>
+              <p className="text-muted-foreground">
+                {t('poles_subtitle')}
+              </p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-3">
+              <Card className="border-primary/20 shadow-sm">
+                <CardHeader>
+                  <CardTitle>{t('pole_ateliers_title')}</CardTitle>
+                  <CardDescription>{t('pole_ateliers_desc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="font-semibold text-primary">
+                    {t('pole_ateliers_price')}
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href={`/${locale}/contact`}>{t('pole_cta')}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20 shadow-sm">
+                <CardHeader>
+                  <CardTitle>{t('pole_passerelle_title')}</CardTitle>
+                  <CardDescription>{t('pole_passerelle_desc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="font-semibold text-primary">
+                    {t('pole_passerelle_price')}
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href={`/${locale}/contact`}>{t('pole_cta')}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20 shadow-sm">
+                <CardHeader>
+                  <CardTitle>{t('pole_cavalier_title')}</CardTitle>
+                  <CardDescription>{t('pole_cavalier_desc')}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="font-semibold text-primary">
+                    {t('pole_cavalier_price')}
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href={`/${locale}/contact`}>{t('pole_cta')}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Grille Tarifaire par Type */}
       <section className="w-full py-12 md:py-20">
         <div className="container px-4 md:px-6">

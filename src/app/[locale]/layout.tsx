@@ -20,17 +20,17 @@ type Props = {
 const locales = ['en', 'fr'];
 
 export const metadata: Metadata = {
-  title: "Ateliers 360 | Passerelle Jeunesse",
-  description: "Ateliers éducatifs et accompagnement mobilité",
+  title: "Ateliers 360 Lab",
+  description: "Ateliers STEM, périscolaire et solutions numériques",
   openGraph: {
-    title: "Ateliers 360 | Passerelle Jeunesse",
-    description: "Ateliers éducatifs et accompagnement mobilité",
+    title: "Ateliers 360 Lab",
+    description: "Ateliers STEM, périscolaire et solutions numériques",
     url: "https://www.ateliers360.fr",
-    siteName: "Ateliers 360",
+    siteName: "Ateliers 360 Lab",
     images: [
       {
         url: "https://orzfuxasrbpkcaqvgvah.supabase.co/storage/v1/object/sign/images/logo_Ateliers360.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtl eV80MzVkYjM4Ni1kN2Q5LTQwZWEtYmE5Mi04MTMwOTRhZjg2YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nb19BdGVsaWVyczM2MC5wbmciLCJpYXQiOjE3NzgwMDA3NTYsImV4cCI6MTkzNTY4MDc1Nn0.-cSRdRkuxaaoNV3BCP8-aWNWb4ZGss_JM1_tB1LrSXA",// Lien direct vers l'image dans Supabase Storage (assurez-vous que les permissions sont correctement configurées)
-        alt: "Ateliers 360 Logo",
+        alt: "Ateliers 360 Lab Logo",
       },
     ],
     locale: "fr_FR",
