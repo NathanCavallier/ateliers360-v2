@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ChevronDown, GitBranch, Menu, Users } from 'lucide-react';
+import { ChevronDown, Menu, Users } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
@@ -52,13 +52,14 @@ const Header = () => {
   const primaryLinks = [
     { href: '/nos-activites', label: t('activities') },
     { href: '/passerelle-jeunesse', label: t('passerelle') },
+    { href: '/cavalier-studio', label: t('cavalier_studio') },
     { href: '/le-projet', label: t('project') },
     { href: '/catalogues', label: t('catalogues') },
     { href: '/tarifs', label: t('pricing') },
     { href: '/contact', label: t('contact') },
   ];
 
-  const ctaLink = { href: '/demander-mission', label: t('request_mission') };
+  const ctaLink = { href: '/contact', label: t('contact') };
 
   const secondaryLinks = [
     { href: '/reserver', label: t('reserve') },
@@ -84,6 +85,7 @@ const Header = () => {
     { href: '/', label: t('home') || 'Accueil' },
     { href: '/nos-activites', label: t('activities') },
     { href: '/passerelle-jeunesse', label: t('passerelle') },
+    { href: '/cavalier-studio', label: t('cavalier_studio') },
     { href: '/le-projet', label: t('project') },
     { href: '/a-propos', label: t('about') },
     { href: '/contact', label: t('contact') },
@@ -140,8 +142,8 @@ const Header = () => {
 
               {/* Mobile-only info banner */}
               <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                <p className="font-semibold">Ateliers 360 + Passerelle Jeunesse</p>
-                <p className="mt-1">Ateliers éducatifs, accompagnement mobilité et prise de contact.</p>
+                <p className="font-semibold">Ateliers 360 · Passerelle Jeunesse · Cavalier Studio</p>
+                <p className="mt-1">Éducation STEM, périscolaire et solutions numériques à Metz.</p>
               </div>
 
               <nav className="space-y-3">
@@ -163,9 +165,8 @@ const Header = () => {
                 <div className="mt-6 rounded-2xl bg-gradient-to-br from-slate-900/80 to-slate-950/80 p-4 space-y-3">
                   <p className="text-xs text-slate-400 font-semibold uppercase">Prise de contact</p>
                   <Button asChild className="w-full bg-emerald-400 hover:bg-emerald-500 text-slate-950">
-                    <Link href={`/${locale}/demander-mission`} onClick={() => setIsMobileMenuOpen(false)}>
-                      <GitBranch className="h-4 w-4" />
-                      Demander une mission
+                    <Link href={`/${locale}/contact`} onClick={() => setIsMobileMenuOpen(false)}>
+                      Nous contacter
                     </Link>
                   </Button>
                   <Button asChild variant="secondary" className="w-full">

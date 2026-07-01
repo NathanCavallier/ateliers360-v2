@@ -145,20 +145,20 @@
     "rights_reserved": "All rights reserved."
   },
   "HomePage": {
-    "title": "Technologies and Sciences Workshops Tailored to Your Audience",
-    "subtitle": "Hands-on, engaging workshops in Physics, Chemistry, Robotics, and AI designed to inspire the next generation of innovators.",
+    "title": "Educate, support, innovate — three pillars for young people in Grand Est",
+    "subtitle": "Turnkey STEM workshops, after-school and leisure programs with Passerelle Jeunesse, and custom digital solutions with Cavalier Studio.",
     "hero_image_alt": "School science and technology workshop",
-    "badge": "Innovative Education",
-    "explore": "Explore Workshops",
+    "badge": "Education · Youth · Digital",
+    "explore": "Explore the pillars",
     "contact": "Contact Us",
     "ourWorkshops": "Our Featured Workshops",
     "ourWorkshopsSubtitle": "We offer a diverse range of STEM workshops tailored for different age groups, focusing on active learning and skill development.",
     "featured": "Featured",
     "viewAll": "View All Workshops",
     "stats": {
-      "students": "Student Goal",
-      "schools": "School Goal",
-      "workshops": "Workshop Goal"
+      "students": "Students reached",
+      "schools": "Partners",
+      "workshops": "Workshops delivered"
     },
     "paths": {
       "badge": "Public pathways",
@@ -182,7 +182,7 @@
     },
     "whyChoose": {
       "title": "Why Choose Ateliers 360?",
-      "subtitle": "An innovative teaching approach that makes the difference",
+      "subtitle": "A local, multi-pillar approach to simplify education, youth and digital projects.",
       "feature1": {
         "title": "Hands-on Learning",
         "description": "100% hands-on workshops where your students experiment and create"
@@ -192,8 +192,8 @@
         "description": "Cutting-edge content, constantly updated"
       },
       "feature3": {
-        "title": "Proven Results",
-        "description": "Hundreds of inspired students and concrete skills developed"
+        "title": "Local roots",
+        "description": "Based in Metz, at the heart of Grand Est, between Nancy and Luxembourg"
       }
     },
     "formations": {
@@ -345,6 +345,7 @@
     "home": "Home",
     "activities": "Our Activities",
     "passerelle": "Passerelle Jeunesse",
+    "cavalier_studio": "Cavalier Studio",
     "project": "The Project",
     "request_mission": "Request a Mission",
     "workshops": "Workshops",

@@ -146,20 +146,20 @@
     "rights_reserved": "Tous droits réservés."
   },
   "HomePage": {
-    "title": "Des ateliers de technologie et de sciences adaptés à votre public",
-    "subtitle": "Des ateliers pratiques et captivants en physique, chimie, robotique et IA, conçus pour inspirer la prochaine génération d'innovateurs.",
+    "title": "Éduquer, accompagner, innover — trois pôles pour les jeunes du Grand Est",
+    "subtitle": "Des ateliers STEM clés en main, un espace périscolaire et de loisirs avec Passerelle Jeunesse, et des solutions numériques sur mesure avec Cavalier Studio.",
     "hero_image_alt": "Atelier scolaire de sciences et technologie",
-    "badge": "Éducation innovante",
-    "explore": "Découvrir les ateliers",
+    "badge": "Éducation · Jeunesse · Numérique",
+    "explore": "Découvrir les pôles",
     "contact": "Nous contacter",
     "ourWorkshops": "Nos ateliers phares",
     "ourWorkshopsSubtitle": "Nous proposons une gamme variée d'ateliers STEM adaptés à différents groupes d'âge, axés sur l'apprentissage actif et le développement des compétences.",
     "featured": "À la une",
     "viewAll": "Voir tous les ateliers",
     "stats": {
-      "students": "Objectif élèves",
-      "schools": "Objectif écoles",
-      "workshops": "Objectif ateliers"
+      "students": "Élèves touchés",
+      "schools": "Partenaires",
+      "workshops": "Ateliers réalisés"
     },
     "paths": {
       "badge": "Parcours publics",
@@ -183,7 +183,7 @@
     },
     "whyChoose": {
       "title": "Pourquoi choisir Ateliers 360 ?",
-      "subtitle": "Une approche pédagogique innovante qui fait la différence",
+      "subtitle": "Une approche locale et multi-pôles pour simplifier vos projets éducatifs, jeunesse et numériques.",
       "feature1": {
         "title": "Apprentissage pratique",
         "description": "Des ateliers 100% hands-on où vos élèves expérimentent et créent"
@@ -193,8 +193,8 @@
         "description": "Des contenus à la pointe de la technologie, constamment mis à jour"
       },
       "feature3": {
-        "title": "Résultats prouvés",
-        "description": "Des centaines d'élèves inspirés et des compétences concrètes développées"
+        "title": "Ancrage local",
+        "description": "Basé à Metz, au cœur du Grand Est, entre Nancy et Luxembourg"
       }
     },
     "formations": {
@@ -346,6 +346,7 @@
     "home": "Accueil",
     "activities": "Nos activités",
     "passerelle": "Passerelle Jeunesse",
+    "cavalier_studio": "Cavalier Studio",
     "project": "Le Projet",
     "request_mission": "Demander une mission",
     "workshops": "Ateliers",

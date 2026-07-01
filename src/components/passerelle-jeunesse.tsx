@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CalendarCheck, CheckCircle2, ClipboardList, MapPinned, Route, ShieldCheck, Users } from 'lucide-react';
+import { ArrowRight, CalendarCheck, CheckCircle2, ClipboardList, Palette, ShieldCheck, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,27 +10,27 @@ type PasserelleJeunesseProps = {
 
 const services = [
   {
-    icon: Route,
-    title: 'Accompagnement mobilite',
-    text: 'Organisation de trajets encadres pour rejoindre une activite, un stage, un rendez-vous ou une structure partenaire.',
+    icon: Users,
+    title: 'Accueil périscolaire',
+    text: 'Accueil du matin, du soir et du mercredi dans un cadre bienveillant, structuré et adapté aux rythmes des enfants.',
+  },
+  {
+    icon: Palette,
+    title: 'Loisirs éducatifs',
+    text: 'Activités créatives, culturelles, scientifiques, cuisine, jeux, sorties et événements pour prolonger l’école autrement.',
   },
   {
     icon: ShieldCheck,
-    title: 'Cadre famille et mineurs',
-    text: 'Collecte des informations essentielles, autorisations parentales et consignes de securite avant chaque mission.',
-  },
-  {
-    icon: Users,
-    title: 'Coordination locale',
-    text: 'Lien entre familles, jeunes, structures d’accueil et partenaires pour limiter les ruptures dans le parcours.',
+    title: 'Cadre rassurant',
+    text: 'Lien familles, informations utiles, règles claires et équipe qualifiée pour accueillir les jeunes de Metz et communes limitrophes.',
   },
 ];
 
 const roadmap = [
-  'Phase 1 : missions de mobilite encadrees',
-  'Phase 2 : partenariats locaux et documents administratifs',
-  'Phase 3 : ateliers Passerelle et activites jeunesse',
-  'Phase 4 : accueil, parcours et formats immersifs',
+  'Phase 1 : ouverture du local et accueil périscolaire',
+  'Phase 2 : stages vacances et ateliers loisirs',
+  'Phase 3 : partenariats écoles, CAF et collectivités',
+  'Phase 4 : salle VR, studio vidéo et campus éducatif',
 ];
 
 export default function PasserelleJeunesse({ locale }: PasserelleJeunesseProps) {
@@ -43,20 +43,20 @@ export default function PasserelleJeunesse({ locale }: PasserelleJeunesseProps) 
               Passerelle Jeunesse
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              Accompagner les jeunes quand la mobilite devient une condition d'acces
+              Un espace périscolaire et de loisirs éducatifs à Metz
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-emerald-50">
-              Passerelle Jeunesse est le pole d'accompagnement d'Ateliers 360. Il commence par des missions de mobilite encadrees et s'etend progressivement vers des parcours jeunesse plus complets.
+              Passerelle Jeunesse accueille les jeunes dans un cadre bienveillant : périscolaire, mercredis, stages de vacances, activités créatives, culturelles et scientifiques.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="bg-white text-emerald-950 hover:bg-emerald-50">
-                <Link href={`/${locale}/demander-mission`}>
-                  Demander une mission
+                <Link href={`/${locale}/contact?pole=passerelle-jeunesse`}>
+                  Demander des informations
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10">
-                <Link href={`/${locale}/nos-activites`}>Voir les deux poles</Link>
+                <Link href={`/${locale}/nos-activites`}>Voir les trois pôles</Link>
               </Button>
             </div>
           </div>
@@ -66,9 +66,9 @@ export default function PasserelleJeunesse({ locale }: PasserelleJeunesseProps) 
       <section className="w-full bg-background py-12 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="mb-10 max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight">Services disponibles aujourd'hui</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Services prévus à l'ouverture</h2>
             <p className="mt-3 text-muted-foreground md:text-lg">
-              Le premier service est volontairement concret : organiser un accompagnement clair, documente et rassurant.
+              Une offre construite autour des besoins quotidiens des familles : accueil, activités, vacances et lien régulier avec les parents.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -97,17 +97,17 @@ export default function PasserelleJeunesse({ locale }: PasserelleJeunesseProps) 
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
               <Badge variant="outline" className="mb-3">Fonctionnement</Badge>
-              <h2 className="text-3xl font-bold tracking-tight">Une demande, une verification, une mission</h2>
+              <h2 className="text-3xl font-bold tracking-tight">Un parcours famille clair</h2>
               <p className="mt-4 text-muted-foreground md:text-lg">
-                Chaque accompagnement doit pouvoir etre relu facilement : besoin, trajet, dates, contacts, autorisations et conditions.
+                Chaque inscription doit être simple à comprendre : besoin de garde, rythme souhaité, informations enfant, autorisations et modalités pratiques.
               </p>
             </div>
             <div className="grid gap-4">
               {[
-                { icon: ClipboardList, title: 'Demande structuree', text: 'La famille ou la structure precise le jeune concerne, le trajet, les dates et le contexte.' },
-                { icon: CheckCircle2, title: 'Validation du cadre', text: 'Les informations sensibles, autorisations et conditions d’intervention sont confirmees.' },
-                { icon: CalendarCheck, title: 'Mission planifiee', text: 'La mission est confirmee avec les horaires, contacts et modalites de paiement.' },
-                { icon: MapPinned, title: 'Suivi terrain', text: 'Le trajet et les points de contact restent identifies pour chaque accompagnement.' },
+                { icon: ClipboardList, title: 'Demande structurée', text: 'La famille précise l’âge, les jours souhaités, le rythme et le contexte de l’enfant.' },
+                { icon: CheckCircle2, title: 'Validation du dossier', text: 'Les informations utiles, autorisations parentales et conditions d’accueil sont confirmées.' },
+                { icon: CalendarCheck, title: 'Planning confirmé', text: 'Les créneaux sont validés avec les horaires, modalités de paiement et contacts référents.' },
+                { icon: ShieldCheck, title: 'Lien familles', text: 'Les parents disposent d’un point de contact clair pour suivre l’accueil et les activités.' },
               ].map((step) => {
                 const Icon = step.icon;
                 return (

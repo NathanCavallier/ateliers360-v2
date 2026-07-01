@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CalendarCheck, FlaskConical, GitBranch, Route, ShieldCheck, Sparkles, Users } from 'lucide-react';
+import { ArrowRight, CalendarCheck, FlaskConical, GitBranch, MonitorSmartphone, ShieldCheck, Sparkles, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,10 +16,17 @@ const ateliersItems = [
 ];
 
 const passerelleItems = [
-  'Accompagnement mobilité',
-  'Missions ponctuelles ou régulières',
-  'Coordination familles et structures',
-  'Parcours autonomie à construire',
+  'Accueil périscolaire',
+  'Stages et activités vacances',
+  'Sorties culturelles et événements',
+  'Ateliers créatifs et loisirs',
+];
+
+const cavalierItems = [
+  'Applications web & mobiles',
+  'Sites associations et collectivités',
+  'Automatisation & agents IA',
+  'Formations équipes et audit numérique',
 ];
 
 export default function NosActivites({ locale }: NosActivitesProps) {
@@ -32,10 +39,10 @@ export default function NosActivites({ locale }: NosActivitesProps) {
               Nos activites
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              Deux pôles pour accompagner la curiosité et l'autonomie des jeunes
+              Trois pôles complémentaires pour éduquer, accompagner et innover
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-200">
-              Ateliers 360 porte les expériences sciences et technologies. Passerelle Jeunesse complète l'écosystème avec un accompagnement mobilité et un cadre de confiance pour les familles.
+              Ateliers 360 porte les sciences et le numérique, Passerelle Jeunesse accompagne le périscolaire et les loisirs, Cavalier Studio développe des solutions numériques pour les structures du territoire.
             </p>
           </div>
         </div>
@@ -43,7 +50,7 @@ export default function NosActivites({ locale }: NosActivitesProps) {
 
       <section className="w-full bg-background py-12 md:py-20">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-3">
             <Card className="border-primary/20">
               <CardHeader>
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -53,7 +60,7 @@ export default function NosActivites({ locale }: NosActivitesProps) {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  Des ateliers pratiques pour expérimenter, fabriquer, coder et comprendre les sciences par l'action.
+                  Des ateliers pratiques pour expérimenter, fabriquer, coder et comprendre les sciences par l'action, en écoles, collèges, lycées, associations et entreprises du Grand Est.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {ateliersItems.map((item) => (
@@ -80,7 +87,7 @@ export default function NosActivites({ locale }: NosActivitesProps) {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  Un service d'accompagnement qui aide les jeunes à rejoindre leurs activités, rendez-vous ou lieux de stage avec un cadre clair.
+                  Un espace de vie éducative ancré dans le territoire : accueil périscolaire, activités créatives, stages de vacances, sorties culturelles et loisirs.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {passerelleItems.map((item) => (
@@ -91,7 +98,34 @@ export default function NosActivites({ locale }: NosActivitesProps) {
                 </div>
                 <Button asChild className="bg-emerald-600 text-white hover:bg-emerald-700">
                   <Link href={`/${locale}/passerelle-jeunesse`}>
-                    Decouvrir Passerelle
+                    Découvrir Passerelle
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-slate-900/20">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-900/10 text-slate-900">
+                  <MonitorSmartphone className="h-6 w-6" />
+                </div>
+                <CardTitle className="text-2xl">Cavalier Studio</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  Développement d'applications web et mobiles, sites internet, intelligence artificielle, automatisation et formations numériques.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {cavalierItems.map((item) => (
+                    <div key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <Button asChild variant="outline">
+                  <Link href={`/${locale}/cavalier-studio`}>
+                    Découvrir Cavalier Studio
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -106,15 +140,15 @@ export default function NosActivites({ locale }: NosActivitesProps) {
           <div className="mb-10 max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight">Une logique commune</h2>
             <p className="mt-3 text-muted-foreground md:text-lg">
-              Les deux pôles partagent la même exigence : rendre les parcours jeunesse plus concrets, plus accessibles et plus sécurisés.
+              Les trois pôles partagent la même exigence : rendre les parcours éducatifs, jeunesse et numériques plus concrets, plus accessibles et plus utiles au territoire.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-4">
-            {[
-              { icon: FlaskConical, title: 'Apprendre', text: 'Des situations pratiques et engageantes.' },
-              { icon: Route, title: 'Relier', text: 'Des trajets et parcours mieux coordonnés.' },
-              { icon: ShieldCheck, title: 'Sécuriser', text: 'Un cadre clair pour les familles et partenaires.' },
-              { icon: CalendarCheck, title: 'Organiser', text: 'Des demandes structurées et suivies.' },
+              {[
+              { icon: FlaskConical, title: 'Apprendre', text: 'Des expériences scientifiques et numériques qui donnent envie de créer.' },
+              { icon: Users, title: 'Grandir', text: 'Un espace de vie éducative chaleureux pour s’épanouir après l’école.' },
+              { icon: ShieldCheck, title: 'Sécuriser', text: 'Un cadre bienveillant avec des équipes qualifiées et des règles claires.' },
+              { icon: CalendarCheck, title: 'Innover', text: 'Des solutions numériques qui transforment les usages du territoire.' },
             ].map((item) => {
               const Icon = item.icon;
               return (
@@ -141,7 +175,7 @@ export default function NosActivites({ locale }: NosActivitesProps) {
             <div>
               <h2 className="text-2xl font-bold">Vous avez une demande précise ?</h2>
               <p className="mt-2 text-muted-foreground">
-                Décrivez le besoin : atelier, mission mobilité, partenariat ou question administrative.
+                Décrivez le besoin : atelier, accueil périscolaire, prestation numérique, partenariat ou question administrative.
               </p>
             </div>
             <Button asChild size="lg">

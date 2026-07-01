@@ -206,7 +206,7 @@ lors du lancement et vous enverrons les détails de l'offre early bird."
 ### Footer de page Bloom Connect
 
 ```
-Bloom Connect est un projet de Cavalier Studio — pôle Solutions Numériques d'Ateliers 360 Lab SAS.
+Bloom Connect est un projet de Cavalier Studio — le pôle Solutions Numériques d'Ateliers 360 Lab SAS.
 Basé à Metz, Grand Est.
 
 [Revenir à Cavalier Studio] | [Nous contacter] | [Autres projets]
@@ -253,9 +253,8 @@ Priorité 3 — Dans les 60 jours :
 
 ```
 Menu principal :
-Ajouter "Cavalier Studio" comme 4e entrée du menu principal
-(après Ateliers 360, Passerelle Jeunesse, Solutions Numériques
-— ou remplacer "Solutions Numériques" par "Cavalier Studio")
+Ajouter "Cavalier Studio" comme 3e entrée du menu principal
+(après Ateliers 360, Passerelle Jeunesse, Cavalier Studio)
 
 Sous-menu déroulant :
 • Sites & présences numériques

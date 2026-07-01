@@ -6,7 +6,7 @@
 
 ## PAGE 4 — Ateliers `/fr/ateliers`
 
-> **Statut :** Mise à jour modérée — ancrage Grand Est, ajout cybersécurité & IA, cohérence 3 pôles  
+> **Statut :** Mise à jour modérée — ancrage Grand Est, ajout cybersécurité & IA, cohérence 3 pôles
 > **Point critique :** La page liste les ateliers mais ne contextualise pas assez l'offre pour les décideurs (directeurs d'école, élus, responsables associatifs). Renforcer la lecture "commanditaire".
 
 ---
@@ -112,23 +112,23 @@ Durée : 1h30 | Public : tous niveaux
 ```
 Argument 1 :
 Titre : Alignés sur les programmes scolaires
-Texte : Nos ateliers sont conçus en cohérence avec les référentiels 
+Texte : Nos ateliers sont conçus en cohérence avec les référentiels
 du ministère de l'Éducation nationale pour le cycle 3, le collège et le lycée.
 
 Argument 2 :
 Titre : Adaptables à votre contexte
-Texte : Niveau, durée, format (classe entière, atelier en demi-groupe, 
-intervention unique ou cycle) — chaque proposition est ajustable 
+Texte : Niveau, durée, format (classe entière, atelier en demi-groupe,
+intervention unique ou cycle) — chaque proposition est ajustable
 selon vos besoins et votre budget.
 
 Argument 3 :
 Titre : Déplaçables dans vos locaux
-Texte : Nous venons chez vous avec le matériel nécessaire. Pas besoin 
+Texte : Nous venons chez vous avec le matériel nécessaire. Pas besoin
 d'équipement spécifique de votre côté dans la plupart des cas.
 
 Argument 4 :
 Titre : Évaluation et compte-rendu
-Texte : Chaque intervention donne lieu à un compte-rendu pédagogique 
+Texte : Chaque intervention donne lieu à un compte-rendu pédagogique
 transmis à l'enseignant ou au responsable, avec les compétences travaillées.
 ```
 
@@ -148,9 +148,9 @@ Texte actuel (supposé) :
 
 Texte proposé :
 Des modules progressifs pour aller plus loin qu'un atelier ponctuel.
-Chaque module se déroule sur 3 à 6 séances et permet aux élèves 
+Chaque module se déroule sur 3 à 6 séances et permet aux élèves
 de construire un vrai projet de bout en bout.
-Idéal pour les enseignants qui souhaitent intégrer une thématique 
+Idéal pour les enseignants qui souhaitent intégrer une thématique
 STEM dans leur séquence annuelle.
 ```
 
@@ -196,9 +196,9 @@ Pour chaque pack existant, vérifier que :
 ```
 Titre : Pack Découverte — Écoles & Familles
 Description :
-Combinez une intervention Ateliers 360 dans votre école avec une 
+Combinez une intervention Ateliers 360 dans votre école avec une
 présentation de Passerelle Jeunesse aux familles lors d'une soirée parents.
-Idéal pour les directeurs d'école qui souhaitent animer l'année scolaire 
+Idéal pour les directeurs d'école qui souhaitent animer l'année scolaire
 et informer les familles sur nos offres périscolaires.
 
 Contenu :
@@ -227,11 +227,11 @@ Tarif : sur devis | CTA : Demander ce pack → /fr/contact
   des réseaux de neurones et des applications concrètes de l'IA dans la vie quotidienne.
 
 • Cybersécurité
-  Description : Découvrir les enjeux de la sécurité informatique, 
+  Description : Découvrir les enjeux de la sécurité informatique,
   les types d'attaques et les bonnes pratiques de protection des données personnelles.
 
 • Éco-numérique
-  Description : Explorer l'impact environnemental du numérique et 
+  Description : Explorer l'impact environnemental du numérique et
   les solutions pour un usage plus responsable des technologies.
 ```
 
@@ -239,9 +239,13 @@ Tarif : sur devis | CTA : Demander ce pack → /fr/contact
 
 ## PAGE 8 — Tarifs `/fr/tarifs`
 
-> **Statut :** Mise à jour significative — recalibrage des prix sur la base du prévisionnel,  
-> ajout grille Passerelle Jeunesse, ajout grille Solutions Numériques  
-> **Point critique :** Les tarifs doivent couvrir le coût employeur réel (cf. section 8 du mémo)  
+> **Statut :** Mise à jour significative — recalibrage des prix sur la base du prévisionnel,
+> ajout grille Passerelle Jeunesse, ajout grille Cavalier Studio, uniformisation des formats et libellés, cohérence 3 pôles
+
+---
+
+### Tarifs existants — Vérifications
+> **Point critique :** Les tarifs doivent couvrir le coût employeur réel (cf. section 8 du mémo)
 > Un atelier à 250 € pour une demi-journée est le minimum viable — vérifier chaque ligne.
 
 ---
@@ -293,7 +297,7 @@ CTA : Demander les tarifs → /fr/contact
 
 ---
 
-### Nouvelle grille — Solutions Numériques
+### Nouvelle grille — Cavalier Studio
 
 ```
 PRESTATIONS NUMÉRIQUES
@@ -326,9 +330,9 @@ Nos tarifs reflètent le coût réel d'une intervention de qualité :
 préparation pédagogique, matériel, déplacement, animateur qualifié,
 assurance RC Pro et bilan transmis après chaque atelier.
 
-Nous ne pratiquons pas de tarifs au rabais qui compromettraient 
+Nous ne pratiquons pas de tarifs au rabais qui compromettraient
 la qualité de l'expérience. En contrepartie, nous proposons des packs
-et des tarifs dégressifs pour les établissements qui souhaitent 
+et des tarifs dégressifs pour les établissements qui souhaitent
 s'inscrire dans une relation durable.
 
 [Voir les packs] → /fr/packs

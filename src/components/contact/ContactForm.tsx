@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -49,6 +50,9 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
+  const pole = searchParams.get("pole") ?? undefined;
+  const service = searchParams.get("service") ?? undefined;
   const { toast } = useToast();
   const t = useTranslations("ContactPage");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -68,11 +72,28 @@ export default function ContactForm() {
   async function onSubmit(values: ContactFormValues) {
     setStatus("loading");
 
+    const metadata = {
+      pole,
+      service,
+    };
+
+    const extraContext = [
+      pole ? `Pôle concerné : ${pole}` : null,
+      service ? `Service ciblé : ${service}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          metadata,
+          source: service === "demo" ? "DEMO" : undefined,
+          message: `${values.message}${extraContext ? `\n\n${extraContext}` : ""}`,
+        }),
       });
 
       if (!res.ok) {
@@ -113,6 +134,17 @@ export default function ContactForm() {
             <CheckCircle className="h-4 w-4 text-green-600" />
             <AlertDescription className="text-green-800">
               {t("formSuccessAlert")}
+            </AlertDescription>
+          </Alert>
+        )}
+
+        {/* Prefill context */}
+        {(pole || service) && (
+          <Alert className="border-slate-200 bg-slate-50 text-slate-800">
+            <AlertDescription>
+              {pole && <span>Pôle sélectionné : {pole}</span>}
+              {pole && service && <span> · </span>}
+              {service && <span>Service ciblé : {service}</span>}
             </AlertDescription>
           </Alert>
         )}

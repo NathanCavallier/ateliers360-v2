@@ -1,19 +1,19 @@
 # Page d'accueil — `ateliers360.fr/fr`
 
-> **Statut :** Mise à jour majeure  
-> **Priorité :** Haute — première impression, reflète l'évolution vers SAS 3 pôles  
-> **Version actuelle :** Micro-entreprise Côte d'Azur, 2 pôles (Ateliers 360 + Passerelle Jeunesse mobilité)  
-> **Cible :** SAS Metz/Grand Est, 3 pôles (Ateliers 360 + Passerelle Jeunesse périscolaire/loisirs + Solutions Numériques)
+> **Statut :** Mise à jour majeure
+> **Priorité :** Haute — première impression, reflète l'évolution vers SAS 3 pôles
+> **Version actuelle :** Micro-entreprise Côte d'Azur, 2 pôles (Ateliers 360 + Passerelle Jeunesse mobilité)
+> **Cible :** SAS Metz/Grand Est, 3 pôles (Ateliers 360 + Passerelle Jeunesse périscolaire/loisirs + Cavalier Studio), refonte complète du contenu et de la structure
 
 ---
 
 ## 🏷️ Meta & SEO
 
 ```
-Titre : Ateliers 360 | Ateliers STEM, Périscolaire & Solutions Numériques — Metz Grand Est
-Description : Ateliers de sciences, robotique, IA et numérique pour les écoles et collectivités. 
-Périscolaire et loisirs jeunesse avec Passerelle Jeunesse. 
-Développement d'applications avec Solutions Numériques. Basé à Metz, Grand Est.
+Titre : Ateliers 360 | Ateliers STEM, Périscolaire & cavalier studio — Metz Grand Est
+Description : Ateliers de sciences, robotique, IA et numérique pour les écoles et collectivités.
+Périscolaire et loisirs jeunesse avec Passerelle Jeunesse.
+Développement d'applications avec Cavalier Studio. Basé à Metz, Grand Est.
 Thème couleur : #0d9488 (conserver)
 ```
 
@@ -66,8 +66,8 @@ CTA secondaire : Nous contacter
 Titre H2 : Trois pôles, une vision commune
 
 Chapeau :
-Ateliers 360, Passerelle Jeunesse et Solutions Numériques partagent les mêmes locaux, 
-les mêmes valeurs et la même ambition : rendre la technologie, l'éducation 
+Ateliers 360, Passerelle Jeunesse et Cavalier Studio partagent les mêmes locaux,
+les mêmes valeurs et la même ambition : rendre la technologie, l'éducation
 et l'accompagnement accessibles à tous les jeunes du territoire.
 ```
 
@@ -108,9 +108,9 @@ Points clés :
 CTA : Découvrir Passerelle Jeunesse → /fr/passerelle-jeunesse
 ```
 
-### Carte 3 — Solutions Numériques ← NOUVEAU PÔLE À AJOUTER
+### Carte 3 — Cavalier Studio ← NOUVEAU PÔLE À AJOUTER
 ```
-Titre : Solutions Numériques
+Titre : Cavalier Studio
 Sous-titre : Développement & innovation
 
 Description :
@@ -124,7 +124,7 @@ Points clés :
 • Automatisation & IA
 • Formations numériques
 
-CTA : Découvrir Solutions Numériques → /fr/solutions-numeriques
+CTA : Découvrir Cavalier Studio → /fr/cavalier-studio
 ```
 
 ---
@@ -137,7 +137,7 @@ CTA : Découvrir Solutions Numériques → /fr/solutions-numeriques
 Parcours 4 — À ajouter :
 Titre : Vous êtes une entreprise ou une collectivité ?
 Contenu : Audit numérique, développement d'outils sur mesure, formations équipes.
-CTA : Solutions Numériques → /fr/solutions-numeriques
+CTA : Cavalier Studio → /fr/cavalier-studio
 ```
 
 ---
@@ -163,18 +163,18 @@ Proposé : Metz, Grand Est (57)
 
 ### Description
 ```
-Actuel : 
-"Rendre la technologie accessible, concrète et enthousiasmante pour tous les publics. 
+Actuel :
+"Rendre la technologie accessible, concrète et enthousiasmante pour tous les publics.
 Passerelle Jeunesse complète cette mission avec un accompagnement mobilité pour les jeunes."
 
 Proposé :
-"Éduquer, accompagner et innover grâce aux sciences, au numérique et à la jeunesse. 
+"Éduquer, accompagner et innover grâce aux sciences, au numérique et à la jeunesse.
 Trois pôles complémentaires basés à Metz au service du Grand Est."
 ```
 
 ### Navigation footer — Ajouter
 ```
-• Solutions Numériques → /fr/solutions-numeriques
+• Cavalier Studio → /fr/cavalier-studio
 • Bloom Connect → /fr/bloom-connect (quand la page sera prête)
 ```
 

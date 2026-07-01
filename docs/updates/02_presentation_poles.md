@@ -6,8 +6,8 @@
 
 ## PAGE 1 — Nos activités `/fr/nos-activites`
 
-> **Statut :** Mise à jour majeure — ajouter le 3e pôle  
-> **Actuel :** 2 pôles (Ateliers 360 éducation + Passerelle Jeunesse mobilité)  
+> **Statut :** Mise à jour majeure — ajouter le 3e pôle
+> **Actuel :** 2 pôles (Ateliers 360 éducation + Passerelle Jeunesse mobilité)
 > **Cible :** 3 pôles avec repositionnement complet de Passerelle Jeunesse
 
 ---
@@ -23,7 +23,7 @@ Titre proposé :
 Sous-titre proposé :
 Ateliers 360 pour les sciences et le numérique en milieu scolaire et associatif.
 Passerelle Jeunesse pour le périscolaire, les loisirs et la vie éducative des jeunes.
-Solutions Numériques pour le développement d'applications et les prestations numériques.
+Cavalier Studio pour le développement d'applications et les prestations numériques.
 ```
 
 ---
@@ -52,13 +52,13 @@ CTA : Voir les ateliers → /fr/ateliers
 
 ```
 Description actuelle (à remplacer) :
-"Un service d'accompagnement qui aide les jeunes à rejoindre leurs activités, 
+"Un service d'accompagnement qui aide les jeunes à rejoindre leurs activités,
 rendez-vous ou lieux de stage avec un cadre clair."
 
 Description proposée :
 Un espace de vie éducative ancré dans le territoire : accueil périscolaire,
 activités créatives, stages de vacances, sorties culturelles, ateliers loisirs
-et événements. Un cadre bienveillant qui prolonge l'école et soutient 
+et événements. Un cadre bienveillant qui prolonge l'école et soutient
 l'épanouissement des jeunes de Metz et du Grand Est.
 
 Points clés (remplacer intégralement) :
@@ -72,15 +72,15 @@ CTA : Découvrir Passerelle Jeunesse → /fr/passerelle-jeunesse
 
 ---
 
-### Carte Solutions Numériques — NOUVELLE CARTE À CRÉER
+### Carte Cavalier Studio — NOUVELLE CARTE À CRÉER
 
 ```
-Titre : Solutions Numériques
+Titre : Cavalier Studio
 Icône suggérée : 💻 ou écran d'ordinateur
 
 Description :
 Développement d'applications web et mobiles, sites internet pour associations,
-collectivités et PME, intelligence artificielle et automatisation, 
+collectivités et PME, intelligence artificielle et automatisation,
 formations numériques et prestations de développement sur mesure.
 
 Points clés :
@@ -89,7 +89,7 @@ Points clés :
 • Automatisation & agents IA
 • Formations équipes et audit numérique
 
-CTA : Découvrir Solutions Numériques → /fr/solutions-numeriques
+CTA : Découvrir Cavalier Studio → /fr/cavalier-studio
 ```
 
 ---
@@ -114,7 +114,7 @@ Bloc 4 — Actuel : "Organiser — Des demandes structurées et suivies."
 
 ## PAGE 2 — Le Projet `/fr/le-projet`
 
-> **Statut :** Mise à jour modérée — intégrer la vision SAS + 3 pôles + ancrage Metz  
+> **Statut :** Mise à jour modérée — intégrer la vision SAS + 3 pôles + ancrage Metz
 > **Point critique :** La page actuelle est trop abstraite. Elle doit raconter le projet réel.
 
 ---
@@ -129,7 +129,7 @@ Titre proposé :
 "Construire un écosystème éducatif, jeunesse et numérique ancré dans le Grand Est"
 
 Sous-titre proposé :
-Ateliers 360, Passerelle Jeunesse et Solutions Numériques forment un projet unique :
+Ateliers 360, Passerelle Jeunesse et Cavalier Studio forment un projet unique :
 trois pôles qui partagent un local, une équipe, des valeurs et une ambition commune —
 rendre l'éducation, la vie jeunesse et le numérique accessibles sur le territoire de Metz.
 ```
@@ -159,20 +159,20 @@ Bloc 4 — Actuel : "Faire grandir — Des parcours qui renforcent la curiosité
 ```
 Objectif 1 — Actuel : "Clarifier les offres"
              Proposé titre : "Trois pôles, une seule porte d'entrée"
-             Proposé texte : 
-             Écoles, familles, collectivités et entreprises trouvent leurs réponses 
+             Proposé texte :
+             Écoles, familles, collectivités et entreprises trouvent leurs réponses
              sur un seul site, avec des offres lisibles et des contacts directs.
 
 Objectif 2 — Actuel : "Rassurer les familles"
              Proposé titre : "Rassurer les familles"
              Proposé texte :
-             Passerelle Jeunesse est un lieu encadré, avec des professionnel(le)s 
+             Passerelle Jeunesse est un lieu encadré, avec des professionnel(le)s
              qualifié(e)s, des horaires clairs et un lien permanent avec les parents.
 
 Objectif 3 — Actuel : "Faciliter les partenariats"
              Proposé titre : "Travailler avec le territoire"
              Proposé texte :
-             Mairies, associations, écoles et entreprises : nous construisons 
+             Mairies, associations, écoles et entreprises : nous construisons
              des partenariats durables qui renforcent l'écosystème éducatif local.
 
 Objectif 4 — Actuel : "Préparer le territoire"
@@ -208,8 +208,8 @@ Objectif 4 — Actuel : "Préparer le territoire"
 Titre : Basé à Metz, rayonnant sur le Grand Est
 
 Texte :
-Nos locaux sont implantés dans l'agglomération messine. Nous intervenons 
-sur l'ensemble du Grand Est pour les ateliers Ateliers 360, et accueillons 
+Nos locaux sont implantés dans l'agglomération messine. Nous intervenons
+sur l'ensemble du Grand Est pour les ateliers Ateliers 360, et accueillons
 les jeunes du bassin de Metz pour Passerelle Jeunesse.
 
 Zone d'intervention Ateliers 360 : Grand Est + déplacements sur demande
@@ -222,8 +222,8 @@ Zone d'accueil Passerelle Jeunesse : Metz et communes limitrophes
 
 ## PAGE 3 — Passerelle Jeunesse `/fr/passerelle-jeunesse`
 
-> **Statut :** Refonte complète — repositionnement de "mobilité" vers "périscolaire & loisirs"  
-> **Point critique :** La page actuelle décrit un service de transport/accompagnement de trajets.  
+> **Statut :** Refonte complète — repositionnement de "mobilité" vers "périscolaire & loisirs"
+> **Point critique :** La page actuelle décrit un service de transport/accompagnement de trajets.
 > Le nouveau concept est un **pôle périscolaire, loisirs et vie éducative** — c'est radicalement différent.
 
 ---
@@ -255,7 +255,7 @@ Titre : Ce que propose Passerelle Jeunesse
 
 Service 1 :
 Titre : Accueil périscolaire
-Description : 
+Description :
 Le matin avant l'école, le soir après, et le mercredi toute la journée.
 Un encadrement professionnel dans un cadre chaleureux et stimulant.
 Icône : 🏠
@@ -263,7 +263,7 @@ Icône : 🏠
 Service 2 :
 Titre : Stages de vacances
 Description :
-Pendant les vacances scolaires, des stages thématiques (sciences, arts, 
+Pendant les vacances scolaires, des stages thématiques (sciences, arts,
 création, cuisine, cosplay, jeux) pour explorer, créer et s'amuser.
 Icône : 🎨
 
@@ -345,12 +345,12 @@ Texte : Lien régulier avec les familles, compte-rendu des activités, agenda de
 ```
 Titre : Tarifs indicatifs
 
-⚠️ Note rédactionnelle : 
-Ne pas afficher de tarifs définitifs avant la fixation avec l'expert-comptable et 
+⚠️ Note rédactionnelle :
+Ne pas afficher de tarifs définitifs avant la fixation avec l'expert-comptable et
 la validation par la CAF/DDETS. Afficher une fourchette ou un lien vers le formulaire.
 
 Texte suggéré :
-Les tarifs sont calculés en fonction de la formule choisie (périscolaire, stage, 
+Les tarifs sont calculés en fonction de la formule choisie (périscolaire, stage,
 activités à la carte), du nombre de jours et de l'âge de l'enfant.
 Des tarifs modulables selon les ressources familiales sont à l'étude.
 

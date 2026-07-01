@@ -97,7 +97,7 @@ export function getReservationConfirmationEmail({
             <td style="padding: 40px 20px;">
                 <!-- Main Container -->
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    
+
                     <!-- Header avec gradient -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #005B99 0%, #00A7C7 100%); padding: 40px 30px; text-align: center;">
@@ -105,7 +105,7 @@ export function getReservationConfirmationEmail({
                             <p style="margin: 12px 0 0; color: #ffffff; font-size: 16px; opacity: 0.95;">✨ Confirmation de réservation</p>
                         </td>
                     </tr>
-                    
+
                     <!-- Success Badge -->
                     <tr>
                         <td style="padding: 30px 30px 0; text-align: center;">
@@ -114,7 +114,7 @@ export function getReservationConfirmationEmail({
                             </div>
                         </td>
                     </tr>
-                    
+
                     <!-- Content -->
                     <tr>
                         <td style="padding: 30px 30px 20px;">
@@ -124,13 +124,13 @@ export function getReservationConfirmationEmail({
                             <p style="margin: 0 0 25px; font-size: 16px; color: #555555; line-height: 1.7;">
                                 Merci d'avoir réservé un atelier chez <strong>Ateliers 360</strong> ! Nous sommes ravis de vous accueillir et de partager notre passion pour les sciences et la technologie.
                             </p>
-                            
+
                             <!-- Reservation Details Card -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%); border: 2px solid #00A7C7; border-radius: 8px; margin: 25px 0;">
                                 <tr>
                                     <td style="padding: 25px;">
                                         <h2 style="margin: 0 0 20px; color: #005B99; font-size: 20px; font-weight: 700;">📋 Détails de votre réservation</h2>
-                                        
+
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                             <tr>
                                                 <td style="padding: 10px 0; border-bottom: 1px solid #e9ecef;">
@@ -170,10 +170,10 @@ export function getReservationConfirmationEmail({
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             <!-- Next Steps -->
                             <h3 style="margin: 30px 0 15px; color: #005B99; font-size: 18px; font-weight: 700;">Prochaines étapes</h3>
-                            
+
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding: 12px 0;">
@@ -211,14 +211,14 @@ export function getReservationConfirmationEmail({
                                                     <div style="width: 24px; height: 24px; background-color: #00A7C7; color: white; border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; font-weight: bold;">3</div>
                                                 </td>
                                                 <td style="padding-left: 12px; color: #555555; font-size: 15px; line-height: 1.6;">
-                                                    Préparez vos questions et votre curiosité ! Tout le matériel sera fourni 
+                                                    Préparez vos questions et votre curiosité ! Tout le matériel sera fourni
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             <!-- Contact Section -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 30px; background-color: #f8f9fa; border-radius: 8px;">
                                 <tr>
@@ -234,7 +234,7 @@ export function getReservationConfirmationEmail({
                             </table>
                         </td>
                     </tr>
-                    
+
                     <!-- Footer -->
                     <tr>
                         <td style="padding: 30px; background-color: #f8f9fa; text-align: center; border-top: 1px solid #e9ecef;">
@@ -289,7 +289,7 @@ export function getAdminNotificationEmail({
             <td style="padding: 40px 20px;">
                 <!-- Main Container -->
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    
+
                     <!-- Header -->
                     <tr>
                         <td style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%); padding: 30px; text-align: center;">
@@ -297,7 +297,7 @@ export function getAdminNotificationEmail({
                             <p style="margin: 10px 0 0; color: #ffffff; font-size: 15px; opacity: 0.95;">Backoffice Ateliers 360</p>
                         </td>
                     </tr>
-                    
+
                     <!-- Alert Badge -->
                     <tr>
                         <td style="padding: 25px 30px 0; text-align: center;">
@@ -306,20 +306,20 @@ export function getAdminNotificationEmail({
                             </div>
                         </td>
                     </tr>
-                    
+
                     <!-- Content -->
                     <tr>
                         <td style="padding: 25px 30px;">
                             <p style="margin: 0 0 20px; font-size: 16px; color: #333333; line-height: 1.6;">
                                 Une nouvelle réservation vient d'être confirmée. Voici les détails :
                             </p>
-                            
+
                             <!-- Reservation Details -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(to bottom, #fff8e1 0%, #ffffff 100%); border: 2px solid #ffc107; border-radius: 8px; margin: 20px 0;">
                                 <tr>
                                     <td style="padding: 20px;">
                                         <h2 style="margin: 0 0 15px; color: #ff6f00; font-size: 18px; font-weight: 700;">📋 Détails de l'atelier</h2>
-                                        
+
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                             <tr>
                                                 <td style="padding: 8px 0; color: #666666; font-size: 14px; width: 40%;">Atelier</td>
@@ -357,7 +357,7 @@ export function getAdminNotificationEmail({
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             <!-- Contact Info -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; border-radius: 8px; margin: 20px 0;">
                                 <tr>
@@ -372,7 +372,7 @@ export function getAdminNotificationEmail({
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             <!-- Action Required -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(135deg, #ff5722 0%, #f44336 100%); border-radius: 8px; margin: 25px 0;">
                                 <tr>
@@ -384,7 +384,7 @@ export function getAdminNotificationEmail({
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             <!-- Quick Actions -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
@@ -402,13 +402,95 @@ export function getAdminNotificationEmail({
                             </table>
                         </td>
                     </tr>
-                    
+
                     <!-- Footer -->
                     <tr>
                         <td style="padding: 25px; background-color: #f8f9fa; text-align: center; border-top: 1px solid #e9ecef;">
                             <p style="margin: 0; color: #6c757d; font-size: 12px;">
                                 © 2025 Ateliers 360 - Backoffice Admin
                             </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+    `.trim();
+}
+
+/**
+ * Template d'email de notification pour les demandes de contact
+ */
+export function getContactNotificationEmail({
+    nom,
+    email,
+    subject,
+    message,
+    metadata,
+}: {
+    nom: string;
+    email: string;
+    subject: string;
+    message: string;
+    metadata?: Record<string, string | null>;
+}): string {
+    const metadataRows = metadata
+        ? Object.entries(metadata)
+              .filter(([, value]) => value)
+              .map(
+                  ([key, value]) => `
+                    <tr>
+                        <td style="padding: 8px 0; color: #666666; font-size: 14px; width: 35%;">${key}</td>
+                        <td style="padding: 8px 0; text-align: right; color: #212529; font-size: 15px;">${value}</td>
+                    </tr>
+                `
+              )
+              .join("")
+        : "";
+
+    return `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nouvelle demande de contact — Ateliers 360</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:20px;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;">
+                    <tr>
+                        <td style="background:#005b99;color:#ffffff;padding:24px;text-align:center;">
+                            <h1 style="margin:0;font-size:24px;">Nouvelle demande de contact</h1>
+                            <p style="margin:8px 0 0;font-size:14px;">${subject}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:24px;color:#333333;">
+                            <p style="margin:0 0 16px;">Vous avez reçu une nouvelle demande de contact.</p>
+                            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                                <tr>
+                                    <td style="padding:8px 0;color:#666666;font-size:14px;width:35%;">Nom</td>
+                                    <td style="padding:8px 0;text-align:right;color:#212529;font-size:15px;">${nom}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0;color:#666666;font-size:14px;">Email</td>
+                                    <td style="padding:8px 0;text-align:right;color:#212529;font-size:15px;">${email}</td>
+                                </tr>
+                                ${metadataRows ? `
+                                <tr>
+                                    <td colspan="2" style="padding:16px 0 8px;color:#333333;font-size:15px;font-weight:700;">Informations supplémentaires</td>
+                                </tr>
+                                ${metadataRows}` : ""}
+                            </table>
+                            <div style="margin-top:24px;padding:16px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;">
+                                <h2 style="margin:0 0 12px;font-size:16px;color:#111827;">Message</h2>
+                                <p style="margin:0;font-size:15px;line-height:1.6;color:#333333;white-space:pre-wrap;">${message}</p>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -487,7 +569,7 @@ export function getReminderEmail({
             <td style="padding: 40px 20px;">
                 <!-- Main Container -->
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    
+
                     <!-- Header -->
                     <tr>
                         <td style="background: ${headerGradient}; padding: 30px; text-align: center;">
@@ -495,7 +577,7 @@ export function getReminderEmail({
                             <p style="margin: 10px 0 0; color: #ffffff; font-size: 16px; opacity: 0.95;">✨ Rappel d'atelier</p>
                         </td>
                     </tr>
-                    
+
                     <!-- Time Badge -->
                     <tr>
                         <td style="padding: 25px 30px 0; text-align: center;">
@@ -504,7 +586,7 @@ export function getReminderEmail({
                             </div>
                         </td>
                     </tr>
-                    
+
                     <!-- Content -->
                     <tr>
                         <td style="padding: 25px 30px;">
@@ -518,13 +600,13 @@ export function getReminderEmail({
             : "C'est demain ! 🎉 Votre atelier aura lieu dans moins de 24 heures. Tout est prêt pour vous accueillir !"
     }
                             </p>
-                            
+
                             <!-- Workshop Details Card -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(to bottom, #e8f5e9 0%, #ffffff 100%); border: 2px solid #4caf50; border-radius: 8px; margin: 20px 0;">
                                 <tr>
                                     <td style="padding: 20px;">
                                         <h2 style="margin: 0 0 15px; color: #2e7d32; font-size: 18px; font-weight: 700;">📚 Votre atelier</h2>
-                                        
+
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                             <tr>
                                                 <td style="padding: 8px 0; color: #666666; font-size: 14px; width: 40%;">Atelier</td>
@@ -574,13 +656,13 @@ export function getReminderEmail({
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             <!-- Preparation Checklist -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #fff3e0; border-left: 4px solid #ff9800; border-radius: 8px; margin: 25px 0;">
                                 <tr>
                                     <td style="padding: 20px;">
                                         <h3 style="margin: 0 0 15px; color: #e65100; font-size: 16px; font-weight: 700;">🎒 À prévoir</h3>
-                                        
+
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                             <tr>
                                                 <td style="padding: 6px 0;">
@@ -610,7 +692,7 @@ export function getReminderEmail({
                                     </td>
                                 </tr>
                             </table>
-                            
+
                             ${
         is48h
             ? `
@@ -643,7 +725,7 @@ export function getReminderEmail({
                             </table>
                             `
     }
-                            
+
                             <!-- Contact Section -->
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 30px; background-color: #f8f9fa; border-radius: 8px;">
                                 <tr>
@@ -659,7 +741,7 @@ export function getReminderEmail({
                             </table>
                         </td>
                     </tr>
-                    
+
                     <!-- Footer -->
                     <tr>
                         <td style="padding: 25px; background-color: #f8f9fa; text-align: center; border-top: 1px solid #e9ecef;">

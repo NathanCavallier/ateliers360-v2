@@ -1,7 +1,7 @@
 // src/app/api/contact/route.ts
 import { NextResponse, NextRequest } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-server";
-import { getAdminNotificationEmail, sendEmail } from "@/lib/email";
+import { getContactNotificationEmail, sendEmail } from "@/lib/email";
 
 type Body = {
     name: string;
@@ -10,6 +10,7 @@ type Body = {
     role?: string;
     message: string;
     source?: string | null | undefined;
+    metadata?: Record<string, string | null | undefined>;
 };
 
 function validateEmail(email: string) {
@@ -46,12 +47,21 @@ export async function POST(req: NextRequest) {
         const role = sanitizeText(body.role);
         const message = sanitizeText(body.message)!;
         const source = sanitizeText(body.source) || null;
+        const metadata: Record<string, string | null> = {
+            source,
+        };
+
+        if (body.metadata) {
+            for (const [key, value] of Object.entries(body.metadata)) {
+                metadata[key] = sanitizeText(value) || null;
+            }
+        }
 
         // Check if supabaseAdmin is available
         if (!supabaseAdmin) {
             console.error("Supabase admin client not initialized - missing SUPABASE_SERVICE_ROLE_KEY");
-            return NextResponse.json({ 
-                error: "Server configuration error - cannot process request" 
+            return NextResponse.json({
+                error: "Server configuration error - cannot process request"
             }, {
                 status: 500,
             });
@@ -66,7 +76,10 @@ export async function POST(req: NextRequest) {
             audience: role || null,
             message,
             status: "new",
-            metadata: { source },
+            metadata: {
+              source,
+              ...metadata,
+            },
         };
 
         const { data, error } = await supabaseAdmin
@@ -99,20 +112,22 @@ export async function POST(req: NextRequest) {
                     return;
                 }
 
-                const adminHtml = getAdminNotificationEmail({
+                const subjectParts = ["Nouvelle demande contact"];
+                if (metadata.pole) subjectParts.push(metadata.pole);
+                if (metadata.service) subjectParts.push(metadata.service);
+                const adminSubject = subjectParts.join(" — ");
+
+                const adminHtml = getContactNotificationEmail({
                     nom: name,
                     email,
-                    workshopTitle: "Contact site - structure",
-                    date: new Date().toISOString(),
-                    participants: 0,
-                    etablissement: establishment || undefined,
+                    subject: adminSubject,
+                    message,
+                    metadata,
                 });
 
                 await sendEmail({
                     to: adminEmail,
-                    subject: `Nouvelle demande contact — ${
-                        establishment || name
-                    }`,
+                    subject: `${adminSubject} — ${establishment || name}`,
                     html: adminHtml,
                 });
             } catch (notifyErr) {

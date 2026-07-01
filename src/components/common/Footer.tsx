@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin, Route } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Mail, MapPin, Network } from "lucide-react";
 
 import { useLocale, useTranslations } from "next-intl";
 
@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="space-y-5">
             <Logo />
             <p className="max-w-md text-sm leading-7 text-slate-600">
-              {t("description")} Passerelle Jeunesse complète cette mission avec un accompagnement mobilité pour les jeunes.
+              Éduquer, accompagner et innover grâce aux sciences, au numérique et à la jeunesse. Trois pôles complémentaires basés à Metz au service du Grand Est.
             </p>
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
               <div className="flex items-center gap-3">
@@ -28,11 +28,11 @@ const Footer = () => {
               </div>
               <div className="mt-3 flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>France</span>
+                <span>Metz, Grand Est (57)</span>
               </div>
               <div className="mt-3 flex items-center gap-3">
-                <Route className="h-4 w-4 text-primary" />
-                <span>Ateliers éducatifs et accompagnement mobilité</span>
+                <Network className="h-4 w-4 text-primary" />
+                <span>Ateliers STEM, périscolaire et solutions numériques</span>
               </div>
             </div>
           </div>
@@ -50,6 +50,11 @@ const Footer = () => {
               <li>
                 <Link href={withLocale("/passerelle-jeunesse")} className="hover:text-primary">
                   {tNav("passerelle")}
+                </Link>
+              </li>
+              <li>
+                <Link href={withLocale("/cavalier-studio")} className="hover:text-primary">
+                  {tNav("cavalier_studio")}
                 </Link>
               </li>
               <li>
@@ -126,7 +131,7 @@ const Footer = () => {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Ateliers 360. {t("rights_reserved")}
+            &copy; {new Date().getFullYear()} Ateliers 360 SAS. {t("rights_reserved")}
           </p>
 
           <div className="flex items-center gap-4 text-slate-500">

@@ -39,7 +39,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/nos-activites',
     '/passerelle-jeunesse',
     '/le-projet',
-    '/demander-mission',
+    '/cavalier-studio',
+    '/cavalier-studio/sites',
+    '/cavalier-studio/bloom-connect',
+    '/cavalier-studio/applications',
+    '/cavalier-studio/conseil',
+    '/cavalier-studio/intelligence-artificielle',
+    '/demo',
     '/faq',
   ];
 

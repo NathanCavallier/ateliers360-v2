@@ -72,12 +72,20 @@ export default function Home() {
       href: `/${locale}/packs`,
       cta: t('paths.packs.cta'),
     },
+    {
+      icon: GitBranch,
+      title: 'Vous êtes une entreprise ou une collectivité ?',
+      description: 'Audit numérique, développement d’outils sur mesure et formations équipes avec Cavalier Studio.',
+      href: `/${locale}/cavalier-studio`,
+      cta: 'Découvrir Cavalier Studio',
+    },
   ];
 
   const stats = [
-    { icon: Users, value: '500+', label: t('stats.students') },
-    { icon: School, value: '20+', label: t('stats.schools') },
-    { icon: Award, value: '150+', label: t('stats.workshops') },
+    { icon: Users, value: '500+', label: 'Élèves touchés' },
+    { icon: School, value: '20+', label: 'Partenaires' },
+    { icon: Award, value: '150+', label: 'Ateliers réalisés' },
+    { icon: Boxes, value: '3', label: 'Pôles actifs' },
   ];
 
   const proofPoints = [
@@ -259,17 +267,17 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="mb-10 max-w-3xl">
             <Badge variant="outline" className="mb-3">
-              Deux pôles, une même mission
+              Trois pôles, une vision commune
             </Badge>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-              Ateliers 360 et Passerelle Jeunesse
+              Ateliers 360, Passerelle Jeunesse et Cavalier Studio
             </h2>
             <p className="mt-3 text-muted-foreground md:text-lg leading-relaxed">
-              Un site unique pour découvrir les ateliers scientifiques et numériques, puis organiser l'accompagnement concret des jeunes quand la mobilité devient un frein.
+              Trois pôles qui partagent les mêmes locaux, les mêmes valeurs et la même ambition : rendre la technologie, l'éducation et l'accompagnement accessibles aux jeunes du territoire.
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-3">
             <Card className="border-primary/20 transition-shadow hover:shadow-lg">
               <CardHeader>
                 <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -306,18 +314,45 @@ export default function Home() {
               </CardHeader>
               <CardContent className="space-y-5">
                 <p className="text-muted-foreground leading-relaxed">
-                  Un pôle d'accompagnement pour sécuriser les trajets, soutenir l'autonomie et relier les jeunes aux activités éducatives du territoire.
+                  Un espace de vie éducative pour les jeunes : accueil périscolaire, activités créatives, stages de vacances, ateliers culturels et loisirs.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {['Accompagnement mobilité', 'Missions encadrées', 'Lien familles et structures', 'Parcours jeunesse à venir'].map((item) => (
+                  {['Accueil périscolaire', 'Stages et vacances', 'Ateliers créatifs', 'Lien familles et partenaires'].map((item) => (
                     <div key={item} className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm font-medium text-emerald-900">
                       {item}
                     </div>
                   ))}
                 </div>
                 <Button asChild className="bg-emerald-600 text-white hover:bg-emerald-700">
-                  <Link href={`/${locale}/demander-mission`}>
-                    Demander une mission
+                  <Link href={`/${locale}/passerelle-jeunesse`}>
+                    Découvrir Passerelle Jeunesse
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-slate-900/20 transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-900/10 text-slate-900">
+                  <Compass className="h-5 w-5" />
+                </div>
+                <CardTitle className="text-2xl">Cavalier Studio</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <p className="text-muted-foreground leading-relaxed">
+                  Développement d'applications web et mobiles, sites internet, automatisation, intelligence artificielle et formations numériques.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {['Applications web & mobiles', 'Sites associations', 'Automatisation & IA', 'Formations numériques'].map((item) => (
+                    <div key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <Button asChild variant="outline">
+                  <Link href={`/${locale}/cavalier-studio`}>
+                    Découvrir Cavalier Studio
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -340,7 +375,7 @@ export default function Home() {
               {t('paths.subtitle')}
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {paths.map((path) => {
               const Icon = path.icon;
               return (

@@ -1,6 +1,6 @@
 # Récapitulatif & Plan d'action — Mise à jour site ateliers360.fr
 
-> Document de pilotage à utiliser avec le développeur ou intégrateur du site.  
+> Document de pilotage à utiliser avec le développeur ou intégrateur du site.
 > Reprend l'ensemble des 19 pages identifiées et hiérarchise les actions.
 
 ---
@@ -11,9 +11,9 @@
 |---|---|---|
 | Forme juridique | Micro-entreprise | SAS |
 | Ancrage géographique | Non précisé / Côte d'Azur | Metz, Grand Est |
-| Nombre de pôles | 2 (Ateliers 360 + Passerelle Jeunesse mobilité) | 3 (Ateliers 360 + Passerelle Jeunesse périscolaire + Solutions Numériques) |
+| Nombre de pôles | 2 (Ateliers 360 + Passerelle Jeunesse mobilité) | 3 (Ateliers 360 + Passerelle Jeunesse périscolaire + Cavalier Studio) |
 | Concept Passerelle Jeunesse | Accompagnement à la mobilité (trajets) | Périscolaire, loisirs éducatifs, stages de vacances |
-| Solutions Numériques | Absent du site | Nouvelle page à créer |
+| Cavalier Studio | Absent du site | Nouvelle page à créer |
 | Pages légales | Micro-entreprise, adresse absente | SAS, adresse Metz, RGPD renforcé (mineurs) |
 | FAQ | Orientée ancien concept | Refonte complète, 3 pôles |
 
@@ -35,7 +35,7 @@
 | 10 | Pour les écoles | `/fr/pour-les-ecoles` | 🟡 Moyenne | Moyen | À faire |
 | 11 | FAQ | `/fr/faq` | 🔴 Haute | Élevé — refonte | À faire |
 | 12 | Contact | `/fr/contact` | 🟡 Moyenne | Faible | À faire |
-| 13 | Solutions Numériques | `/fr/solutions-numeriques` | 🔴 Haute | Élevé — création | À faire |
+| 13 | Cavalier Studio | `/fr/cavalier-studio` | 🔴 Haute | Élevé — création | À faire |
 | 14 | Demander une mission | `/fr/demander-mission` | 🟡 Moyenne | Faible | À faire |
 | 15 | Réservation | `/fr/reserver` | 🟡 Moyenne | Faible | À faire |
 | 16 | Récompenses | `/fr/recompenses` | 🟢 Basse | Faible | À évaluer |
@@ -50,7 +50,7 @@
 
 ### 🔴 Phase 1 — Priorité absolue (avant ouverture)
 
-Ces pages sont visibles en premier par les prospects, partenaires et familles.  
+Ces pages sont visibles en premier par les prospects, partenaires et familles.
 Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
 
 ```
@@ -58,15 +58,14 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
 2. Politique de confidentialité → RGPD, données mineurs Passerelle Jeunesse
 3. CGV → couvrir les 3 pôles, SAS, nouvelles prestations
 4. Accueil → 3 pôles, ancrage Metz, nouveau hero
-5. Nos activités → repositionnement Passerelle Jeunesse + ajout Solutions Numériques
+5. Nos activités → repositionnement Passerelle Jeunesse + ajout Cavalier Studio
 6. Passerelle Jeunesse → refonte complète du concept
-7. Solutions Numériques → créer la page ex nihilo
+7. Cavalier Studio → créer la page ex nihilo
 8. FAQ → refonte complète 3 pôles
-9. Tarifs → recalibrage + grilles PJ et Solutions Numériques
+9. Tarifs → recalibrage + grilles PJ et Cavalier Studio
 ```
 
 ---
-
 ### 🟡 Phase 2 — Mise à jour dans les 30 jours
 
 ```
@@ -102,7 +101,7 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
 • Copyright footer → "© 2026 Ateliers 360 SAS"
 
 ✅ Ajouter partout où pertinent :
-• Lien vers la nouvelle page /fr/solutions-numeriques
+• Lien vers la nouvelle page /fr/cavalier-studio
 • Zone géographique : "Grand Est — Metz et communes limitrophes"
 • Formulaire de contact enrichi (cf. page contact)
 
@@ -118,7 +117,7 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
 
 | Page | URL suggérée | Priorité | Contenu |
 |---|---|---|---|
-| Solutions Numériques | `/fr/solutions-numeriques` | 🔴 Haute | Cf. fichier 04 |
+| Cavalier Studio | `/fr/cavalier-studio` | 🔴 Haute | Cf. fichier 04 |
 | Inscription Passerelle Jeunesse | `/fr/inscription-passerelle` | 🟡 Moyenne | Formulaire d'inscription enfant |
 | Programme périscolaire | `/fr/programme-passerelle` | 🟡 Moyenne | Planning activités + programme par période |
 | Bloom Connect | `/fr/bloom-connect` | 🟢 Basse | Page de présentation app (quand MVP prêt) |
@@ -130,7 +129,7 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
 
 ```
 1. RGPD — Bandeau cookies :
-   Vérifier que le bandeau cookies est conforme CNIL 
+   Vérifier que le bandeau cookies est conforme CNIL
    (refus aussi simple que l'acceptation).
    Aucun cookie analytics ne doit se charger avant consentement.
 
@@ -141,9 +140,9 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
    • Une confirmation d'envoi avec délai de réponse affiché
 
 3. Accessibilité numérique (RGAA) :
-   En tant que structure recevant des fonds publics potentiellement 
+   En tant que structure recevant des fonds publics potentiellement
    (collectivités, CAF), le site doit tendre vers le niveau AA du RGAA.
-   Au minimum : contraste suffisant, texte alternatif sur les images, 
+   Au minimum : contraste suffisant, texte alternatif sur les images,
    navigation clavier possible.
 
 4. Performances :
@@ -151,9 +150,9 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
    Les images doivent être optimisées (format WebP, lazy loading).
 
 5. Multilingue :
-   Le site est actuellement en français (/fr/...). 
-   Prévoir dès maintenant une architecture compatible avec 
-   l'ajout d'une version anglaise ou allemande 
+   Le site est actuellement en français (/fr/...).
+   Prévoir dès maintenant une architecture compatible avec
+   l'ajout d'une version anglaise ou allemande
    (frontaliers luxembourgeois et allemands = cible Bloom Connect).
 ```
 
@@ -166,6 +165,6 @@ Les laisser avec l'ancien contenu nuit à la crédibilité immédiate.
 | `01_accueil.md` | Page d'accueil |
 | `02_presentation_poles.md` | Nos activités · Le Projet · Passerelle Jeunesse |
 | `03_ateliers_catalogues_tarifs.md` | Ateliers · Modules · Packs · Disciplines · Tarifs |
-| `04_pages_fonctionnelles.md` | Pour les écoles · FAQ · Contact · Solutions Numériques · Demander mission · Réserver · Récompenses |
+| `04_pages_fonctionnelles.md` | Pour les écoles · FAQ · Contact · Cavalier Studio · Demander mission · Réserver · Récompenses |
 | `05_pages_legales.md` | Mentions légales · CGV · Politique confidentialité · Conditions d'utilisation |
 | `00_recapitulatif.md` | Ce fichier — récapitulatif et plan d'action |
