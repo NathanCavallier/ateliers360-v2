@@ -97,6 +97,17 @@ FROM_EMAIL=noreply@ateliers360.fr
 FROM_EMAIL_ADMIN=admin@ateliers360.fr
 ADMIN_EMAIL=admin@ateliers360.fr
 
+# Optional : dedicated routing addresses for contact/request types
+CAVALIER_STUDIO_EMAIL=cavalierstudio@ateliers360.fr
+DEMO_EMAIL=demo@ateliers360.fr
+BUSINESS_INQUIRY_EMAIL=entreprises@ateliers360.fr
+SCHOOLS_EMAIL=ecoles@ateliers360.fr
+STRUCTURES_EMAIL=structures@ateliers360.fr
+RESERVATIONS_EMAIL=reservations@ateliers360.fr
+QUOTES_EMAIL=devis@ateliers360.fr
+PASSERELLE_JEUNESSE_EMAIL=passerelle@ateliers360.fr
+ATELIERS_EMAIL=ateliers@ateliers360.fr
+
 # Optionnel : envoyer email de confirmation au client
 SEND_CONFIRMATION_EMAIL=true
 
@@ -150,25 +161,25 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=G-XXXXX
 -- Exécuter dans Supabase SQL Editor
 
 -- 1. Table ateliers
-SELECT column_name, data_type FROM information_schema.columns 
+SELECT column_name, data_type FROM information_schema.columns
 WHERE table_name = 'ateliers'
 ORDER BY ordinal_position;
 -- Devrait inclure : id, titre, type, sequence_order, categorie, ...
 
 -- 2. Table reservations
-SELECT column_name, data_type FROM information_schema.columns 
+SELECT column_name, data_type FROM information_schema.columns
 WHERE table_name = 'reservations'
 ORDER BY ordinal_position;
 -- Devrait inclure : id, atelier_id, email, nom, status, stripe_session_id, ...
 
 -- 3. Table structure_requests
-SELECT column_name, data_type FROM information_schema.columns 
+SELECT column_name, data_type FROM information_schema.columns
 WHERE table_name = 'structure_requests'
 ORDER BY ordinal_position;
 -- Devrait inclure : id, structure_name, contact_name, email, message, status, ...
 
 -- 4. Vérifier les indexes
-SELECT indexname FROM pg_indexes 
+SELECT indexname FROM pg_indexes
 WHERE tablename IN ('ateliers', 'reservations', 'structure_requests')
 ORDER BY indexname;
 ```
@@ -177,7 +188,7 @@ ORDER BY indexname;
 
 ```sql
 -- Ateliers
-SELECT COUNT(*) as total, 
+SELECT COUNT(*) as total,
        COUNT(CASE WHEN type='workshop' THEN 1 END) as workshops,
        COUNT(CASE WHEN type='module' THEN 1 END) as modules,
        COUNT(CASE WHEN type='pack' THEN 1 END) as packs

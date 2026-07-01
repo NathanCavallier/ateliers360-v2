@@ -138,6 +138,18 @@ STRIPE_WEBHOOK_SECRET=whsec_xxx...
 ```bash
 RESEND_API_KEY=re_xxx...
 FROM_EMAIL=noreply@ateliers360.fr
+FROM_EMAIL_ADMIN=admin@ateliers360.fr
+
+# Optional: dedicated routing addresses for contact/request types
+CAVALIER_STUDIO_EMAIL=cavalierstudio@ateliers360.fr
+DEMO_EMAIL=demo@ateliers360.fr
+BUSINESS_INQUIRY_EMAIL=entreprises@ateliers360.fr
+SCHOOLS_EMAIL=ecoles@ateliers360.fr
+STRUCTURES_EMAIL=structures@ateliers360.fr
+RESERVATIONS_EMAIL=reservations@ateliers360.fr
+QUOTES_EMAIL=devis@ateliers360.fr
+PASSERELLE_JEUNESSE_EMAIL=passerelle@ateliers360.fr
+ATELIERS_EMAIL=ateliers@ateliers360.fr
 ```
 
 ---

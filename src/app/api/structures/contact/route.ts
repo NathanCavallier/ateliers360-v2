@@ -1,7 +1,7 @@
 // src/app/api/structures/contact/route.ts
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-server";
-import { sendEmail, getAdminNotificationEmail } from "@/lib/email";
+import { sendEmail, getAdminNotificationEmail, getContactRecipient } from "@/lib/email";
 
 type Body = {
   structure: string;
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
       email: body.email,
       phone: body.phone || null,
       message: body.message,
-      metadata: { audience: body.audience || null },
+      metadata: { audience: body.audience || null, requestType: "structure" },
     };
 
     const { data, error } = await supabaseAdmin
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
     // Notify admin
     try {
-      const adminEmail = process.env.FROM_EMAIL_ADMIN || process.env.FROM_EMAIL;
+      const adminEmail = getContactRecipient({ requestType: "structure" });
       if (adminEmail) {
         const adminHtml = getAdminNotificationEmail({
           nom: body.contact,

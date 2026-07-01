@@ -208,7 +208,7 @@ Route :
 
 Taches :
 
-- Enrichir le formulaire : profil, pole concerne, telephone, message minimum, piece jointe optionnelle.
+- Enrichir le formulaire : profil, pole concerné, telephone, message minimum, piece jointe optionnelle.
 - Ajouter opt-in RGPD obligatoire.
 - Ajouter contacts directs par pole.
 - Gerer les parametres URL :
@@ -218,6 +218,7 @@ Taches :
   - `?service=audit-ia`
   - `?service=bloom-connect-b2b`
 - Router les demandes vers le bon email ou ajouter un tag clair dans l'objet.
+- Pour l'instant, toutes les réservations et tous les formulaires de contact doivent déclencher un email immédiat, sans aucun traitement backoffice.
 - Implémenter le pré-remplissage du formulaire et l'envoi de métadonnées pour `pole` / `service`.
 
 Critere de sortie :

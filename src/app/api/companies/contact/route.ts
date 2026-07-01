@@ -1,7 +1,7 @@
 // src/app/api/companies/contact/route.ts
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-server";
-import { sendEmail, getAdminNotificationEmail } from "@/lib/email";
+import { sendEmail, getAdminNotificationEmail, getContactRecipient } from "@/lib/email";
 
 type Body = {
   company: string;
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
       phone: body.phone || null,
       offer_ref: body.offer || null,
       message: body.message,
-      metadata: { source: body.source || null },
+      metadata: { source: body.source || null, requestType: "company" },
     };
 
     const { data, error } = await supabaseAdmin
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
 
     // Notify admin (non-blocking)
     try {
-      const adminEmail = process.env.FROM_EMAIL_ADMIN || process.env.FROM_EMAIL;
+      const adminEmail = getContactRecipient({ requestType: "company" });
       if (adminEmail) {
         const adminHtml = getAdminNotificationEmail({
           nom: body.contact,

@@ -1,7 +1,7 @@
 // src/app/api/contact/route.ts
 import { NextResponse, NextRequest } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-server";
-import { getContactNotificationEmail, sendEmail } from "@/lib/email";
+import { getContactRecipient, getContactNotificationEmail, sendEmail } from "@/lib/email";
 
 type Body = {
     name: string;
@@ -105,8 +105,7 @@ export async function POST(req: NextRequest) {
         // Notify admin (best-effort, non-blocking)
         (async () => {
             try {
-                const adminEmail = process.env.FROM_EMAIL_ADMIN ||
-                    process.env.FROM_EMAIL;
+                const adminEmail = getContactRecipient(metadata);
                 if (!adminEmail) {
                     console.warn("Admin email not configured - skipping admin notification");
                     return;

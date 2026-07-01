@@ -1,7 +1,7 @@
 // src/app/api/schools/contact/route.ts
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-server";
-import { sendEmail, getAdminNotificationEmail } from "@/lib/email";
+import { sendEmail, getAdminNotificationEmail, getContactRecipient } from "@/lib/email";
 
 type Body = {
   institution: string;
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
     }
 
     try {
-      const adminEmail = process.env.FROM_EMAIL_ADMIN || process.env.FROM_EMAIL;
+      const adminEmail = getContactRecipient({ requestType: "school" });
       if (adminEmail) {
         const adminHtml = getAdminNotificationEmail({
           nom: contact,

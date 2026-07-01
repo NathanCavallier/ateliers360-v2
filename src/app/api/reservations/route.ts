@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createReservationServer } from "@/lib/supabase-server-actions";
+import { getAdminNotificationEmail, getContactRecipient, sendEmail } from "@/lib/email";
 import { z } from "zod";
 
 // Schéma de validation pour les réservations
@@ -49,8 +50,34 @@ export async function POST(request: NextRequest) {
             }, { status: 500 });
         }
 
-        // Note: Les emails seront envoyés après la confirmation du paiement via le webhook Stripe
-        // Cela évite d'envoyer des emails pour des réservations non payées
+        // Envoyer une notification email dès la création de la réservation,
+        // sans attendre un traitement uniquement backoffice.
+        (async () => {
+            try {
+                const adminEmail = getContactRecipient({ requestType: "reservation" });
+                if (!adminEmail) {
+                    console.warn("Admin email not configured - skipping reservation notification");
+                    return;
+                }
+
+                const adminHtml = getAdminNotificationEmail({
+                    nom: validatedData.nom,
+                    email: validatedData.email,
+                    workshopTitle: `Réservation atelier #${validatedData.atelier_id}`,
+                    date: validatedData.date_atelier,
+                    participants: validatedData.participants_count,
+                    etablissement: validatedData.etablissement || undefined,
+                });
+
+                await sendEmail({
+                    to: adminEmail,
+                    subject: `Nouvelle réservation atelier — ${validatedData.nom}`,
+                    html: adminHtml,
+                });
+            } catch (notifyErr) {
+                console.error("Reservation notification failed:", notifyErr);
+            }
+        })();
 
         console.log("Reservation created successfully:", reservation);
 

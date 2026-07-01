@@ -13,6 +13,46 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.FROM_EMAIL ||
     "Ateliers 360 <noreply@ateliers360.fr>";
 
+function normalizeKey(value?: string | null | undefined): string {
+    return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+export function getContactRecipient(metadata?: Record<string, string | null | undefined>): string | null {
+    const pole = normalizeKey(metadata?.pole);
+    const service = normalizeKey(metadata?.service);
+    const requestType = normalizeKey(metadata?.requestType);
+
+    const poleRecipients: Record<string, string> = {
+        "cavalier studio": process.env.CAVALIER_STUDIO_EMAIL || "cavalierstudio@ateliers360.fr",
+        "cavalier-studio": process.env.CAVALIER_STUDIO_EMAIL || "cavalierstudio@ateliers360.fr",
+        "passerelle jeunesse": process.env.PASSERELLE_JEUNESSE_EMAIL || "passerelle@ateliers360.fr",
+        "passerelle-jeunesse": process.env.PASSERELLE_JEUNESSE_EMAIL || "passerelle@ateliers360.fr",
+        "ateliers 360": process.env.ATELIERS_EMAIL || "ateliers@ateliers360.fr",
+        "ateliers-360": process.env.ATELIERS_EMAIL || "ateliers@ateliers360.fr",
+    };
+
+    const serviceRecipients: Record<string, string> = {
+        "sites": poleRecipients["cavalier-studio"],
+        "applications": poleRecipients["cavalier-studio"],
+        "audit-ia": poleRecipients["cavalier-studio"],
+        "bloom-connect-b2b": poleRecipients["cavalier-studio"],
+        "demo": process.env.DEMO_EMAIL || process.env.FROM_EMAIL || "contact@ateliers360.fr",
+    };
+
+    const fallback = process.env.FROM_EMAIL_ADMIN || process.env.FROM_EMAIL || null;
+
+    if (serviceRecipients[service]) return serviceRecipients[service];
+    if (poleRecipients[pole]) return poleRecipients[pole];
+
+    if (requestType === "company") return process.env.BUSINESS_INQUIRY_EMAIL || fallback;
+    if (requestType === "school") return process.env.SCHOOLS_EMAIL || fallback;
+    if (requestType === "structure") return process.env.STRUCTURES_EMAIL || fallback;
+    if (requestType === "reservation") return process.env.RESERVATIONS_EMAIL || fallback;
+    if (requestType === "quote") return process.env.QUOTES_EMAIL || fallback;
+
+    return fallback;
+}
+
 if (!RESEND_API_KEY) {
     console.warn("RESEND_API_KEY manquant. Les emails ne seront pas envoyés.");
 }

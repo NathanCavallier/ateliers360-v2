@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase-server';
 import { z } from 'zod';
-import { sendReservationConfirmation, sendEmail } from '@/lib/email';
+import { getContactRecipient, sendReservationConfirmation, sendEmail } from '@/lib/email';
 
 type IncomingReservation = {
   atelier_id: number;
@@ -131,8 +131,9 @@ export async function POST(request: NextRequest) {
           </ul>
         `;
 
+        const adminEmail = getContactRecipient({ requestType: "reservation" }) || process.env.ADMIN_EMAIL || 'admin@ateliers360.fr';
         await sendEmail({
-          to: process.env.ADMIN_EMAIL || 'admin@ateliers360.fr',
+          to: adminEmail,
           subject: `Réservation sans paiement immédiat reçue (${data.length})`,
           html: summaryHtml,
         });
