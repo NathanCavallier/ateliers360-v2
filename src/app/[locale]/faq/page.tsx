@@ -4,10 +4,15 @@ type PageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = await params;
+  const isEnglish = locale?.startsWith('en');
+
   return {
-    title: 'FAQ | Ateliers 360 & Passerelle Jeunesse',
-    description: 'Questions fréquemment posées sur Ateliers 360 et Passerelle Jeunesse.',
+    title: isEnglish ? 'FAQ | Ateliers 360 Lab' : 'FAQ | Ateliers 360 Lab',
+    description: isEnglish
+      ? 'Common questions about Ateliers 360, Passerelle Jeunesse and Cavalier Studio.'
+      : 'Questions fréquemment posées sur Ateliers 360, Passerelle Jeunesse et Cavalier Studio.',
   };
 }
 

@@ -108,6 +108,42 @@ export default function TarifsPage() {
         </div>
       </section>
 
+      <section className="w-full py-12 md:py-20 bg-slate-50">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-5xl mx-auto rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] items-center">
+              <div>
+                <span className="inline-flex rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+                  {t('pole_ateliers_title')}
+                </span>
+                <h2 className="mt-4 text-3xl font-bold tracking-tight">
+                  {t('pole_ateliers_title')} — {t('pole_ateliers_price')}
+                </h2>
+                <p className="mt-4 text-muted-foreground">
+                  {t('pole_ateliers_desc')}
+                </p>
+              </div>
+              <div className="rounded-3xl bg-primary p-8 text-white shadow-lg">
+                <div className="space-y-4">
+                  <p className="text-sm uppercase tracking-[0.2em] text-primary-foreground/80">
+                    Tarifs clés
+                  </p>
+                  <p className="text-2xl font-semibold">{t('pole_ateliers_price')}</p>
+                  <p className="text-sm text-primary-foreground/90">
+                    {t('pole_ateliers_desc')}
+                  </p>
+                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Link href={`/${locale}/contact`}>
+                      {t('pole_cta')}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="w-full py-12 md:py-20 bg-gradient-to-br from-accent/10 via-background to-accent/20">
         <div className="container px-4 md:px-6">
           <div className="max-w-5xl mx-auto grid gap-6 md:grid-cols-3">

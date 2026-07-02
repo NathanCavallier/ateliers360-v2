@@ -6,171 +6,385 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface FAQItem {
-  category: 'ateliers' | 'passerelle' | 'general';
+  category: 'ateliers' | 'passerelle' | 'cavalier' | 'paiement' | 'general';
   question: string;
   answer: string;
 }
 
-const faqItems: FAQItem[] = [
-  // ===== ATELIERS 360 =====
+const faqItemsFr: FAQItem[] = [
   {
     category: 'ateliers',
     question: 'Quel est le public visé par Ateliers 360 ?',
     answer:
-      'Ateliers 360 propose des ateliers éducatifs pour les enfants et jeunes (6-25 ans) intéressés par la science, la technologie, la robotique et la programmation. Nos ateliers s\'adressent aux écoles, aux MJC, aux associations et aux familles.',
+      'Ateliers 360 propose des ateliers éducatifs pour les enfants et les jeunes (6-18 ans) autour de la science, de la robotique, du code, de l’IA et de l’écologie numérique. Nous intervenons auprès des écoles, associations et familles.',
   },
   {
     category: 'ateliers',
-    question: 'Quels types d\'ateliers proposez-vous ?',
+    question: 'Quels types d’ateliers proposez-vous ?',
     answer:
-      'Nous proposons 4 pôles principaux : (1) Robotique & Automatismes, (2) Programmation & Création, (3) IA & IoT, (4) Activités ludiques et éducatives (escapes games, quiz, narratifs, etc.). Chaque pôle propose plusieurs ateliers adaptés aux niveaux et intérêts.',
+      'Nos ateliers couvrent : robotique & automatismes, programmation & création, intelligence artificielle & IoT, et activités ludiques autour des sciences et du numérique. Chaque atelier s’adapte au niveau et au contexte du groupe.',
   },
   {
     category: 'ateliers',
-    question: 'Quels sont les tarifs des ateliers ?',
+    question: 'Comment réserver un atelier ?',
     answer:
-      'Les tarifs varient selon la durée et le type d\'atelier. Consultez notre page Tarifs pour une liste complète, ou contactez-nous directement. Des réductions de groupe et des forfaits annuels sont disponibles.',
+      'Choisissez un atelier sur notre site, puis utilisez le formulaire de réservation. Nous vous envoyons ensuite une confirmation avec le détail pédagogique, logistique et tarifaire.',
   },
   {
     category: 'ateliers',
-    question: 'Comment s\'inscrire à un atelier ?',
+    question: 'Comment se déroule une intervention scolaire ?',
     answer:
-      'Vous pouvez vous inscrire directement sur notre site en cliquant sur l\'atelier qui vous intéresse, puis en remplissant le formulaire d\'inscription. Une confirmation sera envoyée par email avec tous les détails pratiques.',
+      'Nous intervenons en classe ou dans votre établissement avec le matériel pédagogique nécessaire. Nos animateurs adaptent le programme au niveau et à la durée souhaitée.',
   },
   {
     category: 'ateliers',
-    question: 'Proposez-vous des ateliers pour les écoles ?',
+    question: 'Proposez-vous des ateliers sur mesure ?',
     answer:
-      'Oui ! Nous proposons des ateliers scolaires adaptés aux programmes éducatifs. Les écoles peuvent nous contacter directement via la section "Pour les écoles" ou en utilisant le formulaire de contact.',
+      'Oui, nous créons des ateliers personnalisés selon vos objectifs, votre public et les contraintes de votre planning. Contactez-nous pour construire votre projet.',
   },
   {
     category: 'ateliers',
-    question: 'Peut-on organiser un atelier personnalisé ?',
+    question: 'Quel est le délai de réservation ?',
     answer:
-      'Absolument ! Nous proposons des ateliers sur-mesure adaptés à vos besoins spécifiques (groupe, niveau, durée, thème). Contactez-nous pour discuter de votre projet.',
-  },
-  {
-    category: 'ateliers',
-    question: 'Quelle est la durée habituelle d\'un atelier ?',
-    answer:
-      'Les ateliers varient généralement de 2 à 4 heures pour une session, ou plusieurs semaines pour des programmes complets. Consultez la description de chaque atelier pour les détails spécifiques.',
-  },
-  {
-    category: 'ateliers',
-    question: 'Quel est le nombre de participants par atelier ?',
-    answer:
-      'Le nombre de participants varie selon l\'atelier (généralement 6-15 enfants). Chaque groupe est supervisé par au moins un animateur pour garantir la qualité et la sécurité.',
-  },
-
-  // ===== PASSERELLE JEUNESSE =====
-  {
-    category: 'passerelle',
-    question: 'Qu\'est-ce que Passerelle Jeunesse ?',
-    answer:
-      'Passerelle Jeunesse est un pôle d\'accompagnement spécialisé dans le soutien à la mobilité des jeunes. Nous proposons un accompagnement personnalisé pour les trajets vers des lieux d\'activités, d\'études ou de stage. À terme, nous développerons aussi des ateliers jeunesse spécifiques et des services d\'accueil et d\'orientation.',
+      'Nous recommandons de réserver au moins 15 jours à l’avance pour garantir la disponibilité des animateurs et du matériel.',
   },
   {
     category: 'passerelle',
-    question: 'Quels services propose Passerelle Jeunesse actuellement ?',
+    question: 'Qu’est-ce que Passerelle Jeunesse ?',
     answer:
-      'Actuellement, Passerelle Jeunesse propose : (1) Accompagnement mobilité (trajets locaux et nationaux), (2) Support logistique, (3) Aide à l\'orientation. À terme (2026-2027), nous ajouterons des ateliers jeunesse, un service d\'accueil et d\'escape games éducatifs.',
+      'Passerelle Jeunesse est notre pôle d’activités périscolaires et de loisirs éducatifs pour les jeunes. Nous proposons des formules modulables adaptées aux enfants de 6 à 14 ans.',
   },
   {
     category: 'passerelle',
-    question: 'Qui peut bénéficier de Passerelle Jeunesse ?',
+    question: 'Quels services propose Passerelle Jeunesse ?',
     answer:
-      'Passerelle Jeunesse s\'adresse aux jeunes de 6 à 25 ans, en particulier : ceux qui ont des difficultés de mobilité, les jeunes isolés socialement, ceux en insertion professionnelle, les jeunes intéressés par des activités à mobilité importante. L\'accompagnement s\'adapte à chaque situation.',
+      'Nous proposons des formules périscolaires, des stages de vacances, et des activités à la carte autour du numérique, de la créativité et de l’écologie. Les programmes sont pensés pour être accessibles et progressifs.',
   },
   {
     category: 'passerelle',
-    question: 'Comment demander une mission Passerelle Jeunesse ?',
+    question: 'Comment s’inscrire à Passerelle Jeunesse ?',
     answer:
-      'Vous pouvez faire une demande directement via notre formulaire "Demander une mission Passerelle Jeunesse". Remplissez les informations du jeune, vos coordonnées et les détails de la demande. Nous vous recontacterons dans les 48 heures pour confirmer et finaliser l\'accompagnement.',
+      'Remplissez le formulaire de contact en précisant le pôle Passerelle Jeunesse et le format souhaité. Nous vous rappelons pour finaliser l’inscription et adapter l’offre.',
   },
   {
     category: 'passerelle',
-    question: 'Quels sont les tarifs de Passerelle Jeunesse ?',
+    question: 'Les tarifs sont-ils modulables ?',
     answer:
-      'Les tarifs dépendent de la durée de l\'accompagnement, du type de trajet et des services additionnels. Un devis personnalisé est fourni après réception de votre demande. Des tarifs réduits sont proposés pour les accompagnements réguliers.',
+      'Oui, nos tarifs sont indicatifs et modulables selon la formule choisie, le nombre de jours et les ressources familiales. Nous proposons des réductions fratrie et un accompagnement pour les demandes de financement.',
   },
   {
     category: 'passerelle',
-    question: 'Y a-t-il des frais supplémentaires (transport, repas) ?',
+    question: 'Les activités sont-elles adaptées au rythme des enfants ?',
     answer:
-      'Les tarifs de base incluent l\'accompagnement. Les frais de transport (carburant, péage) et les repas sont généralement à prévoir en fonction du trajet. Une estimation complète est détaillée dans le devis.',
+      'Oui, les sessions sont conçues pour être ludiques, structurées et adaptées aux rythmes scolaires et périscolaires. Nous veillons à proposer des moments calmes et des activités actives.',
   },
   {
     category: 'passerelle',
-    question: 'Peut-on annuler ou modifier une mission ?',
+    question: 'Proposez-vous des stages pendant les vacances ?',
     answer:
-      'Oui, les annulations et modifications sont possibles. Les conditions d\'annulation et de remboursement sont détaillées dans les Conditions Générales et le contrat de mission. Contactez-nous directement pour toute demande.',
+      'Oui, nous organisons des stages de vacances sur 5 jours autour de thèmes comme la science, la créativité, le numérique ou la cuisine éducative.',
   },
   {
-    category: 'passerelle',
-    question: 'Comment fonctionne le paiement pour Passerelle Jeunesse ?',
+    category: 'cavalier',
+    question: 'Qu’est-ce que Cavalier Studio ?',
     answer:
-      'Les paiements se font en deux étapes : (1) Un acompte de sécurité (20% du tarif) au moment de la confirmation, (2) Le reste à la fin de l\'accompagnement. Nous acceptons les virements bancaires et les paiements en ligne (Stripe).',
+      'Cavalier Studio est notre pôle Solutions Numériques : sites web, applications, audit IA, formation digitale et accompagnement numérique pour associations, collectivités et PME.',
   },
   {
-    category: 'passerelle',
-    question: 'Passerelle Jeunesse travaille-t-elle avec les structures locales ?',
+    category: 'cavalier',
+    question: 'Quels types de sites proposez-vous ?',
     answer:
-      'Oui ! Nous avons des partenariats avec des mairies, MJC, associations et structures jeunesse locales (région Moselle). Consultez notre page Partenaires ou contactez-nous pour connaître les ressources disponibles dans votre zone.',
+      'Nous réalisons des sites Essentiels, Studio et Signature, avec des offres adaptées aux structures locales, aux établissements et aux projets sur mesure.',
   },
-
-  // ===== GENERAL =====
+  {
+    category: 'cavalier',
+    question: 'Proposez-vous des applications mobiles ?',
+    answer:
+      'Oui, nous développons des applications web et mobiles sur mesure, avec un accompagnement de la conception jusqu’au déploiement.',
+  },
+  {
+    category: 'cavalier',
+    question: 'Que contient un audit IA ?',
+    answer:
+      'L’audit IA identifie les usages pertinents, évalue les besoins techniques et propose une feuille de route pour intégrer l’IA au sein de votre organisation.',
+  },
+  {
+    category: 'cavalier',
+    question: 'Comment demander un devis Cavalier Studio ?',
+    answer:
+      'Utilisez le formulaire de contact en sélectionnant Cavalier Studio ou le service souhaité. Nous vous proposons un devis détaillé sous 48h.',
+  },
+  {
+    category: 'cavalier',
+    question: 'Proposez-vous de la maintenance ?',
+    answer:
+      'Oui, nous proposons des offres de maintenance mensuelle pour les sites et applications, avec suivi, mises à jour et support.',
+  },
+  {
+    category: 'paiement',
+    question: 'Quels moyens de paiement acceptez-vous ?',
+    answer:
+      'Nous acceptons les virements bancaires, les paiements en ligne et les chèques pour les structures. Les modalités sont précisées dans le devis.',
+  },
+  {
+    category: 'paiement',
+    question: 'Faut-il verser un acompte ?',
+    answer:
+      'Oui, un acompte de 30 % est généralement demandé pour confirmer une réservation ou un devis supérieur à 500 €.',
+  },
+  {
+    category: 'paiement',
+    question: 'Comment sont calculés les frais de déplacement ?',
+    answer:
+      'Pour les ateliers sur site, les frais de déplacement sont inclus localement. Au-delà, un forfait kilométrique est appliqué selon la distance.',
+  },
+  {
+    category: 'paiement',
+    question: 'Peut-on annuler ou modifier une réservation ?',
+    answer:
+      'Oui, les conditions d’annulation sont précisées dans les CGV. En général, l’annulation est possible jusqu’à 7 jours avant l’intervention.',
+  },
+  {
+    category: 'paiement',
+    question: 'Recevons-nous une facture ?',
+    answer:
+      'Oui, nous envoyons une facture après prestation ou à la signature du devis, selon le mode de paiement et la nature du service.',
+  },
   {
     category: 'general',
     question: 'Quelle est la différence entre Ateliers 360 et Passerelle Jeunesse ?',
     answer:
-      'Ateliers 360 propose des ateliers éducatifs (robotique, programmation, IA) dans nos locaux ou directement à l\'école. Passerelle Jeunesse propose un accompagnement personnalisé à la mobilité des jeunes. Les deux pôles sont complémentaires et font partie du même écosystème éducatif et jeunesse.',
+      'Ateliers 360 propose des ateliers éducatifs en sciences et numérique. Passerelle Jeunesse propose des formules périscolaires, des stages et des loisirs éducatifs pour les jeunes.',
   },
   {
     category: 'general',
-    question: 'Comment puis-je contacter Ateliers 360 ?',
+    question: 'Quels sont vos horaires et votre zone d’intervention ?',
     answer:
-      'Vous pouvez nous contacter via : (1) Le formulaire de contact sur le site, (2) L\'email : contact@ateliers360.fr, (3) Le téléphone : [numéro à ajouter], (4) Les réseaux sociaux (Facebook, Instagram). Nous répondons généralement dans les 24 heures.',
+      'Nous sommes basés à Metz et intervenons principalement en Grand Est. Les horaires sont adaptés selon le format choisi et la disponibilité des équipes.',
   },
   {
     category: 'general',
-    question: 'Ateliers 360 propose-t-il un accompagnement pour les écoles ?',
+    question: 'Comment contacter le bon service ?',
     answer:
-      'Oui ! Nous proposons des solutions adaptées aux écoles : ateliers scolaires, interventions en classe, formations pour les enseignants, projets multidisciplinaires. Consultez la section "Pour les écoles" ou contactez notre équipe pédagogique.',
+      'Utilisez le formulaire de contact en précisant le pôle ou le service souhaité. Vous pouvez aussi envoyer un email à ateliers@ateliers360.fr, passerelle@ateliers360.fr ou numerique@ateliers360.fr.',
   },
   {
     category: 'general',
-    question: 'Proposez-vous des formations pour les animateurs ?',
+    question: 'Quelles données personnelles sont collectées ?',
     answer:
-      'Oui, nous proposons des formations régulières pour les animateurs et intervenants. Contactez-nous pour connaître le calendrier des formations et les modalités de participation.',
+      'Nous collectons uniquement les données nécessaires au traitement de votre demande et au suivi de la prestation. La gestion des données est expliquée dans notre Politique de confidentialité.',
   },
   {
     category: 'general',
-    question: 'Comment garantissez-vous la sécurité et le respect des enfants ?',
+    question: 'Comment sont traitées les données des mineurs ?',
     answer:
-      'La sécurité est notre priorité absolue. Tous nos animateurs et accompagnateurs ont une assurance responsabilité civile et respectent les protocoles de sécurité stricts. Une autorisation parentale est requise pour tous les jeunes mineurs. Consultez notre page Mentions légales et Politique de confidentialité pour plus de détails.',
+      'Pour les mineurs, nous demandons le consentement des parents et nous traitons les informations sensibles avec le plus grand soin, conformément au RGPD.',
+  },
+];
+
+const faqItemsEn: FAQItem[] = [
+  {
+    category: 'ateliers',
+    question: 'Who is Ateliers 360 for?',
+    answer:
+      'Ateliers 360 offers educational workshops for children and young people aged 6-18 in science, robotics, coding, AI and digital ecology. We work with schools, associations and families.',
+  },
+  {
+    category: 'ateliers',
+    question: 'What types of workshops do you offer?',
+    answer:
+      'Our workshops cover robotics & automation, programming & creation, artificial intelligence & IoT, and playful educational activities in science and digital culture. Each workshop adapts to the audience and objectives.',
+  },
+  {
+    category: 'ateliers',
+    question: 'How do I book a workshop?',
+    answer:
+      'Select a workshop on our website and complete the booking form. We will send you a confirmation with the educational, logistical and pricing details.',
+  },
+  {
+    category: 'ateliers',
+    question: 'Can you deliver workshops in schools?',
+    answer:
+      'Yes, we can deliver workshops on-site at your school with the necessary educational equipment. Our facilitators tailor the program to your schedule and students.',
+  },
+  {
+    category: 'ateliers',
+    question: 'Do you offer custom workshops?',
+    answer:
+      'Yes, we build tailored workshops based on your goals, audience and timing. Contact us to create a custom project.',
+  },
+  {
+    category: 'ateliers',
+    question: 'What is the booking lead time?',
+    answer:
+      'We recommend booking at least 15 days in advance to ensure facilitator and equipment availability.',
+  },
+  {
+    category: 'passerelle',
+    question: 'What is Passerelle Jeunesse?',
+    answer:
+      'Passerelle Jeunesse is our after-school and youth leisure pole. We offer flexible formulas, holiday camps and educational activities for children aged 6 to 14.',
+  },
+  {
+    category: 'passerelle',
+    question: 'What services does Passerelle Jeunesse provide?',
+    answer:
+      'We provide after-school programs, holiday camps, and à-la-carte activities focused on digital skills, creativity and sustainability. Programs are designed to be accessible and progressive.',
+  },
+  {
+    category: 'passerelle',
+    question: 'How can I enroll in Passerelle Jeunesse?',
+    answer:
+      'Fill out the contact form and select the Passerelle Jeunesse pole and desired format. We will call you back to finalize the registration and adapt the offer.',
+  },
+  {
+    category: 'passerelle',
+    question: 'Are pricing options flexible?',
+    answer:
+      'Yes, pricing is indicative and flexible depending on the chosen formula, number of days and family resources. We offer sibling discounts and support for funding requests.',
+  },
+  {
+    category: 'passerelle',
+    question: 'Are the activities adapted to children’s rhythms?',
+    answer:
+      'Yes, sessions are designed to be playful, structured and adapted to school and after-school rhythms. We combine calm moments with dynamic activities.',
+  },
+  {
+    category: 'passerelle',
+    question: 'Do you offer holiday camps?',
+    answer:
+      'Yes, we run 5-day holiday camps on themes such as science, creativity, digital culture and educational cooking.',
+  },
+  {
+    category: 'cavalier',
+    question: 'What is Cavalier Studio?',
+    answer:
+      'Cavalier Studio is our digital solutions pole: websites, apps, AI audits, digital training and support for associations, local authorities and SMEs.',
+  },
+  {
+    category: 'cavalier',
+    question: 'What website solutions do you offer?',
+    answer:
+      'We deliver Essential, Studio and Signature websites, with packages adapted to local organizations, schools and tailor-made projects.',
+  },
+  {
+    category: 'cavalier',
+    question: 'Do you develop mobile applications?',
+    answer:
+      'Yes, we build custom web and mobile apps with support from concept to deployment.',
+  },
+  {
+    category: 'cavalier',
+    question: 'What does an AI audit include?',
+    answer:
+      'The AI audit identifies relevant use cases, evaluates technical needs and proposes a roadmap for integrating AI into your organization.',
+  },
+  {
+    category: 'cavalier',
+    question: 'How do I request a Cavalier Studio quote?',
+    answer:
+      'Use the contact form and choose Cavalier Studio or the desired service. We provide a detailed quote within 48 hours.',
+  },
+  {
+    category: 'cavalier',
+    question: 'Do you offer maintenance contracts?',
+    answer:
+      'Yes, we offer monthly maintenance for websites and apps with updates, monitoring and support.',
+  },
+  {
+    category: 'paiement',
+    question: 'What payment methods do you accept?',
+    answer:
+      'We accept bank transfers, online payments, and checks for organizations. Payment terms are detailed in the quote.',
+  },
+  {
+    category: 'paiement',
+    question: 'Is a deposit required?',
+    answer:
+      'Yes, a 30% deposit is typically requested to confirm a booking or a quote over €500.',
+  },
+  {
+    category: 'paiement',
+    question: 'How are travel fees calculated?',
+    answer:
+      'For on-site workshops, travel fees are included locally. Beyond that, a mileage fee is applied according to the distance.',
+  },
+  {
+    category: 'paiement',
+    question: 'Can I cancel or change a booking?',
+    answer:
+      'Yes, cancellation conditions are detailed in the terms. Generally, cancellation is possible up to 7 days before the intervention.',
+  },
+  {
+    category: 'paiement',
+    question: 'Will I receive an invoice?',
+    answer:
+      'Yes, we issue an invoice after the service or upon quote acceptance, depending on the payment method and service.',
   },
   {
     category: 'general',
-    question: 'Comment gérez-vous les données personnelles et médicales ?',
+    question: 'What is the difference between Ateliers 360 and Passerelle Jeunesse?',
     answer:
-      'Nous prenons le RGPD très au sérieux. Toutes les données personnelles et médicales sont stockées de manière sécurisée et utilisées uniquement pour les besoins de l\'accompagnement ou de l\'atelier. Consultez notre Politique de confidentialité pour plus de détails ou contactez-nous.',
+      'Ateliers 360 offers educational workshops in science and digital technology. Passerelle Jeunesse provides after-school programs, holiday camps and educational leisure activities for young people.',
   },
   {
     category: 'general',
-    question: 'Quel est votre engagement environnemental ?',
+    question: 'What are your working hours and service area?',
     answer:
-      'Ateliers 360 et Passerelle Jeunesse s\'engagent pour une démarche durable : matériels réutilisables, numérique responsable, trajets optimisés pour réduire l\'empreinte carbone. Nous sensibilisons aussi les jeunes aux enjeux écologiques à travers certains de nos ateliers.',
+      'We are based in Metz and mainly operate in the Grand Est region. Schedules are adapted to the chosen format and team availability.',
+  },
+  {
+    category: 'general',
+    question: 'How do I contact the right service?',
+    answer:
+      'Use the contact form and specify the desired pole or service. You can also email ateliers@ateliers360.fr, passerelle@ateliers360.fr or numerique@ateliers360.fr.',
+  },
+  {
+    category: 'general',
+    question: 'What personal data do you collect?',
+    answer:
+      'We only collect data needed to process your request and manage the service. Data handling is explained in our Privacy Policy.',
+  },
+  {
+    category: 'general',
+    question: 'How is minors’ data handled?',
+    answer:
+      'For minors, we request parental consent and process sensitive information with care, in compliance with GDPR.',
   },
 ];
 
 export default function FAQ({ locale }: { locale: string }) {
-  const [activeCategory, setActiveCategory] = useState<'ateliers' | 'passerelle' | 'general'>('general');
+  const isEnglish = locale?.startsWith('en');
+  const faqItems = isEnglish ? faqItemsEn : faqItemsFr;
+  const [activeCategory, setActiveCategory] = useState<'ateliers' | 'passerelle' | 'cavalier' | 'paiement' | 'general'>('general');
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
 
   const categories = [
-    { id: 'ateliers', label: 'Ateliers 360', color: 'bg-blue-100 text-blue-900' },
-    { id: 'passerelle', label: 'Passerelle Jeunesse', color: 'bg-emerald-100 text-emerald-900' },
-    { id: 'general', label: 'Questions générales', color: 'bg-gray-100 text-gray-900' },
+    {
+      id: 'ateliers',
+      label: isEnglish ? 'Ateliers 360' : 'Ateliers 360',
+      color: 'bg-blue-100 text-blue-900',
+    },
+    {
+      id: 'passerelle',
+      label: isEnglish ? 'Passerelle Jeunesse' : 'Passerelle Jeunesse',
+      color: 'bg-emerald-100 text-emerald-900',
+    },
+    {
+      id: 'cavalier',
+      label: isEnglish ? 'Cavalier Studio' : 'Cavalier Studio',
+      color: 'bg-slate-100 text-slate-900',
+    },
+    {
+      id: 'paiement',
+      label: isEnglish ? 'Payment' : 'Paiement',
+      color: 'bg-amber-100 text-amber-900',
+    },
+    {
+      id: 'general',
+      label: isEnglish ? 'General questions' : 'Questions générales',
+      color: 'bg-gray-100 text-gray-900',
+    },
   ];
 
   const filteredFaqs = faqItems.filter((item) => item.category === activeCategory);
@@ -187,19 +401,21 @@ export default function FAQ({ locale }: { locale: string }) {
 
   return (
     <div className="flex flex-col">
-      {/* Header Section */}
       <section className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 py-16 text-white md:py-24">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Frequently Asked Questions</h1>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              {isEnglish ? 'Frequently Asked Questions' : 'Questions fréquentes'}
+            </h1>
             <p className="mt-5 text-lg leading-relaxed text-blue-50">
-              Vos questions sur Ateliers 360 et Passerelle Jeunesse.
+              {isEnglish
+                ? 'Your questions about Ateliers 360, Passerelle Jeunesse and Cavalier Studio.'
+                : 'Vos questions sur Ateliers 360, Passerelle Jeunesse et Cavalier Studio.'}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Category Tabs */}
       <section className="w-full border-b bg-background py-8">
         <div className="container px-4 md:px-6">
           <div className="flex flex-wrap gap-4">
@@ -207,7 +423,7 @@ export default function FAQ({ locale }: { locale: string }) {
               <Button
                 key={cat.id}
                 variant={activeCategory === cat.id ? 'default' : 'outline'}
-                onClick={() => setActiveCategory(cat.id as 'ateliers' | 'passerelle' | 'general')}
+                onClick={() => setActiveCategory(cat.id)}
                 className={activeCategory === cat.id ? `${cat.color} text-lg font-semibold` : 'text-base'}
               >
                 {cat.label}
@@ -217,7 +433,6 @@ export default function FAQ({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* FAQ Items */}
       <section className="w-full bg-background py-12 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl space-y-4">
@@ -244,28 +459,29 @@ export default function FAQ({ locale }: { locale: string }) {
               ))
             ) : (
               <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center text-gray-600">
-                <p>Aucune question disponible pour cette catégorie.</p>
+                <p>{isEnglish ? 'No questions available for this category.' : 'Aucune question disponible pour cette catégorie.'}</p>
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="w-full bg-gray-100 py-12 md:py-16">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold text-gray-900">Vous n'avez pas trouvé la réponse ?</h2>
+            <h2 className="text-2xl font-bold text-gray-900">
+              {isEnglish ? 'Didn’t find the answer?' : 'Vous n’avez pas trouvé la réponse ?'}
+            </h2>
             <p className="mt-4 text-gray-700">
-              Notre équipe est là pour vous aider. N'hésitez pas à nous contacter directement.
+              {isEnglish
+                ? 'Our team is ready to help. Feel free to contact us directly.'
+                : 'Notre équipe est là pour vous aider. N’hésitez pas à nous contacter directement.'}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button className="bg-blue-600 text-white hover:bg-blue-700">
-                Nous contacter
+                {isEnglish ? 'Contact us' : 'Nous contacter'}
               </Button>
-              <Button variant="outline">
-                Envoyer un email
-              </Button>
+              <Button variant="outline">{isEnglish ? 'Send an email' : 'Envoyer un email'}</Button>
             </div>
           </div>
         </div>
