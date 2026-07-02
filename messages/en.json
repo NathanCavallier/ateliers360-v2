@@ -145,7 +145,7 @@
     "rights_reserved": "All rights reserved."
   },
   "HomePage": {
-    "title": "Educate, support, innovate — three pillars for young people in Grand Est",
+    "title": "Educate, support, innovate, three pillars for young people in Grand Est",
     "subtitle": "Turnkey STEM workshops, after-school and leisure programs with Passerelle Jeunesse, and custom digital solutions with Cavalier Studio.",
     "hero_image_alt": "School science and technology workshop",
     "badge": "Education · Youth · Digital",
@@ -158,7 +158,27 @@
     "stats": {
       "students": "Students reached",
       "schools": "Partners",
-      "workshops": "Workshops delivered"
+      "workshops": "Workshops delivered",
+      "poles": "Active pillars"
+    },
+    "quickAccess": {
+      "badge": "Quick access",
+      "ateliers": {
+        "title": "Ateliers 360",
+        "subtitle": "Explore STEM workshops for schools and families."
+      },
+      "passerelle": {
+        "title": "Passerelle Jeunesse",
+        "subtitle": "Register my child for after-school care or camps."
+      },
+      "cavalier": {
+        "title": "Cavalier Studio",
+        "subtitle": "Request a tailored digital project."
+      },
+      "pricing": {
+        "title": "Pricing",
+        "subtitle": "Check prices for each pillar."
+      }
     },
     "paths": {
       "badge": "Public pathways",
@@ -178,6 +198,16 @@
         "title": "Plan a bundled offer",
         "description": "Packs combine several sessions to simplify quoting, logistics, and follow-up.",
         "cta": "View packs"
+      },
+      "passerelle": {
+        "title": "Passerelle Jeunesse",
+        "description": "Discover our after-school, camp, and educational leisure offerings.",
+        "cta": "View Passerelle Jeunesse"
+      },
+      "cavalier": {
+        "title": "Cavalier Studio",
+        "description": "Explore our digital services and tailored training.",
+        "cta": "View Cavalier Studio"
       }
     },
     "whyChoose": {
@@ -194,6 +224,50 @@
       "feature3": {
         "title": "Local roots",
         "description": "Based in Metz, at the heart of Grand Est, between Nancy and Luxembourg"
+      },
+      "feature4": {
+        "title": "A caring space",
+        "description": "Passerelle Jeunesse provides a warm, secure environment for young people to thrive."
+      },
+      "feature5": {
+        "title": "Family-school connection",
+        "description": "Regular communication and clear programming to support every parent."
+      },
+      "feature6": {
+        "title": "Competitive pricing",
+        "description": "Cavalier Studio offers digital packages tailored to associations and public bodies."
+      }
+    },
+    "poles": {
+      "badge": "Three pillars, one shared vision",
+      "title": "Ateliers 360, Passerelle Jeunesse and Cavalier Studio",
+      "subtitle": "Three pillars working together to make technology, education and support accessible to young people locally.",
+      "ateliers": {
+        "title": "Ateliers 360",
+        "description": "STEM, robotics, coding, AI and student project formats for schools, families and organizations.",
+        "cta": "Explore Ateliers 360",
+        "point1": "Turnkey workshops",
+        "point2": "Progressive modules",
+        "point3": "Packs and cycles",
+        "point4": "Tailored interventions"
+      },
+      "passerelle": {
+        "title": "Passerelle Jeunesse",
+        "description": "An educational living space: after-school care, creative activities, camps and cultural workshops.",
+        "cta": "Discover Passerelle Jeunesse",
+        "point1": "After-school care",
+        "point2": "Holiday camps",
+        "point3": "Creative workshops",
+        "point4": "Family and partner support"
+      },
+      "cavalier": {
+        "title": "Cavalier Studio",
+        "description": "Web development, automation, AI and training for local structures and digital projects.",
+        "cta": "Discover Cavalier Studio",
+        "point1": "Web & mobile apps",
+        "point2": "Association websites",
+        "point3": "Automation & AI",
+        "point4": "Digital training"
       }
     },
     "formations": {
@@ -343,7 +417,7 @@
   },
   "Navigation": {
     "home": "Home",
-    "activities": "Our Activities",
+    "activities": "Ateliers 360",
     "passerelle": "Passerelle Jeunesse",
     "cavalier_studio": "Cavalier Studio",
     "project": "The Project",

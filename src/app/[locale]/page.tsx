@@ -19,6 +19,7 @@ import {
   School,
   Sparkles,
   Users,
+  GraduationCap,
 } from 'lucide-react';
 import { getWorkshops } from '@/lib/supabase';
 import { mapWorkshop } from '@/lib/workshop-normalization';
@@ -66,26 +67,104 @@ export default function Home() {
       cta: t('paths.modules.cta'),
     },
     {
-      icon: Boxes,
-      title: t('paths.packs.title'),
-      description: t('paths.packs.description'),
-      href: `/${locale}/packs`,
-      cta: t('paths.packs.cta'),
+      icon: BookOpen,
+      title: t('paths.passerelle.title'),
+      description: t('paths.passerelle.description'),
+      href: `/${locale}/passerelle-jeunesse`,
+      cta: t('paths.passerelle.cta'),
     },
     {
       icon: GitBranch,
-      title: 'Vous êtes une entreprise ou une collectivité ?',
-      description: 'Audit numérique, développement d’outils sur mesure et formations équipes avec Cavalier Studio.',
+      title: t('paths.cavalier.title'),
+      description: t('paths.cavalier.description'),
       href: `/${locale}/cavalier-studio`,
-      cta: 'Découvrir Cavalier Studio',
+      cta: t('paths.cavalier.cta'),
     },
   ];
 
   const stats = [
-    { icon: Users, value: '500+', label: 'Élèves touchés' },
-    { icon: School, value: '20+', label: 'Partenaires' },
-    { icon: Award, value: '150+', label: 'Ateliers réalisés' },
-    { icon: Boxes, value: '3', label: 'Pôles actifs' },
+    { icon: Users, value: '500+', label: t('stats.students') },
+    { icon: School, value: '20+', label: t('stats.schools') },
+    { icon: Award, value: '150+', label: t('stats.workshops') },
+    { icon: Boxes, value: '3', label: t('stats.poles') },
+  ];
+
+  const quickLinks = [
+    {
+      title: t('quickAccess.ateliers.title'),
+      subtitle: t('quickAccess.ateliers.subtitle'),
+      href: `/${locale}/ateliers`,
+      icon: Sparkles,
+    },
+    {
+      title: t('quickAccess.passerelle.title'),
+      subtitle: t('quickAccess.passerelle.subtitle'),
+      href: `/${locale}/passerelle-jeunesse`,
+      icon: Users,
+    },
+    {
+      title: t('quickAccess.cavalier.title'),
+      subtitle: t('quickAccess.cavalier.subtitle'),
+      href: `/${locale}/cavalier-studio`,
+      icon: Compass,
+    },
+    {
+      title: t('quickAccess.pricing.title'),
+      subtitle: t('quickAccess.pricing.subtitle'),
+      href: `/${locale}/tarifs`,
+      icon: Euro,
+    },
+  ];
+
+  const poleCards = [
+    {
+      title: t('poles.ateliers.title'),
+      description: t('poles.ateliers.description'),
+      href: `/${locale}/ateliers`,
+      cta: t('poles.ateliers.cta'),
+      icon: Sparkles,
+      headerClass: 'bg-primary/10 text-primary',
+      buttonClass: 'bg-slate-950 text-white hover:bg-slate-900',
+      listItemClass: 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700',
+      points: [
+        t('poles.ateliers.point1'),
+        t('poles.ateliers.point2'),
+        t('poles.ateliers.point3'),
+        t('poles.ateliers.point4'),
+      ],
+    },
+    {
+      title: t('poles.passerelle.title'),
+      description: t('poles.passerelle.description'),
+      href: `/${locale}/passerelle-jeunesse`,
+      cta: t('poles.passerelle.cta'),
+      icon: GitBranch,
+      headerClass: 'bg-emerald-500/10 text-emerald-700',
+      buttonClass: 'bg-emerald-600 text-white hover:bg-emerald-700',
+      listItemClass: 'rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm font-medium text-emerald-900',
+      points: [
+        t('poles.passerelle.point1'),
+        t('poles.passerelle.point2'),
+        t('poles.passerelle.point3'),
+        t('poles.passerelle.point4'),
+      ],
+    },
+    {
+      title: t('poles.cavalier.title'),
+      description: t('poles.cavalier.description'),
+      href: `/${locale}/cavalier-studio`,
+      cta: t('poles.cavalier.cta'),
+      icon: Compass,
+      headerClass: 'bg-slate-900/10 text-slate-900',
+      buttonClass: 'border border-slate-900 text-slate-950 hover:bg-slate-100',
+      listItemClass: 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700',
+      points: [
+        t('poles.cavalier.point1'),
+        t('poles.cavalier.point2'),
+        t('poles.cavalier.point3'),
+        t('poles.cavalier.point4'),
+      ],
+    },
   ];
 
   const proofPoints = [
@@ -103,6 +182,21 @@ export default function Home() {
       icon: BookOpen,
       title: t('whyChoose.feature3.title'),
       description: t('whyChoose.feature3.description'),
+    },
+    {
+      icon: Route,
+      title: t('whyChoose.feature4.title'),
+      description: t('whyChoose.feature4.description'),
+    },
+    {
+      icon: GraduationCap,
+      title: t('whyChoose.feature5.title'),
+      description: t('whyChoose.feature5.description'),
+    },
+    {
+      icon: Users,
+      title: t('whyChoose.feature6.title'),
+      description: t('whyChoose.feature6.description'),
     },
   ];
 
@@ -157,72 +251,29 @@ export default function Home() {
               {/* Accès rapides */}
               <div className="mt-8 pt-8 border-t border-white/20">
                 <p className="text-sm text-white/60 mb-3 font-semibold">
-                  Accès rapides
+                  {t('quickAccess.badge')}
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <Link
-                    href={`/${locale}/tarifs`}
-                    className="group rounded-lg bg-white/5 hover:bg-white/10 p-3 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Euro className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
-                      <div className="text-left">
-                        <p className="text-sm font-semibold text-white">
-                          Tarifs
-                        </p>
-                        <p className="text-xs text-white/60">Voir nos prix</p>
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href={`/${locale}/reserver`}
-                    className="group rounded-lg bg-white/5 hover:bg-white/10 p-3 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
-                      <div className="text-left">
-                        <p className="text-sm font-semibold text-white">
-                          Réserver
-                        </p>
-                        <p className="text-xs text-white/60">
-                          Réserver maintenant
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href={`/${locale}/modules`}
-                    className="group rounded-lg bg-white/5 hover:bg-white/10 p-3 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <BookOpen className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
-                      <div className="text-left">
-                        <p className="text-sm font-semibold text-white">
-                          Modules
-                        </p>
-                        <p className="text-xs text-white/60">
-                          Formations longues
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href={`/${locale}/packs`}
-                    className="group rounded-lg bg-white/5 hover:bg-white/10 p-3 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Boxes className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
-                      <div className="text-left">
-                        <p className="text-sm font-semibold text-white">
-                          Packs
-                        </p>
-                        <p className="text-xs text-white/60">Offres groupées</p>
-                      </div>
-                    </div>
-                  </Link>
+                  {quickLinks.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="group rounded-lg bg-white/5 hover:bg-white/10 p-3 transition-colors"
+                      >
+                        <div className="flex items-center gap-2">
+                          <Icon className="w-4 h-4 text-accent group-hover:scale-110 transition-transform" />
+                          <div className="text-left">
+                            <p className="text-sm font-semibold text-white">
+                              {item.title}
+                            </p>
+                            <p className="text-xs text-white/60">{item.subtitle}</p>
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -267,98 +318,49 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="mb-10 max-w-3xl">
             <Badge variant="outline" className="mb-3">
-              Trois pôles, une vision commune
-            </Badge>
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
-              Ateliers 360, Passerelle Jeunesse et Cavalier Studio
-            </h2>
-            <p className="mt-3 text-muted-foreground md:text-lg leading-relaxed">
-              Trois pôles qui partagent les mêmes locaux, les mêmes valeurs et la même ambition : rendre la technologie, l'éducation et l'accompagnement accessibles aux jeunes du territoire.
-            </p>
-          </div>
+                {t('poles.badge')}
+              </Badge>
+              <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">
+                {t('poles.title')}
+              </h2>
+              <p className="mt-3 text-muted-foreground md:text-lg leading-relaxed">
+                {t('poles.subtitle')}
+              </p>
+            </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
-            <Card className="border-primary/20 transition-shadow hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Sparkles className="h-5 w-5" />
-                </div>
-                <CardTitle className="text-2xl">Ateliers 360</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-5">
-                <p className="text-muted-foreground leading-relaxed">
-                  Des formats sciences, robotique, code, IA et projets élèves pour les écoles, familles, structures et entreprises.
-                </p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {['Ateliers clés en main', 'Modules progressifs', 'Packs et cycles', 'Interventions sur mesure'].map((item) => (
-                    <div key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700">
-                      {item}
+            {poleCards.map((card) => {
+              const Icon = card.icon;
+              return (
+                <Card key={card.title} className="transition-shadow hover:shadow-lg" style={{ borderColor: 'transparent' }}>
+                  <CardHeader>
+                    <div className={`mb-3 flex h-11 w-11 items-center justify-center rounded-lg ${card.headerClass}`}>
+                      <Icon className="h-5 w-5" />
                     </div>
-                  ))}
-                </div>
-                <Button asChild>
-                  <Link href={`/${locale}/ateliers`}>
-                    Explorer Ateliers 360
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-emerald-500/30 bg-emerald-50/60 transition-shadow hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-700">
-                  <GitBranch className="h-5 w-5" />
-                </div>
-                <CardTitle className="text-2xl">Passerelle Jeunesse</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-5">
-                <p className="text-muted-foreground leading-relaxed">
-                  Un espace de vie éducative pour les jeunes : accueil périscolaire, activités créatives, stages de vacances, ateliers culturels et loisirs.
-                </p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {['Accueil périscolaire', 'Stages et vacances', 'Ateliers créatifs', 'Lien familles et partenaires'].map((item) => (
-                    <div key={item} className="rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm font-medium text-emerald-900">
-                      {item}
+                    <CardTitle className="text-2xl">{card.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-5">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {card.description}
+                    </p>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {card.points.map((point) => (
+                        <div key={point} className={card.listItemClass}>
+                          {point}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-                <Button asChild className="bg-emerald-600 text-white hover:bg-emerald-700">
-                  <Link href={`/${locale}/passerelle-jeunesse`}>
-                    Découvrir Passerelle Jeunesse
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-slate-900/20 transition-shadow hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-900/10 text-slate-900">
-                  <Compass className="h-5 w-5" />
-                </div>
-                <CardTitle className="text-2xl">Cavalier Studio</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-5">
-                <p className="text-muted-foreground leading-relaxed">
-                  Développement d'applications web et mobiles, sites internet, automatisation, intelligence artificielle et formations numériques.
-                </p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {['Applications web & mobiles', 'Sites associations', 'Automatisation & IA', 'Formations numériques'].map((item) => (
-                    <div key={item} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <Button asChild variant="outline">
-                  <Link href={`/${locale}/cavalier-studio`}>
-                    Découvrir Cavalier Studio
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+                    <Button asChild className={`w-full ${card.buttonClass}`} variant={card.buttonClass.includes('border') ? 'outline' : undefined}>
+                      <Link href={card.href}>
+                        {card.cta}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+        </div>
         </div>
       </section>
 

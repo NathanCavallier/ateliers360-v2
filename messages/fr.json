@@ -146,7 +146,7 @@
     "rights_reserved": "Tous droits réservés."
   },
   "HomePage": {
-    "title": "Éduquer, accompagner, innover — trois pôles pour les jeunes du Grand Est",
+    "title": "Éduquer, accompagner, innover, trois pôles pour les jeunes du Grand Est",
     "subtitle": "Des ateliers STEM clés en main, un espace périscolaire et de loisirs avec Passerelle Jeunesse, et des solutions numériques sur mesure avec Cavalier Studio.",
     "hero_image_alt": "Atelier scolaire de sciences et technologie",
     "badge": "Éducation · Jeunesse · Numérique",
@@ -159,7 +159,27 @@
     "stats": {
       "students": "Élèves touchés",
       "schools": "Partenaires",
-      "workshops": "Ateliers réalisés"
+      "workshops": "Ateliers réalisés",
+      "poles": "Pôles actifs"
+    },
+    "quickAccess": {
+      "badge": "Accès rapides",
+      "ateliers": {
+        "title": "Ateliers 360",
+        "subtitle": "Explorer les ateliers STEM pour écoles et familles."
+      },
+      "passerelle": {
+        "title": "Passerelle Jeunesse",
+        "subtitle": "Inscrire mon enfant en périscolaire ou en stage."
+      },
+      "cavalier": {
+        "title": "Cavalier Studio",
+        "subtitle": "Demander un projet numérique sur mesure."
+      },
+      "pricing": {
+        "title": "Tarifs",
+        "subtitle": "Consulter nos prix pour chaque pôle."
+      }
     },
     "paths": {
       "badge": "Parcours publics",
@@ -179,6 +199,16 @@
         "title": "Planifier une offre groupée",
         "description": "Les packs combinent plusieurs séances pour simplifier le devis, la logistique et le suivi.",
         "cta": "Voir les packs"
+      },
+      "passerelle": {
+        "title": "Passerelle Jeunesse",
+        "description": "Découvrir nos offres périscolaires, stages et loisirs éducatifs.",
+        "cta": "Voir Passerelle Jeunesse"
+      },
+      "cavalier": {
+        "title": "Cavalier Studio",
+        "description": "Explorer nos services numériques et formations sur mesure.",
+        "cta": "Voir Cavalier Studio"
       }
     },
     "whyChoose": {
@@ -195,6 +225,50 @@
       "feature3": {
         "title": "Ancrage local",
         "description": "Basé à Metz, au cœur du Grand Est, entre Nancy et Luxembourg"
+      },
+      "feature4": {
+        "title": "Un espace bienveillant",
+        "description": "Passerelle Jeunesse propose un cadre chaleureux et sécurisé pour l’épanouissement des jeunes."
+      },
+      "feature5": {
+        "title": "Lien familles-école",
+        "description": "Communication régulière et programme clair pour accompagner chaque parent."
+      },
+      "feature6": {
+        "title": "Tarifs compétitifs",
+        "description": "Cavalier Studio propose des offres numériques adaptées aux associations et collectivités."
+      }
+    },
+    "poles": {
+      "badge": "Trois pôles, une vision commune",
+      "title": "Ateliers 360, Passerelle Jeunesse et Cavalier Studio",
+      "subtitle": "Trois pôles qui partagent les mêmes locaux, les mêmes valeurs et la même ambition : rendre la technologie, l'éducation et l'accompagnement accessibles aux jeunes du territoire.",
+      "ateliers": {
+        "title": "Ateliers 360",
+        "description": "Des formats sciences, robotique, code, IA et projets élèves pour les écoles, familles et structures.",
+        "cta": "Explorer Ateliers 360",
+        "point1": "Ateliers clés en main",
+        "point2": "Modules progressifs",
+        "point3": "Packs et cycles",
+        "point4": "Interventions sur mesure"
+      },
+      "passerelle": {
+        "title": "Passerelle Jeunesse",
+        "description": "Un espace de vie éducative : accueil périscolaire, activités créatives, stages et ateliers culturels.",
+        "cta": "Découvrir Passerelle Jeunesse",
+        "point1": "Accueil périscolaire",
+        "point2": "Stages et vacances",
+        "point3": "Ateliers créatifs",
+        "point4": "Lien familles et partenaires"
+      },
+      "cavalier": {
+        "title": "Cavalier Studio",
+        "description": "Développement web, automatisation, IA et formations pour les structures et les projets locaux.",
+        "cta": "Découvrir Cavalier Studio",
+        "point1": "Applications web & mobiles",
+        "point2": "Sites internet associatifs",
+        "point3": "Automatisation & IA",
+        "point4": "Formations numériques"
       }
     },
     "formations": {
@@ -344,7 +418,7 @@
   },
   "Navigation": {
     "home": "Accueil",
-    "activities": "Nos activités",
+    "activities": "Ateliers 360",
     "passerelle": "Passerelle Jeunesse",
     "cavalier_studio": "Cavalier Studio",
     "project": "Le Projet",
