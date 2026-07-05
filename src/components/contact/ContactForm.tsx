@@ -142,9 +142,9 @@ export default function ContactForm() {
         {(pole || service) && (
           <Alert className="border-slate-200 bg-slate-50 text-slate-800">
             <AlertDescription>
-              {pole && <span>Pôle sélectionné : {pole}</span>}
+              {pole && <span>{t('selected_pole')} : {pole}</span>}
               {pole && service && <span> · </span>}
-              {service && <span>Service ciblé : {service}</span>}
+              {service && <span>{t('selected_service')} : {service}</span>}
             </AlertDescription>
           </Alert>
         )}

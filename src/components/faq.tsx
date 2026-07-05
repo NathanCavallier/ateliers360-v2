@@ -353,13 +353,15 @@ const faqItemsEn: FAQItem[] = [
   },
 ];
 
+type FAQCategory = 'ateliers' | 'passerelle' | 'cavalier' | 'paiement' | 'general';
+
 export default function FAQ({ locale }: { locale: string }) {
   const isEnglish = locale?.startsWith('en');
   const faqItems = isEnglish ? faqItemsEn : faqItemsFr;
-  const [activeCategory, setActiveCategory] = useState<'ateliers' | 'passerelle' | 'cavalier' | 'paiement' | 'general'>('general');
+  const [activeCategory, setActiveCategory] = useState<FAQCategory>('general');
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
 
-  const categories = [
+  const categories: Array<{ id: FAQCategory; label: string; color: string }> = [
     {
       id: 'ateliers',
       label: isEnglish ? 'Ateliers 360' : 'Ateliers 360',

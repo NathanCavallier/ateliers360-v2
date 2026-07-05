@@ -1,13 +1,17 @@
+import { getTranslations } from 'next-intl/server';
 import PasserelleJeunesse from '@/components/passerelle-jeunesse';
 
 type PageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'PasserelleJeunessePage' });
+
   return {
-    title: 'Passerelle Jeunesse | Ateliers 360',
-    description: 'Accompagnement mobilite et parcours jeunesse par Ateliers 360.',
+    title: t('meta_title'),
+    description: t('meta_description'),
   };
 }
 

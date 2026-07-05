@@ -1,6 +1,7 @@
 # Pages Fonctionnelles — Mises à jour
 
-> Fichier couvrant : `/fr/pour-les-ecoles` · `/fr/faq` · `/fr/contact` · `/fr/solutions-numeriques` (page à créer)
+> Fichier couvrant : `/fr/pour-les-ecoles` · `/fr/faq` · `/fr/contact` · `/fr/cavalier-studio`
+>
 > + `/fr/demander-mission` · `/fr/reserver` · `/fr/recompenses`
 
 ---
