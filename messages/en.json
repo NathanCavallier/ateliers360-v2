@@ -451,6 +451,30 @@
       "item4_title": "Specific projects",
       "item4_text": "For specific needs related to travel, outings, appointments or unusual situations."
     },
+    "features": {
+      "badge": "What the service includes",
+      "title": "A concrete offer built like a real support journey",
+      "subtitle": "The service follows a simple logic: understand the need, organize travel, secure the steps and maintain reassuring follow-up for the family.",
+      "item1_title": "Guided booking",
+      "item1_text": "A clear request journey with planned slots and support adapted to the young person’s needs.",
+      "item2_title": "Secure travel",
+      "item2_text": "Organized journeys with a stable framework, clear contacts and careful attention to safety.",
+      "item3_title": "Human follow-up",
+      "item3_text": "A close and adaptable support that keeps its meaning and quality over time.",
+      "item4_title": "Feedback and improvement",
+      "item4_text": "Feedback and continuous improvement to make each mission smoother and more reliable."
+    },
+    "pricing": {
+      "badge": "Transparent pricing",
+      "title": "Simple pricing for varied needs",
+      "text": "We offer solutions adapted to local travel as well as longer journeys, with clear pricing and options for families supporting several young people.",
+      "item1_label": "Local accompaniment",
+      "item1_value": "From 35 €",
+      "item2_label": "Long distance",
+      "item2_value": "From 80 €",
+      "item3_label": "Discounts",
+      "item3_value": "Sibling, loyalty and first booking"
+    },
     "process": {
       "badge": "The journey",
       "title": "Simple, clear and progressive support",

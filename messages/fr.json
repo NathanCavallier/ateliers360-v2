@@ -452,6 +452,30 @@
       "item4_title": "Projets ponctuels",
       "item4_text": "Pour des besoins spécifiques liés à des déplacements, des sorties, des rendez-vous ou des situations particulières."
     },
+    "features": {
+      "badge": "Ce que contient le service",
+      "title": "Une offre concrète, pensée comme un vrai parcours de soutien",
+      "subtitle": "Le service s’appuie sur une logique simple : comprendre le besoin, organiser les déplacements, sécuriser les étapes et maintenir un suivi rassurant pour la famille.",
+      "item1_title": "Réservation guidée",
+      "item1_text": "Un parcours de demande clair, avec des créneaux à planifier et une prise en charge adaptée au besoin du jeune.",
+      "item2_title": "Sécurisation des trajets",
+      "item2_text": "Des déplacements organisés avec un cadre stable, des contacts clairs et une attention portée à la sécurité.",
+      "item3_title": "Suivi humain",
+      "item3_text": "Un accompagnement proche qui s’ajuste au fil du temps pour garder du sens et de la qualité dans le soutien.",
+      "item4_title": "Retour d’expérience",
+      "item4_text": "Des retours et une amélioration continue pour offrir une expérience plus fluide à chaque mission."
+    },
+    "pricing": {
+      "badge": "Tarification transparente",
+      "title": "Des tarifs simples pour des besoins variés",
+      "text": "Nous proposons des formules adaptées aux trajets locaux comme aux déplacements plus longs, avec des bases de prix claires et des options pour les familles qui ont plusieurs jeunes à accompagner.",
+      "item1_label": "Accompagnement local",
+      "item1_value": "À partir de 35 €",
+      "item2_label": "Longue distance",
+      "item2_value": "À partir de 80 €",
+      "item3_label": "Réductions",
+      "item3_value": "Fratrie, fidélité et 1ère réservation"
+    },
     "process": {
       "badge": "Le parcours",
       "title": "Un accompagnement simple, clair et progressif",

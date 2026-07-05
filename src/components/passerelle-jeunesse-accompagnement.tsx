@@ -88,6 +88,44 @@ export default function PasserelleJeunesseAccompagnement({ locale }: PasserelleJ
     },
   ];
 
+  const serviceFeatures = [
+    {
+      icon: CalendarCheck,
+      title: t('features.item1_title'),
+      text: t('features.item1_text'),
+    },
+    {
+      icon: ShieldCheck,
+      title: t('features.item2_title'),
+      text: t('features.item2_text'),
+    },
+    {
+      icon: Users,
+      title: t('features.item3_title'),
+      text: t('features.item3_text'),
+    },
+    {
+      icon: Sparkles,
+      title: t('features.item4_title'),
+      text: t('features.item4_text'),
+    },
+  ];
+
+  const pricingHighlights = [
+    {
+      label: t('pricing.item1_label'),
+      value: t('pricing.item1_value'),
+    },
+    {
+      label: t('pricing.item2_label'),
+      value: t('pricing.item2_value'),
+    },
+    {
+      label: t('pricing.item3_label'),
+      value: t('pricing.item3_value'),
+    },
+  ];
+
   const faqItems = [
     {
       question: t('faq.item1_question'),
@@ -177,6 +215,58 @@ export default function PasserelleJeunesseAccompagnement({ locale }: PasserelleJ
                 <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5">
                   <h3 className="font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-slate-50 py-12 md:py-20">
+        <div className="container px-4 md:px-6">
+          <div className="mb-10 max-w-3xl">
+            <Badge variant="outline" className="mb-3">
+              {t('features.badge')}
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tight">{t('features.title')}</h2>
+            <p className="mt-3 text-muted-foreground md:text-lg">{t('features.subtitle')}</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {serviceFeatures.map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <Card key={feature.title} className="h-full border-slate-200 bg-white">
+                  <CardHeader>
+                    <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-600/10 text-emerald-700">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="leading-relaxed text-muted-foreground">{feature.text}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-background py-12 md:py-20">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8">
+              <Badge variant="outline" className="mb-3 border-emerald-300 bg-white/80">
+                {t('pricing.badge')}
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight text-emerald-950">{t('pricing.title')}</h2>
+              <p className="mt-3 text-lg leading-relaxed text-emerald-900">{t('pricing.text')}</p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {pricingHighlights.map((item) => (
+                <div key={item.label} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+                  <p className="text-sm font-medium text-muted-foreground">{item.label}</p>
+                  <p className="mt-2 text-2xl font-semibold text-slate-900">{item.value}</p>
                 </div>
               ))}
             </div>
