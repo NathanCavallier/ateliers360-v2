@@ -93,6 +93,28 @@ export default function PasserelleJeunesse({ locale }: PasserelleJeunesseProps) 
         </div>
       </section>
 
+      <section className="w-full bg-emerald-50/70 py-12 md:py-20">
+        <div className="container px-4 md:px-6">
+          <div className="rounded-2xl border border-emerald-200 bg-white p-8 md:p-10">
+            <div className="max-w-3xl">
+              <Badge variant="outline" className="mb-3 border-emerald-200 text-emerald-700">
+                {t('accompagnement_banner.badge')}
+              </Badge>
+              <h3 className="text-2xl font-semibold tracking-tight">{t('accompagnement_banner.title')}</h3>
+              <p className="mt-3 text-muted-foreground md:text-lg">{t('accompagnement_banner.text')}</p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="bg-emerald-700 text-white hover:bg-emerald-800">
+                <Link href={`/${locale}/passerelle-jeunesse/accompagnement`}>
+                  {t('accompagnement_banner.button')}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="w-full bg-muted/30 py-12 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">

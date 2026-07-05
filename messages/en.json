@@ -362,6 +362,12 @@
     },
     "services_title": "Services designed for everyday life and personal growth",
     "services_subtitle": "A high-quality programme tailored to school rhythms and each child's interests.",
+    "accompagnement_banner": {
+      "badge": "New service",
+      "title": "Tailored support for young people and families",
+      "text": "Discover our dedicated service for everyday support, safety and peace of mind.",
+      "button": "Discover support"
+    },
     "services": {
       "service1_title": "After-school care",
       "service1_text": "Morning, evening and Wednesday daytime care in a reassuring setting, with carers who know each child by name.",
@@ -407,6 +413,72 @@
       "badge3": "DDETS declaration",
       "badge4": "ACM insurance",
       "badge5": "Respect of supervision ratios"
+    }
+  },
+  "PasserelleJeunesseAccompagnementPage": {
+    "meta_title": "Passerelle Jeunesse Support | Educational support and mobility",
+    "meta_description": "Discover our accompaniment service for young people and families: educational support, safe routes and human support tailored to each need.",
+    "hero": {
+      "badge": "Passerelle Jeunesse support service",
+      "title": "Human support to make young people’s journeys safer",
+      "subtitle": "We help families organize, reassure and support young people in their daily journeys, projects and needs.",
+      "primary_cta": "Request support",
+      "secondary_cta": "See quick answers"
+    },
+    "benefits": {
+      "badge": "Why this service",
+      "title": "Practical, reassuring support designed for each young person",
+      "subtitle": "Our approach combines safety, closeness and personalized care to help young people move forward with confidence.",
+      "item1_title": "Secure journeys",
+      "item1_text": "Travel, organization, routines and transitions are all planned to reduce stress for families.",
+      "item2_title": "Support autonomy",
+      "item2_text": "We guide young people step by step so they can grow in confidence, responsibility and independence.",
+      "item3_title": "Reassure parents",
+      "item3_text": "A trusted partner for families who need a clear, stable and responsive framework.",
+      "item4_title": "A caring environment",
+      "item4_text": "A human, respectful and age-appropriate welcome adapted to each young person’s rhythm and need."
+    },
+    "audience": {
+      "badge": "Who this service is for",
+      "title": "Support tailored to different situations",
+      "intro": "This service is designed for young people who need regular or occasional support, and for families who want a trusted partner.",
+      "item1_title": "School-age young people",
+      "item1_text": "For children who need structure, organization or support to reach school, activities or transport.",
+      "item2_title": "Young people in transition",
+      "item2_text": "To help manage changes in routine, new environments or stressful moments.",
+      "item3_title": "Families needing support",
+      "item3_text": "For families who want calm, simple and close support in daily life.",
+      "item4_title": "Specific projects",
+      "item4_text": "For specific needs related to travel, outings, appointments or unusual situations."
+    },
+    "process": {
+      "badge": "The journey",
+      "title": "Simple, clear and progressive support",
+      "intro": "Each intervention is designed to be understandable, reassuring and adapted to the real need of the young person and their family.",
+      "step1_title": "Initial contact",
+      "step1_text": "We talk to understand the need, the context and the family’s expectations.",
+      "step2_title": "Quick assessment",
+      "step2_text": "We define priorities, goals and the most suitable form of support together.",
+      "step3_title": "Implementation",
+      "step3_text": "Support begins in a clear framework, with regular follow-up and adjustments when needed.",
+      "step4_title": "Monitoring and adjustment",
+      "step4_text": "We adapt the support over time to keep it useful and high quality."
+    },
+    "faq": {
+      "badge": "Frequently asked questions",
+      "title": "Answers to the most common questions",
+      "intro": "Here are the most useful details to better understand this service and its arrangements.",
+      "item1_question": "From what age is this service offered?",
+      "item1_answer": "The service is designed for young people aged 7 to 20, with adaptation according to age and needs.",
+      "item2_question": "Is it occasional or regular support?",
+      "item2_answer": "The format can be occasional, regular or tailored to a specific need depending on the family.",
+      "item3_question": "How can I request support?",
+      "item3_answer": "You can simply fill out the contact form or contact us directly for an initial conversation."
+    },
+    "cta": {
+      "title": "Would you like to talk about your need?",
+      "text": "We are listening to help clarify the situation, propose a first response and support you step by step.",
+      "button": "Contact us"
     }
   },
   "AboutPage": {

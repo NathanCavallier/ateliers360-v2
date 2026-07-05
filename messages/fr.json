@@ -363,6 +363,12 @@
     },
     "services_title": "Des services pensés pour la vie quotidienne des jeunes",
     "services_subtitle": "Un programme de qualité, adapté aux rythmes scolaires et aux envies de chaque enfant.",
+    "accompagnement_banner": {
+      "badge": "Nouveau service",
+      "title": "Un accompagnement sur mesure pour les jeunes et les familles",
+      "text": "Découvrez notre service dédié au soutien, à la sécurité et à la sérénité au quotidien.",
+      "button": "Découvrir l’accompagnement"
+    },
     "services": {
       "service1_title": "Accueil périscolaire",
       "service1_text": "Matin, soir et mercredi en journée dans un cadre rassurant, avec des référentes qui connaissent chaque enfant par son prénom.",
@@ -408,6 +414,72 @@
       "badge3": "Déclaration DDETS",
       "badge4": "Assurance ACM",
       "badge5": "Respect des taux d'encadrement"
+    }
+  },
+  "PasserelleJeunesseAccompagnementPage": {
+    "meta_title": "Accompagnement Passerelle Jeunesse | Soutien éducatif et mobilité",
+    "meta_description": "Découvrez notre service d’accompagnement pour jeunes et familles : soutien éducatif, sécurisation des parcours et accompagnement humain sur mesure.",
+    "hero": {
+      "badge": "Service d’accompagnement Passerelle Jeunesse",
+      "title": "Un accompagnement humain pour sécuriser les parcours des jeunes",
+      "subtitle": "Nous aidons les familles à organiser, rassurer et soutenir les jeunes dans leurs déplacements, leurs projets et leurs besoins du quotidien.",
+      "primary_cta": "Demander un accompagnement",
+      "secondary_cta": "Voir les réponses rapides"
+    },
+    "benefits": {
+      "badge": "Pourquoi ce service",
+      "title": "Un soutien concret, rassurant et pensé pour chaque jeune",
+      "subtitle": "Notre approche combine sécurité, proximité et accompagnement personnalisé pour aider les jeunes à avancer avec sérénité.",
+      "item1_title": "Sécuriser les parcours",
+      "item1_text": "Déplacements, organisation, horaires et transitions : chaque étape est pensée pour réduire le stress des familles.",
+      "item2_title": "Soutenir l’autonomie",
+      "item2_text": "Nous accompagnons les jeunes pas à pas pour gagner en confiance, en responsabilité et en autonomie.",
+      "item3_title": "Apaiser les parents",
+      "item3_text": "Un relais de confiance pour les familles qui ont besoin d’un cadre clair, stable et réactif.",
+      "item4_title": "Un cadre bienveillant",
+      "item4_text": "Un accueil humain, respectueux et adapté à l’âge, au rythme et au besoin du jeune."
+    },
+    "audience": {
+      "badge": "À qui s’adresse ce service",
+      "title": "Un accompagnement adapté à différents besoins",
+      "intro": "Ce service est conçu pour les jeunes qui ont besoin d’un soutien régulier ou ponctuel, et pour les familles qui souhaitent un partenaire de confiance.",
+      "item1_title": "Jeunes en âge scolaire",
+      "item1_text": "Pour les enfants qui ont besoin de repères, d’organisation ou d’un accompagnement vers l’école, les activités ou les transports.",
+      "item2_title": "Jeunes en transition",
+      "item2_text": "Pour aider à gérer les changements de rythme, les nouveaux environnements ou les moments de stress.",
+      "item3_title": "Familles en besoin de soutien",
+      "item3_text": "Pour des familles qui veulent un accompagnement rassurant, simple et proche dans la vie quotidienne.",
+      "item4_title": "Projets ponctuels",
+      "item4_text": "Pour des besoins spécifiques liés à des déplacements, des sorties, des rendez-vous ou des situations particulières."
+    },
+    "process": {
+      "badge": "Le parcours",
+      "title": "Un accompagnement simple, clair et progressif",
+      "intro": "Chaque intervention est pensée pour être compréhensible, rassurante et adaptée au besoin réel du jeune et de sa famille.",
+      "step1_title": "Prise de contact",
+      "step1_text": "Nous échangeons pour comprendre le besoin, le contexte et les attentes de la famille.",
+      "step2_title": "Évaluation rapide",
+      "step2_text": "Nous définissons ensemble les priorités, les objectifs et la forme la plus adaptée d’accompagnement.",
+      "step3_title": "Mise en place",
+      "step3_text": "L’accompagnement démarre dans un cadre clair, avec un suivi régulier et des ajustements si nécessaire.",
+      "step4_title": "Suivi et ajustement",
+      "step4_text": "Nous adaptons le dispositif au fil du temps pour garder un accompagnement utile et de qualité."
+    },
+    "faq": {
+      "badge": "Questions fréquentes",
+      "title": "Les réponses aux questions les plus courantes",
+      "intro": "Voici les informations les plus utiles pour mieux comprendre ce service et ses modalités.",
+      "item1_question": "À partir de quel âge ce service est-il proposé ?",
+      "item1_answer": "Le service est pensé pour les jeunes de 7 à 20 ans, avec une adaptation selon l’âge et les besoins.",
+      "item2_question": "Est-ce un accompagnement ponctuel ou régulier ?",
+      "item2_answer": "Les formules peuvent être ponctuelles, régulières ou adaptées à un besoin précis selon les familles.",
+      "item3_question": "Comment demander un accompagnement ?",
+      "item3_answer": "Il suffit de remplir le formulaire de contact ou de nous écrire directement pour un premier échange."
+    },
+    "cta": {
+      "title": "Vous souhaitez parler de votre besoin ?",
+      "text": "Nous sommes à l’écoute pour vous aider à clarifier la situation, proposer une première réponse et vous accompagner pas à pas.",
+      "button": "Nous contacter"
     }
   },
   "AboutPage": {
