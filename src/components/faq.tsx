@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface FAQItem {
-  category: 'ateliers' | 'passerelle' | 'cavalier' | 'paiement' | 'general';
+  category: 'ateliers' | 'paiement' | 'general';
   question: string;
   answer: string;
 }
@@ -47,7 +47,8 @@ const faqItemsFr: FAQItem[] = [
     question: 'Quel est le délai de réservation ?',
     answer:
       'Nous recommandons de réserver au moins 15 jours à l’avance pour garantir la disponibilité des animateurs et du matériel.',
-  },/*
+  },
+  /*
   {
     category: 'passerelle',
     question: 'Qu’est-ce que Passerelle Jeunesse ?',
@@ -152,12 +153,6 @@ const faqItemsFr: FAQItem[] = [
   },
   {
     category: 'general',
-    question: 'Quelle est la différence entre Ateliers 360 et Passerelle Jeunesse ?',
-    answer:
-      'Ateliers 360 propose des ateliers éducatifs en sciences et numérique. Passerelle Jeunesse propose des formules périscolaires, des stages et des loisirs éducatifs pour les jeunes.',
-  },
-  {
-    category: 'general',
     question: 'Quels sont vos horaires et votre zone d’intervention ?',
     answer:
       'Nous sommes basés à Metz et intervenons principalement en Grand Est. Les horaires sont adaptés selon le format choisi et la disponibilité des équipes.',
@@ -166,7 +161,7 @@ const faqItemsFr: FAQItem[] = [
     category: 'general',
     question: 'Comment contacter le bon service ?',
     answer:
-      'Utilisez le formulaire de contact en précisant le pôle ou le service souhaité. Vous pouvez aussi envoyer un email à ateliers@ateliers360.fr.',
+      'Utilisez le formulaire de contact en précisant le pôle ou le service souhaité. Vous pouvez aussi envoyer un email à contact@ateliers360.fr.',
   },
   {
     category: 'general',
@@ -218,7 +213,8 @@ const faqItemsEn: FAQItem[] = [
     question: 'What is the booking lead time?',
     answer:
       'We recommend booking at least 15 days in advance to ensure facilitator and equipment availability.',
-  },/*
+  },
+  /*
   {
     category: 'passerelle',
     question: 'What is Passerelle Jeunesse?',
@@ -323,12 +319,6 @@ const faqItemsEn: FAQItem[] = [
   },
   {
     category: 'general',
-    question: 'What is the difference between Ateliers 360 and Passerelle Jeunesse?',
-    answer:
-      'Ateliers 360 offers educational workshops in science and digital technology. Passerelle Jeunesse provides after-school programs, holiday camps and educational leisure activities for young people.',
-  },
-  {
-    category: 'general',
     question: 'What are your working hours and service area?',
     answer:
       'We are based in Metz and mainly operate in the Grand Est region. Schedules are adapted to the chosen format and team availability.',
@@ -337,7 +327,7 @@ const faqItemsEn: FAQItem[] = [
     category: 'general',
     question: 'How do I contact the right service?',
     answer:
-      'Use the contact form and specify the desired pole or service. You can also email ateliers@ateliers360.fr.',
+      'Use the contact form and specify the desired pole or service. You can also email contact@ateliers360.fr.',
   },
   {
     category: 'general',
@@ -401,8 +391,8 @@ export default function FAQ({ locale }: { locale: string }) {
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-blue-50">
               {isEnglish
-                ? 'Your questions about Ateliers 360, Passerelle Jeunesse and Cavalier Studio.'
-                : 'Vos questions sur Ateliers 360, Passerelle Jeunesse et Cavalier Studio.'}
+                ? 'Your questions about Ateliers 360'
+                : 'Vos questions sur Ateliers 360'}
             </p>
           </div>
         </div>
@@ -470,10 +460,12 @@ export default function FAQ({ locale }: { locale: string }) {
                 : 'Notre équipe est là pour vous aider. N’hésitez pas à nous contacter directement.'}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <Button className="bg-blue-600 text-white hover:bg-blue-700">
+              <Button className="bg-blue-600 text-white hover:bg-blue-700" onClick={() => window.location.href = `${isEnglish ? '/en/contact' : '/fr/contact'}`}>
                 {isEnglish ? 'Contact us' : 'Nous contacter'}
               </Button>
-              <Button variant="outline">{isEnglish ? 'Send an email' : 'Envoyer un email'}</Button>
+              <Button variant="outline" onClick={() => window.location.href = 'mailto:contact@ateliers360.fr'}>
+                {isEnglish ? 'Send an email' : 'Envoyer un email'}
+              </Button>
             </div>
           </div>
         </div>

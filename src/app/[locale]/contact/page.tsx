@@ -85,7 +85,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">{t('email')}</h3>
                       <div className="space-y-2 text-sm text-muted-foreground">
-                        <p><span className="font-medium text-foreground">{t('email_ateliers')}</span> <a href="mailto:ateliers@ateliers360.fr" className="hover:text-primary transition-colors">ateliers@ateliers360.fr</a></p>
+                        <p>{/*<span className="font-medium text-foreground">{t('email_ateliers')}</span> */} <a href="mailto:contact@ateliers360.fr" className="hover:text-primary transition-colors">contact@ateliers360.fr</a></p>
                         {/* <p><span className="font-medium text-foreground">{t('email_passerelle')}</span> <a href="mailto:passerelle@ateliers360.fr" className="hover:text-primary transition-colors">passerelle@ateliers360.fr</a></p>
                         <p><span className="font-medium text-foreground">{t('email_cavalier')}</span> <a href="mailto:numerique@ateliers360.fr" className="hover:text-primary transition-colors">numerique@ateliers360.fr</a></p> */}
                       </div>

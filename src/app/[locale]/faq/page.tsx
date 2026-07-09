@@ -9,10 +9,10 @@ export async function generateMetadata({ params }: PageProps) {
   const isEnglish = locale?.startsWith('en');
 
   return {
-    title: isEnglish ? 'FAQ | Ateliers 360 Lab' : 'FAQ | Ateliers 360 Lab',
+    title: isEnglish ? 'FAQ | Ateliers 360' : 'FAQ | Ateliers 360',
     description: isEnglish
-      ? 'Common questions about Ateliers 360, Passerelle Jeunesse and Cavalier Studio.'
-      : 'Questions fréquemment posées sur Ateliers 360, Passerelle Jeunesse et Cavalier Studio.',
+      ? 'Common questions about Ateliers 360.'
+      : 'Questions fréquemment posées sur Ateliers 360.',
   };
 }
 

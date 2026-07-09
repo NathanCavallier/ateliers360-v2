@@ -6,7 +6,7 @@ type PageProps = {
 
 export async function generateMetadata() {
   return {
-    title: 'Nos activites | Ateliers 360 Lab',
+    title: 'Nos activites | Ateliers 360',
     description: 'Decouvrez les deux poles Ateliers 360, Passerelle Jeunesse et Cavalier Studio.',
   };
 }

@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
   return {
-    title: 'Demander une démo | Ateliers 360 Lab — Metz, Grand Est',
+    title: 'Demander une démo | Ateliers 360 — Metz, Grand Est',
     description:
       'Réservez une démonstration gratuite d’un atelier scientifique avec Ateliers 360. Présentiel, visio ou kit décideur sur mesure pour votre établissement.',
     openGraph: {
-      title: 'Demander une démo | Ateliers 360 Lab — Metz, Grand Est',
+      title: 'Demander une démo | Ateliers 360 — Metz, Grand Est',
       description:
         'Réservez une démonstration gratuite d’un atelier scientifique avec Ateliers 360. Présentiel, visio ou kit décideur sur mesure pour votre établissement.',
       url: `https://www.ateliers360.fr/${locale}/demo`,
