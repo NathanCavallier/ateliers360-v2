@@ -29,7 +29,7 @@ const demoFormSchema = z.object({
   structure: z.string().min(2, "Minimum 2 caractères").max(200, "Maximum 200 caractères"),
   city: z.string().min(2, "Minimum 2 caractères").max(100, "Maximum 100 caractères"),
   structureType: z.string().min(2, "Minimum 2 caractères").max(100, "Maximum 100 caractères"),
-  pole: z.enum(["Ateliers 360", "Passerelle Jeunesse", "Cavalier Studio"]),
+  pole: z.enum(["Ateliers 360"]),
   demoFormat: z.enum(["presentiel", "visio", "kit"]),
   availability: z.string().optional(),
   attendees: z.string().optional(),
@@ -238,8 +238,6 @@ export default function DemoRequestForm() {
                   </FormControl>
                   <SelectContent>
                     <SelectItem value="Ateliers 360">Ateliers 360</SelectItem>
-                    <SelectItem value="Passerelle Jeunesse">Passerelle Jeunesse</SelectItem>
-                    <SelectItem value="Cavalier Studio">Cavalier Studio</SelectItem>
                   </SelectContent>
                 </Select>
               </FormControl>

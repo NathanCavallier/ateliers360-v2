@@ -65,7 +65,7 @@ export default function Home() {
       description: t('paths.modules.description'),
       href: `/${locale}/modules`,
       cta: t('paths.modules.cta'),
-    },
+    },/*
     {
       icon: BookOpen,
       title: t('paths.passerelle.title'),
@@ -79,14 +79,14 @@ export default function Home() {
       description: t('paths.cavalier.description'),
       href: `/${locale}/cavalier-studio`,
       cta: t('paths.cavalier.cta'),
-    },
+    },*/
   ];
 
   const stats = [
     { icon: Users, value: '500+', label: t('stats.students') },
     { icon: School, value: '20+', label: t('stats.schools') },
     { icon: Award, value: '150+', label: t('stats.workshops') },
-    { icon: Boxes, value: '3', label: t('stats.poles') },
+    //{ icon: Boxes, value: '3', label: t('stats.poles') },
   ];
 
   const quickLinks = [
@@ -97,18 +97,6 @@ export default function Home() {
       icon: Sparkles,
     },
     {
-      title: t('quickAccess.passerelle.title'),
-      subtitle: t('quickAccess.passerelle.subtitle'),
-      href: `/${locale}/passerelle-jeunesse`,
-      icon: Users,
-    },
-    {
-      title: t('quickAccess.cavalier.title'),
-      subtitle: t('quickAccess.cavalier.subtitle'),
-      href: `/${locale}/cavalier-studio`,
-      icon: Compass,
-    },
-    {
       title: t('quickAccess.pricing.title'),
       subtitle: t('quickAccess.pricing.subtitle'),
       href: `/${locale}/tarifs`,
@@ -116,56 +104,6 @@ export default function Home() {
     },
   ];
 
-  const poleCards = [
-    {
-      title: t('poles.ateliers.title'),
-      description: t('poles.ateliers.description'),
-      href: `/${locale}/ateliers`,
-      cta: t('poles.ateliers.cta'),
-      icon: Sparkles,
-      headerClass: 'bg-primary/10 text-primary',
-      buttonClass: 'bg-slate-950 text-white hover:bg-slate-900',
-      listItemClass: 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700',
-      points: [
-        t('poles.ateliers.point1'),
-        t('poles.ateliers.point2'),
-        t('poles.ateliers.point3'),
-        t('poles.ateliers.point4'),
-      ],
-    },
-    {
-      title: t('poles.passerelle.title'),
-      description: t('poles.passerelle.description'),
-      href: `/${locale}/passerelle-jeunesse`,
-      cta: t('poles.passerelle.cta'),
-      icon: GitBranch,
-      headerClass: 'bg-emerald-500/10 text-emerald-700',
-      buttonClass: 'bg-emerald-600 text-white hover:bg-emerald-700',
-      listItemClass: 'rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm font-medium text-emerald-900',
-      points: [
-        t('poles.passerelle.point1'),
-        t('poles.passerelle.point2'),
-        t('poles.passerelle.point3'),
-        t('poles.passerelle.point4'),
-      ],
-    },
-    {
-      title: t('poles.cavalier.title'),
-      description: t('poles.cavalier.description'),
-      href: `/${locale}/cavalier-studio`,
-      cta: t('poles.cavalier.cta'),
-      icon: Compass,
-      headerClass: 'bg-slate-900/10 text-slate-900',
-      buttonClass: 'border border-slate-900 text-slate-950 hover:bg-slate-100',
-      listItemClass: 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-medium text-slate-700',
-      points: [
-        t('poles.cavalier.point1'),
-        t('poles.cavalier.point2'),
-        t('poles.cavalier.point3'),
-        t('poles.cavalier.point4'),
-      ],
-    },
-  ];
 
   const proofPoints = [
     {
@@ -282,10 +220,7 @@ export default function Home() {
               {/* Logo/Brand Box */}
               <div className="rounded-lg border border-white/15 bg-white/10 px-5 py-6 backdrop-blur-sm flex items-center justify-center min-h-28">
                 <div className="text-center">
-                  <Sparkles className="h-8 w-8 text-accent mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-white">
-                    Ateliers360
-                  </p>
+                  <AteliersLogoBrand />
                 </div>
               </div>
 
@@ -314,7 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full bg-background py-12 md:py-20">
+      {/* <section className="w-full bg-background py-12 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="mb-10 max-w-3xl">
             <Badge variant="outline" className="mb-3">
@@ -362,7 +297,7 @@ export default function Home() {
             })}
         </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="w-full py-12 md:py-20 bg-background">
         <div className="container px-4 md:px-6">
@@ -377,7 +312,7 @@ export default function Home() {
               {t('paths.subtitle')}
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full">
             {paths.map((path) => {
               const Icon = path.icon;
               return (

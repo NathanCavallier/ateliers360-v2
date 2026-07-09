@@ -1,29 +1,29 @@
+import Link from "next/link";
+import Image from "next/image";
+
 /**
  * Visual logo component for Ateliers360 homepage
  * 3 elements forming a cohesive brand identity
  */
 
 export const AteliersLogoBrand = () => {
+    const logoLink = "/";
     return (
-        <div className="flex flex-col items-center justify-center gap-3">
-            {/* Top row - 2 elements */}
-            <div className="flex gap-3">
-                {/* Top left - Blue accent square */}
-                <div className="w-7 h-7 bg-accent rounded-md shadow-lg shadow-accent/20" />
+        <div className="flex flex-col items-center justify-center gap-4">
+            <Link href={logoLink} aria-label="Ateliers 360" className="relative h-24 w-24">
+                <Image
+                    src="/images/logo.png"
+                    alt="Ateliers 360"
+                    fill
+                    className="object-contain border border-white/10 rounded-full"
+                    sizes="100px"
+                />
+            </Link>
 
-                {/* Top right - Medium accent square */}
-                <div className="w-7 h-7 bg-accent/70 rounded-md shadow-lg shadow-accent/15" />
-            </div>
-
-            {/* Bottom - Larger accent square */}
-            <div className="w-7 h-7 bg-accent/40 rounded-md shadow-lg shadow-accent/10" />
-
-            {/* Brand text below */}
-            <div className="mt-2 text-center">
-                <p className="text-xs font-bold text-white tracking-wider">
-                    A360
-                </p>
-            </div>
+             {/* <div className="text-center">
+                <p className="text-lg font-semibold text-white">Ateliers 360</p>
+                <p className="text-sm text-slate-300">Créativité, technologie, partage</p>
+            </div>end text */}
         </div>
     );
 };

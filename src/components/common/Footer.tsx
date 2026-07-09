@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="space-y-5">
             <Logo />
             <p className="max-w-md text-sm leading-7 text-slate-600">
-              Éduquer, accompagner et innover grâce aux sciences, au numérique et à la jeunesse. Trois pôles complémentaires basés à Metz au service du Grand Est.
+              {t("description")}
             </p>
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
               <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ const Footer = () => {
               </div>
               <div className="mt-3 flex items-center gap-3">
                 <Network className="h-4 w-4 text-primary" />
-                <span>Ateliers STEM, périscolaire et solutions numériques</span>
+                <span>Ateliers Tech et Sciences</span>
               </div>
             </div>
           </div>
@@ -48,23 +48,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href={withLocale("/passerelle-jeunesse")} className="hover:text-primary">
-                  {tNav("passerelle")}
-                </Link>
-              </li>
-              <li>
-                <Link href={withLocale("/cavalier-studio")} className="hover:text-primary">
-                  {tNav("cavalier_studio")}
+                <Link href={withLocale("/nos-activites")} className="hover:text-primary">
+                  {tNav("activities")}
                 </Link>
               </li>
               <li>
                 <Link href={withLocale("/le-projet")} className="hover:text-primary">
                   {tNav("project")}
-                </Link>
-              </li>
-              <li>
-                <Link href={withLocale("/demander-mission")} className="hover:text-primary">
-                  {tNav("request_mission")}
                 </Link>
               </li>
               <li>

@@ -5,31 +5,32 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { CookieConsent } from "@/components/common/CookieConsent";
-import BottomTabBar from '@/components/common/BottomTabBar';
-import ServiceWorkerRegister from '@/components/common/ServiceWorkerRegister';
-import MobileRestrictedPage from '@/components/common/MobileRestrictedPage';
-import {NextIntlClientProvider} from 'next-intl';
-import {notFound} from 'next/navigation';
+import BottomTabBar from "@/components/common/BottomTabBar";
+import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
+import MobileRestrictedPage from "@/components/common/MobileRestrictedPage";
+import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 };
 
 // Can be imported from a shared config
-const locales = ['en', 'fr'];
+const locales = ["en", "fr"];
 
 export const metadata: Metadata = {
   title: "Ateliers 360 Lab",
-  description: "Ateliers STEM, périscolaire et solutions numériques",
+  description: "Ateliers Tech et Sciences",
   openGraph: {
     title: "Ateliers 360 Lab",
-    description: "Ateliers STEM, périscolaire et solutions numériques",
+    description: "Ateliers Tech et Sciences",
     url: "https://www.ateliers360.fr",
     siteName: "Ateliers 360 Lab",
     images: [
       {
-        url: "https://orzfuxasrbpkcaqvgvah.supabase.co/storage/v1/object/sign/images/logo_Ateliers360.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtl eV80MzVkYjM4Ni1kN2Q5LTQwZWEtYmE5Mi04MTMwOTRhZjg2YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nb19BdGVsaWVyczM2MC5wbmciLCJpYXQiOjE3NzgwMDA3NTYsImV4cCI6MTkzNTY4MDc1Nn0.-cSRdRkuxaaoNV3BCP8-aWNWb4ZGss_JM1_tB1LrSXA",// Lien direct vers l'image dans Supabase Storage (assurez-vous que les permissions sont correctement configurées)
+        url:
+          "https://orzfuxasrbpkcaqvgvah.supabase.co/storage/v1/object/sign/images/logo_Ateliers360.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtl eV80MzVkYjM4Ni1kN2Q5LTQwZWEtYmE5Mi04MTMwOTRhZjg2YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nb19BdGVsaWVyczM2MC5wbmciLCJpYXQiOjE3NzgwMDA3NTYsImV4cCI6MTkzNTY4MDc1Nn0.-cSRdRkuxaaoNV3BCP8-aWNWb4ZGss_JM1_tB1LrSXA", // Lien direct vers l'image dans Supabase Storage (assurez-vous que les permissions sont correctement configurées)
         alt: "Ateliers 360 Lab Logo",
       },
     ],
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: Readonly<Props>) {
-  const {locale} = await params;
+  const { locale } = await params;
   if (!locales.includes(locale as any)) notFound();
 
   // Load messages directly
@@ -59,8 +60,15 @@ export default async function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body className={cn("min-h-screen bg-background font-body antialiased")}>
@@ -70,7 +78,7 @@ export default async function RootLayout({
             <MobileRestrictedPage>
               <main className="flex-1 pb-safe md:pb-0">{children}</main>
             </MobileRestrictedPage>
-              <BottomTabBar />
+            <BottomTabBar />
             <Footer />
           </div>
           <Toaster />

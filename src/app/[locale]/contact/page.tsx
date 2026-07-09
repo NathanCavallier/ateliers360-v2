@@ -44,6 +44,7 @@ export default function ContactPage() {
                 <p className="mt-3 text-sm text-slate-200/80 leading-relaxed">
                   {t('hero_cta') || 'Écrivez-nous et nous vous recontactons rapidement.'}
                 </p>
+                {/*
                 <div className="mt-6 grid gap-3">
                   <div className="rounded-2xl bg-slate-950/70 p-4">
                     <p className="text-xs uppercase tracking-[0.24em] text-slate-400">{t('pole_ateliers')}</p>
@@ -57,7 +58,7 @@ export default function ContactPage() {
                     <p className="text-xs uppercase tracking-[0.24em] text-slate-400">{t('pole_cavalier')}</p>
                     <a href="mailto:numerique@ateliers360.fr" className="mt-2 block text-sm font-medium text-white hover:text-accent">numerique@ateliers360.fr</a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -85,8 +86,8 @@ export default function ContactPage() {
                       <h3 className="font-semibold mb-1">{t('email')}</h3>
                       <div className="space-y-2 text-sm text-muted-foreground">
                         <p><span className="font-medium text-foreground">{t('email_ateliers')}</span> <a href="mailto:ateliers@ateliers360.fr" className="hover:text-primary transition-colors">ateliers@ateliers360.fr</a></p>
-                        <p><span className="font-medium text-foreground">{t('email_passerelle')}</span> <a href="mailto:passerelle@ateliers360.fr" className="hover:text-primary transition-colors">passerelle@ateliers360.fr</a></p>
-                        <p><span className="font-medium text-foreground">{t('email_cavalier')}</span> <a href="mailto:numerique@ateliers360.fr" className="hover:text-primary transition-colors">numerique@ateliers360.fr</a></p>
+                        {/* <p><span className="font-medium text-foreground">{t('email_passerelle')}</span> <a href="mailto:passerelle@ateliers360.fr" className="hover:text-primary transition-colors">passerelle@ateliers360.fr</a></p>
+                        <p><span className="font-medium text-foreground">{t('email_cavalier')}</span> <a href="mailto:numerique@ateliers360.fr" className="hover:text-primary transition-colors">numerique@ateliers360.fr</a></p> */}
                       </div>
                     </div>
                   </div>

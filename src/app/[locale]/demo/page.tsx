@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: 'Demander une démo | Ateliers 360 Lab — Metz, Grand Est',
     description:
-      'Réservez une démonstration gratuite d’un atelier scientifique, découvrez Passerelle Jeunesse ou demandez une démo de nos solutions numériques. Présentiel, visio ou kit décideur.',
+      'Réservez une démonstration gratuite d’un atelier scientifique avec Ateliers 360. Présentiel, visio ou kit décideur sur mesure pour votre établissement.',
     openGraph: {
       title: 'Demander une démo | Ateliers 360 Lab — Metz, Grand Est',
       description:
-        'Réservez une démonstration gratuite d’un atelier scientifique, découvrez Passerelle Jeunesse ou demandez une démo de nos solutions numériques. Présentiel, visio ou kit décideur.',
+        'Réservez une démonstration gratuite d’un atelier scientifique avec Ateliers 360. Présentiel, visio ou kit décideur sur mesure pour votre établissement.',
       url: `https://www.ateliers360.fr/${locale}/demo`,
     },
   };
@@ -119,7 +119,7 @@ export default async function DemoPage({ params }: PageProps) {
               </li>
               <li className="flex gap-3">
                 <Sparkles className="mt-1 h-5 w-5 text-accent-foreground" />
-                <span>Accès à nos ateliers, à Passerelle Jeunesse ou à Cavalier Studio.</span>
+                <span>Un aperçu concret des ateliers Ateliers 360 et de nos formats pédagogiques.</span>
               </li>
             </ul>
             <div className="mt-8">
@@ -147,7 +147,7 @@ export default async function DemoPage({ params }: PageProps) {
               },
               {
                 quote:
-                  'Voir l’espace Passerelle Jeunesse en vrai a tout changé pour nous.',
+                  'La démo nous a permis de valider rapidement le format et le contenu pédagogique.',
                 author: 'Parent d’élève, Metz',
               },
             ].map((item) => (
@@ -177,7 +177,7 @@ export default async function DemoPage({ params }: PageProps) {
                 <li>Téléphone (optionnel)</li>
                 <li>Votre structure</li>
                 <li>Nom de l’établissement et ville</li>
-                <li>Pôle concerné : Ateliers 360, Passerelle Jeunesse, Cavalier Studio</li>
+                <li>Pôle concerné : Ateliers 360</li>
               </ul>
             </div>
           </div>

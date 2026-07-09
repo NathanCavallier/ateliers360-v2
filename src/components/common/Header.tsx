@@ -50,10 +50,10 @@ const Header = () => {
   }, [locale, pathname, t]);
 
   const primaryLinks = [
-    { href: '/nos-activites', label: t('activities') },
-    { href: '/passerelle-jeunesse', label: t('passerelle') },
-    { href: '/cavalier-studio', label: t('cavalier_studio') },
-    { href: '/le-projet', label: t('project') },
+    //{ href: '/nos-activites', label: t('activities') },
+    //{ href: '/passerelle-jeunesse', label: t('passerelle') },
+    //{ href: '/cavalier-studio', label: t('cavalier_studio') },
+    //{ href: '/le-projet', label: t('project') },
     { href: '/catalogues', label: t('catalogues') },
     { href: '/tarifs', label: t('pricing') },
     { href: '/contact', label: t('contact') },
@@ -83,10 +83,10 @@ const Header = () => {
   // Mobile: only show essential links
   const mobilePrimaryLinks = [
     { href: '/', label: t('home') || 'Accueil' },
-    { href: '/nos-activites', label: t('activities') },
-    { href: '/passerelle-jeunesse', label: t('passerelle') },
-    { href: '/cavalier-studio', label: t('cavalier_studio') },
-    { href: '/le-projet', label: t('project') },
+    //{ href: '/nos-activites', label: t('activities') },
+    //{ href: '/passerelle-jeunesse', label: t('passerelle') },
+    //{ href: '/cavalier-studio', label: t('cavalier_studio') },
+    //{ href: '/le-projet', label: t('project') },
     { href: '/a-propos', label: t('about') },
     { href: '/contact', label: t('contact') },
   ];
@@ -142,8 +142,8 @@ const Header = () => {
 
               {/* Mobile-only info banner */}
               <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
-                <p className="font-semibold">Ateliers 360 · Passerelle Jeunesse · Cavalier Studio</p>
-                <p className="mt-1">Éducation STEM, périscolaire et solutions numériques à Metz.</p>
+                <p className="font-semibold">Ateliers 360</p>
+                <p className="mt-1">Ateliers pédagogiques STEM et solutions éducatives à Metz.</p>
               </div>
 
               <nav className="space-y-3">

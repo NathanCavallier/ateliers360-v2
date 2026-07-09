@@ -47,7 +47,7 @@ const faqItemsFr: FAQItem[] = [
     question: 'Quel est le délai de réservation ?',
     answer:
       'Nous recommandons de réserver au moins 15 jours à l’avance pour garantir la disponibilité des animateurs et du matériel.',
-  },
+  },/*
   {
     category: 'passerelle',
     question: 'Qu’est-ce que Passerelle Jeunesse ?',
@@ -119,7 +119,7 @@ const faqItemsFr: FAQItem[] = [
     question: 'Proposez-vous de la maintenance ?',
     answer:
       'Oui, nous proposons des offres de maintenance mensuelle pour les sites et applications, avec suivi, mises à jour et support.',
-  },
+  },*/
   {
     category: 'paiement',
     question: 'Quels moyens de paiement acceptez-vous ?',
@@ -166,7 +166,7 @@ const faqItemsFr: FAQItem[] = [
     category: 'general',
     question: 'Comment contacter le bon service ?',
     answer:
-      'Utilisez le formulaire de contact en précisant le pôle ou le service souhaité. Vous pouvez aussi envoyer un email à ateliers@ateliers360.fr, passerelle@ateliers360.fr ou numerique@ateliers360.fr.',
+      'Utilisez le formulaire de contact en précisant le pôle ou le service souhaité. Vous pouvez aussi envoyer un email à ateliers@ateliers360.fr.',
   },
   {
     category: 'general',
@@ -218,7 +218,7 @@ const faqItemsEn: FAQItem[] = [
     question: 'What is the booking lead time?',
     answer:
       'We recommend booking at least 15 days in advance to ensure facilitator and equipment availability.',
-  },
+  },/*
   {
     category: 'passerelle',
     question: 'What is Passerelle Jeunesse?',
@@ -296,7 +296,7 @@ const faqItemsEn: FAQItem[] = [
     question: 'What payment methods do you accept?',
     answer:
       'We accept bank transfers, online payments, and checks for organizations. Payment terms are detailed in the quote.',
-  },
+  },*/
   {
     category: 'paiement',
     question: 'Is a deposit required?',
@@ -337,7 +337,7 @@ const faqItemsEn: FAQItem[] = [
     category: 'general',
     question: 'How do I contact the right service?',
     answer:
-      'Use the contact form and specify the desired pole or service. You can also email ateliers@ateliers360.fr, passerelle@ateliers360.fr or numerique@ateliers360.fr.',
+      'Use the contact form and specify the desired pole or service. You can also email ateliers@ateliers360.fr.',
   },
   {
     category: 'general',
@@ -353,7 +353,7 @@ const faqItemsEn: FAQItem[] = [
   },
 ];
 
-type FAQCategory = 'ateliers' | 'passerelle' | 'cavalier' | 'paiement' | 'general';
+type FAQCategory = 'ateliers' | 'paiement' | 'general';
 
 export default function FAQ({ locale }: { locale: string }) {
   const isEnglish = locale?.startsWith('en');
@@ -366,16 +366,6 @@ export default function FAQ({ locale }: { locale: string }) {
       id: 'ateliers',
       label: isEnglish ? 'Ateliers 360' : 'Ateliers 360',
       color: 'bg-blue-100 text-blue-900',
-    },
-    {
-      id: 'passerelle',
-      label: isEnglish ? 'Passerelle Jeunesse' : 'Passerelle Jeunesse',
-      color: 'bg-emerald-100 text-emerald-900',
-    },
-    {
-      id: 'cavalier',
-      label: isEnglish ? 'Cavalier Studio' : 'Cavalier Studio',
-      color: 'bg-slate-100 text-slate-900',
     },
     {
       id: 'paiement',
