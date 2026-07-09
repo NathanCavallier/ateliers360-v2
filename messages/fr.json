@@ -187,12 +187,12 @@
       "subtitle": "Le site est organisé pour passer d'une intention pédagogique à une offre concrète : discipline, module, pack ou atelier.",
       "disciplines": {
         "title": "Explorer par discipline",
-        "description": "Sciences, code, robotique, IA, écologie ou espace : partez d'une thématique et trouvez les ateliers associés.",
+        "description": "Sciences, code, robotique, IA, écologie ou espace",
         "cta": "Voir les disciplines"
       },
       "modules": {
         "title": "Construire une progression",
-        "description": "Les modules piliers structurent un cycle pédagogique, de la découverte au projet final.",
+        "description": "Un cycle pédagogique, de la découverte au projet final.",
         "cta": "Voir les modules"
       },
       "packs": {
@@ -607,6 +607,7 @@
     "faq": "FAQ",
     "contracts": "Contrats",
     "families": "Familles",
+    "family": "Famille",
     "reserve": "Réserver",
     "more": "Plus",
     "account": "Mon compte",
@@ -729,9 +730,9 @@
   "LegalPage": {
     "title": "Mentions Légales",
     "presentation": "Présentation d'Ateliers 360 Lab",
-    "presentation_desc": "Ateliers 360 Lab est l'éditeur du site www.ateliers360.fr. Le site présente trois pôles complémentaires : Ateliers 360 Éducation pour les ateliers éducatifs STEM et l'innovation pédagogique, Passerelle Jeunesse pour l'accompagnement périscolaire, les loisirs éducatifs et les stages, et Cavalier Studio pour les services numériques sur mesure. La société est basée à Metz, dans le Grand Est, et intervient sur l'ensemble du territoire.",
+    "presentation_desc": "Ateliers 360 Éducation est l'éditeur du site www.ateliers360.fr. Le site présente trois pôles complémentaires : Ateliers 360 Éducation pour les ateliers éducatifs STEM et l'innovation pédagogique, Passerelle Jeunesse pour l'accompagnement périscolaire, les loisirs éducatifs et les stages, et Cavalier Studio pour les services numériques sur mesure. La société est basée à Metz, dans le Grand Est, et intervient sur l'ensemble du territoire.",
     "editor": "1. Éditeur du site",
-    "editor_name": "Ateliers 360 Lab — SAS",
+    "editor_name": "Ateliers 360 Éducation",
     "editor_type": "Forme juridique : Société par actions simplifiée (SAS)",
     "editor_siret": "SIREN : [À compléter lors de l'immatriculation]",
     "editor_code": "Code APE / NAF : 8559A — Formation continue d'adultes",
@@ -1223,7 +1224,7 @@
   },
   "TarifsPage": {
     "badge": "Tarifs & Devis",
-    "hero_title": "Simulez votre tarif",
+    "hero_title": "Tarifs Clairs et Devis Personnalisés",
     "hero_subtitle": "Obtenez une estimation immédiate pour votre atelier ou événement sur mesure.",
     "calculator_title": "Calculateur de Prix",
     "calculator_subtitle": "Estimez le coût de votre intervention en quelques clics.",
@@ -1254,7 +1255,7 @@
     "poles_badge": "Tarifs par pôle",
     "poles_title": "Des grilles adaptées à chaque mission",
     "poles_subtitle": "Que vous recherchiez un atelier éducatif, un accompagnement périscolaire ou un service numérique, nous vous proposons des tarifs clairs et évolutifs.",
-    "pole_ateliers_title": "Ateliers 360 Éducation",
+    "pole_ateliers_title": "Ateliers 360",
     "pole_ateliers_desc": "Interventions pédagogiques en présentiel ou à distance pour écoles, associations, collectivités et entreprises.",
     "pole_ateliers_price": "À partir de 220 € HT pour une demi-journée, avec des cycles à partir de 580 € HT pour 3 séances.",
     "pole_passerelle_title": "Passerelle Jeunesse",

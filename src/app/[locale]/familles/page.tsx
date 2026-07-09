@@ -100,12 +100,12 @@ export default function FamillesPage() {
               {t('hero_subtitle')}
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="bg-emerald-500 text-white">
+              {/* <Button asChild size="lg" className="bg-emerald-500 text-white">
                 <Link href={`/${locale}/inscription`}>
                   {t('cta_register')}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              </Button>
+              </Button> */}
               <Button
                 asChild
                 size="lg"
@@ -211,7 +211,7 @@ export default function FamillesPage() {
         </div>
       </section>
 
-      <section className="container px-4 pb-16 sm:px-6 lg:px-8">
+      {/* <section className="container px-4 pb-16 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-slate-950 p-10 text-white shadow-lg sm:p-14">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
@@ -295,7 +295,7 @@ export default function FamillesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

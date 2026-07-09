@@ -35,7 +35,7 @@ const catalogueItems = [
   {
     title: 'Diplômes personnalisés',
     description:
-      'Diplômes aux couleurs d’Ateliers 360 Éducation, signés et formatés pour être affichés.',
+      'Diplômes aux couleurs d’Ateliers 360, signés et formatés pour être affichés.',
     icon: Star,
     tags: ['Format A4', 'Signature', 'Design'],
   },

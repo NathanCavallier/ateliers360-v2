@@ -43,21 +43,6 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 text-sm text-slate-600">
               <li>
-                <Link href={withLocale("/nos-activites")} className="hover:text-primary">
-                  {tNav("activities")}
-                </Link>
-              </li>
-              <li>
-                <Link href={withLocale("/nos-activites")} className="hover:text-primary">
-                  {tNav("activities")}
-                </Link>
-              </li>
-              <li>
-                <Link href={withLocale("/le-projet")} className="hover:text-primary">
-                  {tNav("project")}
-                </Link>
-              </li>
-              <li>
                 <Link href={withLocale("/ateliers")} className="hover:text-primary">
                   {tNav("workshops_list")}
                 </Link>
@@ -121,7 +106,7 @@ const Footer = () => {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Ateliers 360 SAS. {t("rights_reserved")}
+            &copy; {new Date().getFullYear()} Ateliers 360 Éducation. {t("rights_reserved")}
           </p>
 
           <div className="flex items-center gap-4 text-slate-500">

@@ -50,12 +50,12 @@ const Header = () => {
   }, [locale, pathname, t]);
 
   const primaryLinks = [
-    //{ href: '/nos-activites', label: t('activities') },
-    //{ href: '/passerelle-jeunesse', label: t('passerelle') },
-    //{ href: '/cavalier-studio', label: t('cavalier_studio') },
-    //{ href: '/le-projet', label: t('project') },
-    { href: '/catalogues', label: t('catalogues') },
+    { href: '/ateliers', label: t('workshops') },
+    { href: '/disciplines', label: t('disciplines') },
+    { href: '/modules', label: t('modules') },
+    { href: '/packs', label: t('packs') },
     { href: '/tarifs', label: t('pricing') },
+    { href: '/familles', label: t('families') },
     { href: '/contact', label: t('contact') },
   ];
 
@@ -65,10 +65,6 @@ const Header = () => {
     { href: '/reserver', label: t('reserve') },
     { href: '/constructeur', label: t('constructor') },
     { href: '/contrats', label: t('contracts') },
-    { href: '/familles', label: t('families') },
-    { href: '/disciplines', label: t('disciplines') },
-    { href: '/modules', label: t('modules') },
-    { href: '/packs', label: t('packs') },
     { href: '/pour-les-entreprises', label: t('companies') },
     { href: '/pour-les-structures', label: t('structures') },
     { href: '/pour-les-ecoles', label: t('schools') },
@@ -83,11 +79,11 @@ const Header = () => {
   // Mobile: only show essential links
   const mobilePrimaryLinks = [
     { href: '/', label: t('home') || 'Accueil' },
-    //{ href: '/nos-activites', label: t('activities') },
-    //{ href: '/passerelle-jeunesse', label: t('passerelle') },
-    //{ href: '/cavalier-studio', label: t('cavalier_studio') },
-    //{ href: '/le-projet', label: t('project') },
-    { href: '/a-propos', label: t('about') },
+    { href: '/ateliers', label: t('workshops') },
+    { href: '/disciplines', label: t('disciplines') },
+    { href: '/modules', label: t('modules') },
+    { href: '/packs', label: t('packs') },
+    { href: '/tarifs', label: t('pricing') },
     { href: '/contact', label: t('contact') },
   ];
 

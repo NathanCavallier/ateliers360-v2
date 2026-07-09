@@ -80,7 +80,7 @@ export default function CataloguesPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2073"
-            alt="Documents pédagogiques Ateliers 360 Éducation"
+            alt="Documents pédagogiques Ateliers 360"
             fill
             priority
             className="object-cover opacity-20"
@@ -100,7 +100,7 @@ export default function CataloguesPage() {
                   Documents pédagogiques</span>
               </div>
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                Catalogues Ateliers 360 Éducation
+                Catalogues Ateliers 360
               </h1>
               <p className="text-lg leading-8 text-slate-200 max-w-3xl">
                 Retrouvez les documents à partager avec une école, une MJC, une collectivité ou une entreprise avant de construire une proposition.

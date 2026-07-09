@@ -51,8 +51,8 @@ interface AtelierListPageProps {
 }
 
 export default function AtelierListPage({
-  searchParams = { category: 'all' },
-}: any) {
+  searchParams,
+}: AtelierListPageProps) {
   const t = useTranslations('Workshops');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -63,11 +63,14 @@ export default function AtelierListPage({
   const [sortBy, setSortBy] = useState<string>('popular');
   const [showFilters, setShowFilters] = useState(false);
 
+  const resolvedSearchParams = React.use(searchParams as any) as { category?: string };
+  const categoryFromSearchParams = resolvedSearchParams?.category;
+
   useEffect(() => {
-    if (searchParams.category) {
-      setSelectedCategory(searchParams.category);
+    if (categoryFromSearchParams) {
+      setSelectedCategory(categoryFromSearchParams);
     }
-  }, [searchParams.category]);
+  }, [categoryFromSearchParams]);
 
   const categories = [
     { id: 'all', label: t('all_workshops'), color: 'default' },
@@ -131,18 +134,18 @@ export default function AtelierListPage({
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="w-full py-14 md:py-24 bg-slate-950 text-white overflow-hidden">
+      <section className="relative w-full py-14 md:py-24 bg-slate-950 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071"
-            alt="Catalogue ateliers"
+            alt={t('hero_image_alt')}
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-25"
             priority
           />
         </div>
           <div className="container px-4 md:px-6 relative z-10">
-            <div className="max-w-3xl rounded-[2rem] border border-white/10 bg-slate-950/90 p-10 shadow-2xl">
+            <div className="max-w-3xl rounded-[2rem] border border-white/10 bg-slate-950/70 p-10 shadow-2xl">
               <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 {t('title')}
               </h1>

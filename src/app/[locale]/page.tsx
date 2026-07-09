@@ -97,6 +97,18 @@ export default function Home() {
       icon: Sparkles,
     },
     {
+      title: t('paths.disciplines.title'),
+      subtitle: t('paths.disciplines.description'),
+      href: `/${locale}/disciplines`,
+      icon: Compass,
+    },
+    {
+      title: t('paths.modules.title'),
+      subtitle: t('paths.modules.description'),
+      href: `/${locale}/modules`,
+      icon: BookOpen,
+    },
+    {
       title: t('quickAccess.pricing.title'),
       subtitle: t('quickAccess.pricing.subtitle'),
       href: `/${locale}/tarifs`,

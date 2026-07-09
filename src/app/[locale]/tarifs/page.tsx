@@ -96,14 +96,16 @@ export default function TarifsPage() {
         <div className="container px-4 md:px-6 relative z-10">
           <div className="space-y-4 max-w-3xl">
             <Badge className="w-fit bg-accent text-accent-foreground">
-              {t('hero_badge')}
+              {t('badge')}
             </Badge>
+
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               {t('hero_title')}
             </h1>
+            {/*
             <p className="text-xl text-primary-foreground/90 max-w-2xl">
               {t('hero_subtitle')}
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -117,7 +119,7 @@ export default function TarifsPage() {
                   {t('pole_ateliers_title')}
                 </span>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight">
-                  {t('pole_ateliers_title')} — {t('pole_ateliers_price')}
+                  {t('pole_ateliers_price')}
                 </h2>
                 <p className="mt-4 text-muted-foreground">
                   {t('pole_ateliers_desc')}
@@ -190,7 +192,7 @@ export default function TarifsPage() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-20">
+      {/* <section className="w-full py-12 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto space-y-6">
             <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -253,7 +255,7 @@ export default function TarifsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Grille Tarifaire par Type */}
       <section className="w-full py-12 md:py-20">
