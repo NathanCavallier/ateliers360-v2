@@ -9,6 +9,30 @@ export interface EmailOptions {
     from?: string;
 }
 
+export interface ReservationEmailItem {
+    workshopTitle: string;
+    date: string;
+    participants: number;
+    nom: string;
+    email: string;
+    etablissement?: string | null;
+    adresse?: string | null;
+}
+
+export function buildReservationSummarySections(items: ReservationEmailItem[]) {
+    const uniqueWorkshops = Array.from(new Set(items.map((item) => item.workshopTitle)));
+    const summaryLines = items.map((item) => {
+        const base = `- ${item.workshopTitle} — ${item.date} — ${item.participants} personne${item.participants > 1 ? 's' : ''}`;
+        const meta = [item.etablissement, item.adresse].filter(Boolean).join(' | ');
+        return meta ? `${base} (${meta})` : base;
+    });
+
+    return {
+        subject: `${items.length} réservation${items.length > 1 ? 's' : ''} reçue${items.length > 1 ? 's' : ''} — ${uniqueWorkshops.length} atelier${uniqueWorkshops.length > 1 ? 's' : ''}`,
+        summaryText: summaryLines.join('\n'),
+    };
+}
+
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const FROM_EMAIL = process.env.FROM_EMAIL ||
     "Ateliers 360 <noreply@ateliers360.fr>";

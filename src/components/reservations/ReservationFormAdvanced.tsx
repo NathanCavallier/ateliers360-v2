@@ -128,6 +128,7 @@ export default function ReservationFormAdvanced({
     /trimestriel|annuel|semestriel/i.test(atelier.format || '') ||
     selectedDates.length > 1,
   );
+  const paymentFlowEnabled = false;
 
   async function onSubmit(data: ReservationFormDataAdvanced) {
     setIsSubmitting(true);
@@ -172,35 +173,9 @@ export default function ReservationFormAdvanced({
 
       const { groupId, paymentMode } = await response.json();
 
-      if (paymentMode === 'reserve') {
-        setSubmitStatus('success');
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Étape 2: Créer la session de paiement Stripe
-      const checkoutResponse = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          groupId,
-        }),
-      });
-
-      if (!checkoutResponse.ok) {
-        throw new Error('Échec de la création de la session de paiement');
-      }
-
-      const { url } = await checkoutResponse.json();
-
-      // Rediriger vers la page de paiement Stripe
-      if (url) {
-        window.location.href = url;
-      } else {
-        throw new Error('URL de paiement manquante');
-      }
+      setSubmitStatus('success');
+      setIsSubmitting(false);
+      return;
     } catch (error) {
       console.error('Erreur lors de la réservation:', error);
       setSubmitStatus('error');
@@ -219,10 +194,17 @@ export default function ReservationFormAdvanced({
         <Alert className="border-green-500 bg-green-50">
           <CheckCircle className="h-4 w-4 text-green-600" />
           <AlertTitle className="text-green-600">
-            {t('success_title')}
+            Réservation bien reçue
           </AlertTitle>
           <AlertDescription className="text-green-600">
-            {t('success_message')}
+            <div className="space-y-2">
+              <p>
+                Votre demande de réservation a bien été enregistrée. Un e-mail de confirmation a été envoyé à votre adresse et une copie a été transmise à notre équipe Ateliers 360.
+              </p>
+              <p>
+                Nous reviendrons vers vous rapidement pour valider les détails de votre réservation et vous accompagner dans la suite du processus.
+              </p>
+            </div>
           </AlertDescription>
         </Alert>
       )}
@@ -266,7 +248,7 @@ export default function ReservationFormAdvanced({
               <div className="p-3 bg-white rounded-lg">
                 <p className="text-sm text-muted-foreground">Prix total</p>
                 <p className="text-2xl font-bold text-green-600">
-                  {totalPrice * form.watch('participants_count')}€
+                  {totalPrice}€
                 </p>
               </div>
             </div>
@@ -356,47 +338,49 @@ export default function ReservationFormAdvanced({
             )}
           />
 
-          <div className="space-y-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
-            <h3 className="text-base font-semibold">Mode de réservation</h3>
-            <p className="text-sm text-muted-foreground">
-              {canReserveWithoutPayment
-                ? 'Pour ce type de réservation, vous pouvez soit payer maintenant, soit réserver sans paiement immédiat.'
-                : 'Le paiement immédiat est requis pour valider cette réservation.'}
-            </p>
+          {paymentFlowEnabled && (
+            <div className="space-y-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+              <h3 className="text-base font-semibold">Mode de réservation</h3>
+              <p className="text-sm text-muted-foreground">
+                {canReserveWithoutPayment
+                  ? 'Pour ce type de réservation, vous pouvez soit payer maintenant, soit réserver sans paiement immédiat.'
+                  : 'Le paiement immédiat est requis pour valider cette réservation.'}
+              </p>
 
-            <div className="grid gap-3 md:grid-cols-2 mt-3">
-              <label className="flex cursor-pointer items-center gap-3 rounded-lg border p-3 hover:border-primary/80">
-                <input
-                  type="radio"
-                  name="paymentMode"
-                  value="payment"
-                  checked={form.watch('paymentMode') === 'payment'}
-                  onChange={() => form.setValue('paymentMode', 'payment')}
-                  className="h-4 w-4"
-                />
-                <div>
-                  <div className="font-semibold">Payer maintenant</div>
-                  <div className="text-sm text-muted-foreground">Validation immédiate par Stripe.</div>
-                </div>
-              </label>
+              <div className="grid gap-3 md:grid-cols-2 mt-3">
+                <label className="flex cursor-pointer items-center gap-3 rounded-lg border p-3 hover:border-primary/80">
+                  <input
+                    type="radio"
+                    name="paymentMode"
+                    value="payment"
+                    checked={form.watch('paymentMode') === 'payment'}
+                    onChange={() => form.setValue('paymentMode', 'payment')}
+                    className="h-4 w-4"
+                  />
+                  <div>
+                    <div className="font-semibold">Payer maintenant</div>
+                    <div className="text-sm text-muted-foreground">Validation immédiate par Stripe.</div>
+                  </div>
+                </label>
 
-              <label className={"flex cursor-pointer items-center gap-3 rounded-lg border p-3 " + (canReserveWithoutPayment ? 'hover:border-primary/80' : 'cursor-not-allowed opacity-50')}>
-                <input
-                  type="radio"
-                  name="paymentMode"
-                  value="reserve"
-                  checked={form.watch('paymentMode') === 'reserve'}
-                  onChange={() => canReserveWithoutPayment && form.setValue('paymentMode', 'reserve')}
-                  disabled={!canReserveWithoutPayment}
-                  className="h-4 w-4"
-                />
-                <div>
-                  <div className="font-semibold">Réserver sans paiement immédiat</div>
-                  <div className="text-sm text-muted-foreground">Réservation validée maintenant, paiement différé ou devis ultérieur.</div>
-                </div>
-              </label>
+                <label className={"flex cursor-pointer items-center gap-3 rounded-lg border p-3 " + (canReserveWithoutPayment ? 'hover:border-primary/80' : 'cursor-not-allowed opacity-50')}>
+                  <input
+                    type="radio"
+                    name="paymentMode"
+                    value="reserve"
+                    checked={form.watch('paymentMode') === 'reserve'}
+                    onChange={() => canReserveWithoutPayment && form.setValue('paymentMode', 'reserve')}
+                    disabled={!canReserveWithoutPayment}
+                    className="h-4 w-4"
+                  />
+                  <div>
+                    <div className="font-semibold">Réserver sans paiement immédiat</div>
+                    <div className="text-sm text-muted-foreground">Réservation validée maintenant, paiement différé ou devis ultérieur.</div>
+                  </div>
+                </label>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Informations personnelles */}
           <div className="space-y-4">
@@ -553,9 +537,7 @@ export default function ReservationFormAdvanced({
           >
             {isSubmitting
               ? 'Traitement...'
-              : form.watch('paymentMode') === 'reserve'
-              ? 'Réserver sans paiement immédiat'
-              : 'Procéder au paiement'}
+              : 'Envoyer la réservation'}
           </Button>
         </form>
       </Form>

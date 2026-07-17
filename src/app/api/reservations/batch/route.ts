@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase-server';
 import { z } from 'zod';
-import { getContactRecipient, sendReservationConfirmation, sendEmail } from '@/lib/email';
+import { buildReservationSummarySections, getContactRecipient, sendReservationConfirmation, sendEmail } from '@/lib/email';
 
 type IncomingReservation = {
   atelier_id: number;
@@ -32,6 +32,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { reservations, paymentMode } = batchSchema.parse(body);
+    const normalizedPaymentMode = paymentMode === 'payment' ? 'payment' : 'reserve';
 
     if (!Array.isArray(reservations) || reservations.length === 0) {
       return NextResponse.json({ success: false, error: 'Aucune réservation fournie' }, { status: 400 });
@@ -44,7 +45,7 @@ export async function POST(request: NextRequest) {
 
     // Préparer les enregistrements à insérer
     const now = new Date().toISOString();
-    const status = paymentMode === 'reserve' ? 'confirmed' : 'pending';
+    const status = 'confirmed';
     const toInsert = reservations.map((r) => ({
       atelier_id: r.atelier_id,
       nom: r.nom,
@@ -87,7 +88,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (paymentMode === 'reserve' && data && data.length) {
+    if (data && data.length) {
       const atelierIds = Array.from(new Set(data.map((r: any) => r.atelier_id)));
       const { data: ateliersData } = await supabaseAdmin
         .from('ateliers')
@@ -96,53 +97,57 @@ export async function POST(request: NextRequest) {
       const atelierMap = new Map<number, string>();
       (ateliersData || []).forEach((atelier: any) => atelierMap.set(atelier.id, atelier.titre));
 
+      const emailItems = (data as any[]).map((reservation) => ({
+        nom: reservation.nom,
+        email: reservation.email,
+        workshopTitle: atelierMap.get(reservation.atelier_id) || 'Atelier Ateliers 360',
+        date: new Date(reservation.date_atelier).toLocaleDateString('fr-FR', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }),
+        participants: reservation.participants_count,
+        etablissement: reservation.etablissement || null,
+        adresse: reservation.adresse || null,
+      }));
+
       await Promise.all(
-        (data as any[]).map(async (reservation) => {
+        emailItems.map(async (item) => {
           try {
             await sendReservationConfirmation({
-              nom: reservation.nom,
-              email: reservation.email,
-              workshopTitle: atelierMap.get(reservation.atelier_id) || 'Atelier Ateliers 360',
-              date: new Date(reservation.date_atelier).toLocaleDateString('fr-FR', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              }),
-              participants: reservation.participants_count,
+              nom: item.nom,
+              email: item.email,
+              workshopTitle: item.workshopTitle,
+              date: item.date,
+              participants: item.participants,
             });
           } catch (emailError) {
-            console.error('Erreur envoi email de réservation sans paiement:', emailError);
+            console.error('Erreur envoi email de confirmation client:', emailError);
           }
         }),
       );
 
       try {
+        const { subject, summaryText } = buildReservationSummarySections(emailItems);
         const summaryHtml = `
-          <h3>Réservations sans paiement immédiat - group_id: ${groupId}</h3>
-          <p>${data.length} réservation(s) enregistrée(s) sans paiement immédiat :</p>
-          <ul>
-            ${data
-              .map(
-                (r: any) =>
-                  `<li>${r.nom} — ${r.email} — ${atelierMap.get(r.atelier_id) || 'Atelier'} — ${r.date_atelier} — ${r.participants_count} pers.</li>`,
-              )
-              .join('')}
-          </ul>
+          <h3>Nouvelle réservation reçue — group_id: ${groupId}</h3>
+          <p>${data.length} réservation(s) enregistrée(s) :</p>
+          <pre style="white-space: pre-wrap; font-family: inherit;">${summaryText}</pre>
         `;
 
-        const adminEmail = getContactRecipient({ requestType: "reservation" }) || process.env.ADMIN_EMAIL || 'admin@ateliers360.fr';
+        const adminEmail = getContactRecipient({ requestType: 'reservation' }) || process.env.ADMIN_EMAIL || 'admin@ateliers360.fr';
         await sendEmail({
           to: adminEmail,
-          subject: `Réservation sans paiement immédiat reçue (${data.length})`,
+          subject: `${subject} (${data.length} place${data.length > 1 ? 's' : ''})`,
           html: summaryHtml,
         });
       } catch (summaryError) {
-        console.error('Erreur envoi email admin summary pour réservations sans paiement:', summaryError);
+        console.error('Erreur envoi email admin summary:', summaryError);
       }
     }
 
-    return NextResponse.json({ success: true, groupId, reservations: data, paymentMode }, { status: 201 });
+    return NextResponse.json({ success: true, groupId, reservations: data, paymentMode: normalizedPaymentMode }, { status: 201 });
   } catch (err) {
     console.error('Batch reservation error:', err);
     return NextResponse.json(
