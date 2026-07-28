@@ -2,9 +2,10 @@
   "name": "src",
   "version": "1.0.0",
   "description": "",
-  "main": "src/build_docs_mission.js",
+  "main": "src/presentation_adie.js",
   "module": "cjs",
   "scripts": {
+    "generate:adie": "node src/presentation_adie.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "docx": "^9.7.1",
     "express": "^5.2.1"
   }
 }
