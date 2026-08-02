@@ -325,6 +325,32 @@ export default function PouraLesEcolesPage() {
         </div>
       </section>
 
+      <section className="w-full py-16 md:py-24 bg-white/70">
+        <div className="container px-4 md:px-6 max-w-5xl mx-auto">
+          <div className="rounded-3xl border border-slate-200 bg-slate-950 p-8 text-white shadow-sm">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+              <div className="space-y-4">
+                <Badge variant="secondary" className="bg-white/10 text-white border-white/20">
+                  {t('partnership_badge') || 'Partenariat scolaire'}
+                </Badge>
+                <h2 className="text-3xl font-semibold">
+                  {t('partnership_title') || 'Un accompagnement pédagogique clair et sécurisé'}
+                </h2>
+                <p className="text-sm leading-7 text-slate-300">
+                  {t('partnership_desc') || 'Chaque intervention peut être encadrée par une convention, un devis détaillé et un suivi pédagogique adapté à l’établissement.'}
+                </p>
+              </div>
+              <ul className="space-y-3 text-sm text-slate-200">
+                <li className="rounded-2xl border border-white/10 bg-white/10 p-3">{t('partnership_item1') || 'Convention signée avant la première intervention'}</li>
+                <li className="rounded-2xl border border-white/10 bg-white/10 p-3">{t('partnership_item2') || 'Annexe RGPD et règles de protection des mineurs'}</li>
+                <li className="rounded-2xl border border-white/10 bg-white/10 p-3">{t('partnership_item3') || 'Bilan pédagogique envoyé après chaque cycle'}</li>
+                <li className="rounded-2xl border border-white/10 bg-white/10 p-3">{t('partnership_item4') || 'Logistique, matériel et suivi adaptés au contexte scolaire'}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Packs Section */}
       <section className="w-full py-16 md:py-24 bg-background">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto">

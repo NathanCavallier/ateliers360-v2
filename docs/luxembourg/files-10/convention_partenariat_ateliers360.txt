@@ -1,0 +1,241 @@
+CONVENTION DE PARTENARIAT PÉDAGOGIQUE
+
+[Ligne "Ateliers Tech & Sciences, Académie Nancy-Metz" retirée : sans objet pour un établissement luxembourgeois]
+
+Entre les soussignés :
+
+Ateliers 360, Entreprise individuelle (indépendant), immatriculée sous le numéro de matricule ______________ [et, le cas échéant, numéro RCS Luxembourg ______________], dont le siège est situé ______________________________, représenté par Nathan Imogo, agissant en nom propre, ci-après désigné "le Prestataire".
+
+[Correction importante : le document original mentionnait à tort "SASU au capital de ___ €" et "en sa qualité de Président". Une entreprise individuelle n'a pas de capital social et l'exploitant n'a pas de qualité de Président, il agit en nom propre. Ces deux mentions ont été supprimées ci-dessus.]
+
+ET
+
+L'établissement / la structure dénommé(e) ______________________________, dont le siège est ______________________________, représenté(e) par ______________________________ en sa qualité de ______________________________, ci-après désigné(e) "l'Établissement Partenaire".
+
+Il a été convenu ce qui suit :
+
+Article 1 : Objet de la convention
+
+La présente convention a pour objet de définir les modalités de collaboration entre Ateliers 360 et l'Établissement Partenaire dans le cadre de la mise en œuvre d'ateliers pédagogiques portant sur les sciences, le numérique, la robotique et l'intelligence artificielle.
+
+Elle fixe les droits et obligations réciproques des parties, les conditions d'intervention, les modalités financières ainsi que les engagements en matière de protection des données et de responsabilité.
+
+Article 2 : Durée
+
+Année scolaire concernée : ______________________________
+Date de prise d'effet : ______________________________
+Date d'échéance : ______________________________
+
+La présente convention est conclue pour la durée de l'année scolaire indiquée ci-dessus. Elle prend fin de plein droit à l'échéance prévue, sauf reconduction expresse par avenant signé par les deux parties. En cas de résiliation anticipée, un préavis écrit de 30 jours calendaires est requis, sous réserve des dispositions relatives à l'annulation (Article 7).
+
+Article 3 : Description des interventions
+
+3.1 Nature des ateliers
+
+Les ateliers réalisés dans le cadre de cette convention portent sur les thématiques suivantes (cocher les cases retenues) :
+
+[ ] Sciences et Expériences          [ ] Numérique et Algorithmique
+[ ] Robotique (initiation / avancée) [ ] Intelligence Artificielle
+[ ] Impression 3D / Makers           [ ] Fake News et Esprit Critique
+[ ] Python et Programmation          [ ] Données Personnelles et Cybersécurité
+[ ] Hackathon éducatif               [ ] Numérique Responsable
+[ ] Formation formateurs             [ ] Autre : ______________________________
+
+3.2 Format et planning prévisionnel
+
+Format retenu : ______________________________
+Nombre de séances : ______________________________
+Durée par séance : ______________________________
+Public visé (niveau/classe) : ______________________________
+Effectif par groupe : ______________________________
+Nombre de groupes : ______________________________
+
+3.3 Calendrier des interventions
+
+Les dates et horaires des interventions sont définis conjointement selon le tableau ci-dessous, sous réserve de disponibilité des parties :
+
+N° | Date | Horaires | Groupe / Classe | Salle / Lieu
+1  |
+2  |
+3  |
+4  |
+5  |
+6  |
+
+(Lignes supplémentaires si besoin, à préciser en annexe.)
+
+Article 4 : Obligations des parties
+
+4.1 Obligations d'Ateliers 360 (le Prestataire)
+
+- Concevoir et animer les ateliers conformément aux objectifs pédagogiques définis en accord avec l'Établissement Partenaire.
+- Se présenter à l'heure convenue avec le matériel pédagogique nécessaire, sauf cas de force majeure signalé dans les meilleurs délais.
+- Adapter le contenu des ateliers au niveau et aux besoins spécifiques du groupe, en concertation avec l'enseignant ou référent interne.
+- Transmettre un bilan pédagogique écrit dans un délai de 5 jours ouvrés suivant chaque séance ou cycle d'ateliers.
+- Respecter les règles de vie et de sécurité en vigueur au sein de l'établissement.
+- Maintenir à jour son attestation de RC Pro [vérifier que la couverture s'étend aux interventions au Luxembourg] et son extrait de casier judiciaire vierge, disponibles sur demande [vérifier si l'établissement luxembourgeois demande spécifiquement un extrait de casier judiciaire luxembourgeois en complément].
+- Traiter les données des participants conformément au RGPD et à la charte de protection des données jointe en annexe.
+
+4.2 Obligations de l'Établissement Partenaire
+
+- Mettre à disposition une salle adaptée à l'atelier (tables, chaises, prises électriques, accès réseau si nécessaire), en bon état de fonctionnement.
+- Désigner un référent interne (enseignant, éducateur, animateur) présent lors de chaque intervention, responsable de la discipline des participants.
+- Informer Ateliers 360 des contraintes particulières (allergies, besoins spécifiques, contraintes de l'emploi du temps) au moins 5 jours avant l'intervention.
+- Recueillir et conserver les autorisations parentales (droit à l'image, collecte de données) pour les participants mineurs, conformément à l'Annexe RGPD.
+- Régler les factures dans les délais convenus à l'Article 5.
+- Ne pas reproduire, diffuser ou utiliser les supports pédagogiques d'Ateliers 360 en dehors du cadre de la présente convention sans accord écrit préalable.
+
+Article 5 : Conditions financières
+
+5.1 Tarifs
+
+Les tarifs applicables sont ceux figurant dans le devis accepté joint en Annexe 1. Ils sont exprimés en euros.
+
+[INCOHÉRENCE A CORRIGER : le document original indiquait ici "hors taxes (HT), la TVA applicable est ajoutée au taux en vigueur au jour de la facturation", alors que le devis et la facture indiquent "TVA non applicable". Cette contradiction doit être résolue avec le régime de TVA confirmé par l'expert-comptable, puis répercutée à l'identique dans ce document, dans les CGV, le devis et la facture.]
+
+Des réductions peuvent s'appliquer selon les conditions suivantes :
+
+Premier atelier test (nouveau partenaire) : offert ou 50 % du tarif standard
+Partenariat annuel (10 journées d'intervention ou plus) : -10 % sur l'ensemble des prestations
+Structure associative ou en zone prioritaire : -15 % à -30 % sur justificatif
+Déplacement de plus de 30 km (aller) depuis le siège : +0,45 €/km supplémentaire (hors forfait)
+
+5.2 Modalités de paiement
+
+- Acompte de 30 % exigible à la signature de la présente convention ou du devis, pour toute commande supérieure à 500 €.
+- Solde payable à réception de la facture finale, dans un délai maximum de 30 jours nets.
+- Mode de paiement : virement bancaire exclusivement (coordonnées communiquées sur facture).
+- En cas de retard de paiement : pénalités de retard au taux légal majoré de 5 points, exigibles de plein droit dès le lendemain de l'échéance, sans mise en demeure préalable, ainsi qu'une indemnité forfaitaire de recouvrement. [Base légale à faire valider par un juriste, voir remarque équivalente dans les CGV, Article 13]
+
+Montant total estimé : ______________________________
+Acompte (30 %) à la signature : ______________________________
+Solde à réception de facture : ______________________________
+
+Article 6 : Matériel pédagogique
+
+Ateliers 360 apporte son matériel pédagogique standard (kits, équipements, supports de cours) pour la réalisation des ateliers. Ce matériel reste la propriété exclusive d'Ateliers 360.
+
+Tout besoin de matériel complémentaire fourni par l'Établissement Partenaire devra être précisé dans le devis (Annexe 1). En cas de dégradation du matériel d'Ateliers 360 due à un usage inapproprié ou à une négligence caractérisée des participants, les frais de remplacement pourront être facturés à l'Établissement Partenaire, après constat contradictoire.
+
+Matériel spécifique demandé par l'établissement (hors kit standard) : ______________________________
+
+Article 7 : Annulation et report
+
+Délai de notification écrite : plus de 7 jours avant l'intervention, aucune pénalité, report gratuit.
+Entre 48h et 7 jours avant : 30 % du montant HT de la séance concernée.
+Moins de 48h avant : 50 % du montant HT de la séance concernée.
+Le jour même (sans force majeure) : 80 % du montant HT de la séance concernée.
+
+Constituent des cas de force majeure : maladie grave de l'intervenant attestée médicalement, catastrophes naturelles, grève des transports, épidémie ou tout événement imprévisible rendant l'intervention objectivement impossible. Dans ces cas, les parties conviennent d'un report sans pénalité dans les 30 jours.
+
+Article 8 : Propriété intellectuelle
+
+L'ensemble des supports pédagogiques, présentations, exercices, fiches, méthodologies et contenus créés par Ateliers 360 dans le cadre de la présente convention demeurent la propriété exclusive d'Ateliers 360 et sont protégés par le droit d'auteur.
+
+L'Établissement Partenaire dispose d'un droit d'utilisation non exclusif, non cessible, limité au cadre et à la durée de la présente convention. Toute reproduction, diffusion, modification ou exploitation commerciale des contenus sans autorisation écrite préalable est strictement interdite.
+
+Les productions réalisées par les participants (projets Scratch, scripts, objets imprimés, maquettes, etc.) appartiennent à ces participants et peuvent être librement conservées par eux.
+
+Article 9 : Protection des données personnelles
+
+Ateliers 360 s'engage à traiter les données personnelles des participants (prénom, niveau, productions pédagogiques) dans le strict respect du Règlement Général sur la Protection des Données (RGPD, UE 2016/679).
+
+Les données sont collectées aux seules fins de réalisation des ateliers et de production du bilan pédagogique, conservées pour une durée maximale d'un an scolaire puis supprimées ou anonymisées, et ne sont jamais cédées à des tiers à des fins commerciales.
+
+L'Établissement Partenaire, en tant que responsable de traitement vis-à-vis de ses élèves et de leurs familles, s'engage à recueillir les consentements nécessaires et à informer les personnes concernées conformément à la charte RGPD d'Ateliers 360, jointe en Annexe 3.
+
+Article 10 : Responsabilité et assurances
+
+Ateliers 360 est titulaire d'une assurance Responsabilité Civile Professionnelle couvrant les dommages corporels, matériels et immatériels pouvant survenir dans le cadre de ses prestations. [Vérifier l'extension géographique de cette assurance aux interventions au Luxembourg]. L'attestation est disponible sur demande et jointe en Annexe 2.
+
+La responsabilité d'Ateliers 360 ne saurait être engagée en cas de :
+
+- dommages résultant d'une faute de l'Établissement Partenaire, d'un participant ou d'un tiers ;
+- utilisation des contenus pédagogiques en dehors du cadre convenu ;
+- cas de force majeure.
+
+L'Établissement Partenaire est responsable de la discipline et de la sécurité des participants en dehors des moments d'activité strictement animés par Ateliers 360, ainsi que du bon état de la salle mise à disposition.
+
+Article 11 : Bilan pédagogique
+
+À l'issue de chaque séance (ou cycle), Ateliers 360 s'engage à transmettre à l'Établissement Partenaire un bilan pédagogique comprenant :
+
+- le descriptif des activités réalisées et des objectifs atteints ;
+- le niveau de participation et l'engagement des groupes ;
+- les productions ou livrables réalisés par les participants ;
+- des recommandations pour la suite du parcours.
+
+Un bilan annuel de partenariat est transmis en fin d'année scolaire, récapitulant l'ensemble des interventions et proposant des pistes de reconduction.
+
+Article 12 : Communication et valorisation
+
+Avec l'accord de l'Établissement Partenaire et sous réserve des consentements recueillis auprès des participants (et de leurs représentants légaux pour les mineurs), Ateliers 360 pourra utiliser des photos ou vidéos des interventions à des fins de communication pédagogique et de valorisation de ses activités (site internet, réseaux sociaux, dossiers de présentation, rapports d'impact).
+
+Autorisation de communication accordée par l'Établissement Partenaire : [ ] OUI [ ] NON
+
+En cas d'autorisation, le Prestataire s'engage à respecter la dignité des personnes représentées et à ne jamais céder ces supports à des tiers à des fins commerciales.
+
+Article 13 : Reconduction
+
+Au plus tard 2 mois avant l'échéance de la présente convention, les parties se rencontrent (ou échangent par écrit) pour évaluer conjointement les résultats du partenariat et décider d'une éventuelle reconduction pour l'année scolaire suivante.
+
+Reconduction souhaitée (à compléter en fin de convention) : [ ] OUI [ ] NON [ ] À discuter
+
+Article 14 : Confidentialité
+
+Les parties s'engagent mutuellement à ne pas divulguer les informations confidentielles échangées dans le cadre de la présente convention (contenus pédagogiques non publiés, informations sur les participants, données financières). Cet engagement de confidentialité s'applique pendant toute la durée de la convention et pendant 2 ans après son terme.
+
+Article 15 : Litiges et droit applicable
+
+[CLAUSE A FAIRE VALIDER PAR UN JURISTE pour les conventions avec un établissement luxembourgeois]
+
+La présente convention est régie par le droit français. En cas de différend relatif à son interprétation ou à son exécution, les parties s'engagent à rechercher une solution amiable dans un délai de 30 jours à compter de la notification du litige par l'une ou l'autre des parties.
+
+À défaut de règlement amiable, le litige sera soumis à la compétence exclusive du Tribunal de Commerce ou Judiciaire de Nancy.
+
+[Option alternative à arbitrer avec un juriste pour les partenariats luxembourgeois : loi et juridiction luxembourgeoises]
+
+Article 16 : Documents annexés à la présente convention
+
+Annexe 1 : Devis détaillé des prestations (signé et accepté) [ ] Joint [ ] À venir
+Annexe 2 : Attestation d'assurance RC Pro Ateliers 360 [ ] Joint [ ] Sur demande
+Annexe 3 : Charte RGPD et droit à l'image participants [ ] Joint [ ] À faire signer
+Annexe 4 : Programme détaillé des ateliers retenus [ ] Joint [ ] À définir
+Annexe 5 : Extrait de casier judiciaire de l'intervenant [ ] Joint [ ] Sur demande
+
+Fait en deux exemplaires originaux, à ______________________________, le ______________________________
+
+L'ÉTABLISSEMENT PARTENAIRE
+
+Représentant légal / Responsable pédagogique
+
+Nom, Prénom, Qualité : ______________________________
+Date : ______________________________
+Cachet et Signature :
+
+
+ATELIERS 360
+
+Nathan Imogo, exploitant
+
+Nom, Prénom, Qualité : ______________________________
+Date : ______________________________
+Cachet et Signature :
+
+--------------------------------------------------
+
+CADRE RÉSERVÉ AU BILAN ANNUEL ET AU RENOUVELLEMENT
+
+Nb total d'ateliers réalisés : ______________________________
+Nb total de participants touchés : ______________________________
+Note de satisfaction moyenne : ______________________________
+Décision de reconduction : ______________________________
+Observations / ajustements : ______________________________
+
+Signatures des deux parties pour reconduction :
+
+--------------------------------------------------
+
+Ateliers 360, Entreprise individuelle (indépendant), matricule : ______________
+
+contact@ateliers360.fr | www.ateliers360.fr | +33 7 53 61 24 71

@@ -2,10 +2,10 @@
   "name": "src",
   "version": "1.0.0",
   "description": "",
-  "main": "src/presentation_adie.js",
+  "main": "src/build_lux.js",
   "module": "cjs",
   "scripts": {
-    "generate:adie": "node src/presentation_adie.js",
+    "generate:docs": "node src/build_lux.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

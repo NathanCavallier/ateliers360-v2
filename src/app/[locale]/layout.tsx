@@ -70,6 +70,22 @@ export default async function RootLayout({
           rel="stylesheet"
         />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(d, w, c) {
+                w.BrevoConversationsID = '6a61c1a3fbb55c90730b8e44';
+                w[c] = w[c] || function() {
+                  (w[c].q = w[c].q || []).push(arguments);
+                };
+                var s = d.createElement('script');
+                s.async = true;
+                s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+                if (d.head) d.head.appendChild(s);
+              })(document, window, 'BrevoConversations');
+            `,
+          }}
+        />
       </head>
       <body className={cn("min-h-screen bg-background font-body antialiased")}>
         <NextIntlClientProvider locale={locale} messages={messages}>

@@ -1,7 +1,7 @@
 // src/__tests__/integration/missions.integration.test.ts
 // Test d'intégration Phase 5 — Missions Passerelle Jeunesse
 
-import { describe, it, expect } from '@jest/globals';
+import { describe, it, expect } from 'vitest';
 
 /**
  * INSTRUCTIONS DE TEST MANUEL

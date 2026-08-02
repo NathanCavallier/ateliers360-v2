@@ -68,6 +68,21 @@ export default function PolitiqueConfidentialitePage() {
 
               <Card className="border border-slate-200 bg-white shadow-sm">
                 <CardHeader>
+                  <CardTitle>{t('section3b')}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-sm leading-7 text-slate-600">
+                  <p>{t('section3b_desc')}</p>
+                  <ul className="list-disc space-y-2 pl-5">
+                    <li>{t('safeguard1')}</li>
+                    <li>{t('safeguard2')}</li>
+                    <li>{t('safeguard3')}</li>
+                    <li>{t('safeguard4')}</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border border-slate-200 bg-white shadow-sm">
+                <CardHeader>
                   <CardTitle>{t('section4')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm leading-7 text-slate-600">

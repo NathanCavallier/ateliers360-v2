@@ -1,0 +1,68 @@
+ATELIERS 360 - Ateliers Tech & Sciences
+Entreprise individuelle (indépendant)
+
+[Adresse complète de l'entreprise au Luxembourg]
+
+Numéro de matricule : [A COMPLETER - immatriculation Luxembourg]
+Numéro RCS (si qualité de commerçant) : [A COMPLETER]
+
+[REGIME DE TVA A CONFIRMER AVEC L'EXPERT-COMPTABLE : soit mention "TVA non applicable" avec la référence légale luxembourgeoise applicable, soit numéro de TVA intracommunautaire LU accompagné de la mention d'autoliquidation "TVA due par le preneur, article 196 de la directive 2006/112/CE"]
+
+IBAN : [A COMPLETER - IBAN luxembourgeois si compte LU utilisé, sinon IBAN existant avec la mention "Virement SEPA international accepté"]
+BIC : [A COMPLETER]
+
+Numéro d'autorisation d'établissement Luxembourg (si applicable) : [A COMPLETER une fois le régime confirmé auprès de la House of Entrepreneurship]
+
+--------------------------------------------------
+
+FACTURE
+
+N° : FAC-2026-______
+Date : ____/____/______
+Échéance : ____/____/______
+Réf. devis : DEV-2026-______
+
+FACTURÉ À
+
+Établissement / Structure : ______________________________________________
+Adresse : ______________________________________________
+Numéro d'identification (SIRET ou équivalent luxembourgeois si organisme public) : ______________________________________________
+À l'attention de : ______________________________________________
+Email : ______________________________________________
+
+DÉSIGNATION DES PRESTATIONS
+
+Désignation                                        Qté   Durée   P.U. (€)   Total (€)
+__________________________________________________  1
+__________________________________________________  1
+__________________________________________________  1
+__________________________________________________  1
+__________________________________________________  1
+
+Déduction acompte versé le ______________ (réf. DEV-2026-______) : - __________ €
+
+Montant total : __________________________ €
+
+[Mention TVA, voir en-tête pour le régime à confirmer]
+
+Acompte déduit : - __________________ €
+
+NET A PAYER : __________________ €
+
+--------------------------------------------------
+
+MODALITÉS DE RÈGLEMENT
+
+Virement bancaire uniquement, à régler avant le : ______________
+
+IBAN : [voir en-tête] | BIC : [voir en-tête]
+
+Titulaire : Ateliers 360 | Banque : ________________________
+
+Référence à indiquer : FAC-2026-______
+
+En cas de retard de paiement : pénalités au taux légal majoré de 5 points, plus indemnité forfaitaire de recouvrement de 40 €. [Base légale à adapter selon le droit applicable retenu dans les CGV : article L.441-10 du Code de commerce français, ou loi luxembourgeoise du 18 avril 2004 relative aux délais de paiement et aux intérêts de retard]. Pas d'escompte pour paiement anticipé.
+
+Facture établie par Ateliers 360, Entreprise individuelle (indépendant), matricule ______________.
+
+[Mention TVA finale à confirmer, voir en-tête]

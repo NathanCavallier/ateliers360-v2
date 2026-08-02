@@ -45,9 +45,9 @@ import {
 
 // Props pour afficher les ateliers par catégorie en venant de la page de disciplines (ex: https://www.ateliers360.fr/fr/ateliers?category=sciences: "sciences")
 interface AtelierListPageProps {
-  searchParams: {
+  searchParams: Promise<{
     category?: string;
-  };
+  }>;
 }
 
 export default function AtelierListPage({
@@ -63,7 +63,7 @@ export default function AtelierListPage({
   const [sortBy, setSortBy] = useState<string>('popular');
   const [showFilters, setShowFilters] = useState(false);
 
-  const resolvedSearchParams = React.use(searchParams as any) as { category?: string };
+  const resolvedSearchParams = React.use(searchParams) as { category?: string };
   const categoryFromSearchParams = resolvedSearchParams?.category;
 
   useEffect(() => {

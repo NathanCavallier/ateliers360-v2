@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function MentionsLegalesPage() {
   const t = useTranslations('LegalPage');
+  const locale = useLocale();
 
   const details = [
     { label: t('editor_name'), value: t('editor_type') },
@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
     { label: t('editor_fiscal'), value: t('editor_fiscal') },
     { label: t('editor_location'), value: t('editor_location') },
     { label: t('editor_zones'), value: t('editor_zones') },
-    { label: t('editor_contact'), value: t('editor_contact') },
+    { label: t('editor_contact_label'), value: t('editor_contact') },
     { label: t('editor_email'), value: t('editor_email') },
     { label: t('editor_phone'), value: t('editor_phone') },
   ];
@@ -56,6 +56,34 @@ export default function MentionsLegalesPage() {
                       <span className="text-sm text-slate-700">{item.value}</span>
                     </div>
                   ))}
+                </CardContent>
+              </Card>
+
+              <Card className="border border-slate-200 bg-white shadow-sm">
+                <CardHeader>
+                  <CardTitle>{t('partnership')}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-slate-600">
+                  <p>{t('partnership_desc')}</p>
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>{t('partnership_item1')}</li>
+                    <li>{t('partnership_item2')}</li>
+                    <li>{t('partnership_item3')}</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border border-slate-200 bg-white shadow-sm">
+                <CardHeader>
+                  <CardTitle>{t('luxembourg')}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3 text-sm text-slate-600">
+                  <p>{t('luxembourg_desc')}</p>
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>{t('luxembourg_item1')}</li>
+                    <li>{t('luxembourg_item2')}</li>
+                  </ul>
+                  <p>{t('luxembourg_disclaimer')}</p>
                 </CardContent>
               </Card>
 
@@ -106,7 +134,7 @@ export default function MentionsLegalesPage() {
             <p className="text-sm text-slate-600 mb-6">{t('contact_phone')}</p>
             <p className="text-xs text-slate-500">{t('version')}</p>
             <div className="mt-6">
-              <Link href="/contact" className="inline-flex items-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/90">
+              <Link href={`/${locale}/contact`} className="inline-flex items-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/90">
                 {t('contact_button') || 'Nous contacter'}
               </Link>
             </div>

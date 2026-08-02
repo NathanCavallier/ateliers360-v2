@@ -145,6 +145,26 @@ export default function StructuresPage({ params }: any) {
         </div>
       </section>
 
+      <section className="w-full py-16 bg-muted/40">
+        <div className="container px-4 md:px-6 max-w-5xl mx-auto">
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-semibold">{t('partnership_title') || 'Un cadre de collaboration simple et rassurant'}</h2>
+                <p className="text-sm leading-7 text-slate-600">
+                  {t('partnership_desc') || "Nous vous accompagnons de la première demande jusqu'au bilan final, avec un devis clair, une convention adaptée et un suivi opérationnel."}
+                </p>
+              </div>
+              <ul className="space-y-3 text-sm text-slate-600">
+                <li className="rounded-2xl border border-slate-200 bg-slate-50 p-3">{t('partnership_item1') || 'Diagnostic de besoin et proposition de format'}</li>
+                <li className="rounded-2xl border border-slate-200 bg-slate-50 p-3">{t('partnership_item2') || 'Convention, planning et logistique définis ensemble'}</li>
+                <li className="rounded-2xl border border-slate-200 bg-slate-50 p-3">{t('partnership_item3') || 'Bilan pédagogique et pistes d’évolution'}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <ProcessSteps
         title={t('process_title')}

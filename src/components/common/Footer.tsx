@@ -24,15 +24,15 @@ const Footer = () => {
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>contact@ateliers360.fr</span>
+                <span>{t("contact_email")}</span>
               </div>
               <div className="mt-3 flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Metz, Grand Est (57)</span>
+                <span>{t("contact_location")}</span>
               </div>
               <div className="mt-3 flex items-center gap-3">
                 <Network className="h-4 w-4 text-primary" />
-                <span>Ateliers Tech et Sciences</span>
+                <span>{t("contact_phone")}</span>
               </div>
             </div>
           </div>

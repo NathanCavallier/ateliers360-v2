@@ -73,6 +73,10 @@ export default async function CgvPage({ params }: { params: PageParams }) {
                 <p className="text-sm leading-7 text-slate-300">{t('summary_text') || 'Nos conditions générales expliquent les règles de réservation, de paiement et d’organisation des ateliers.'}</p>
               </Card>
               <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h2 className="text-xl font-semibold mb-3">{t('billing_title') || 'Facturation & TVA'}</h2>
+                <p className="text-sm leading-7 text-slate-600">{t('billing_text') || 'Le devis précise le régime de TVA applicable, les modalités de paiement et les frais de déplacement éventuels pour une intervention transfrontalière.'}</p>
+              </Card>
+              <Card className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <h2 className="text-xl font-semibold mb-3">{t('need_help_title') || 'Besoin d’aide ?'}</h2>
                 <p className="text-sm leading-7 text-slate-600">{t('need_help_text') || 'Contactez notre équipe si vous avez des questions sur vos droits ou conditions de service.'}</p>
               </Card>
