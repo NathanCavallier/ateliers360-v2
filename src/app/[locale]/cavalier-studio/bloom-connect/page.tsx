@@ -35,7 +35,7 @@ export default async function BloomConnectPage({ params }: PageProps) {
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Bloom Connect</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Réinventer la mobilité entre Nancy, Metz et Luxembourg avec un service hybride premium,
+            Réinventer la mobilité entre les pôles de la Grande Région avec un service hybride premium,
             pensé pour les professionnels frontaliers.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -51,7 +51,7 @@ export default async function BloomConnectPage({ params }: PageProps) {
               'Réponse sous 48h',
               'Liste d’attente ouverte',
               'Service premium à venir',
-              'Corridor Nancy–Metz–Luxembourg',
+              'Corridor Luxembourg–Grande Région',
             ].map((item) => (
               <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
                 <p className="font-semibold text-white">{item}</p>
@@ -72,7 +72,7 @@ export default async function BloomConnectPage({ params }: PageProps) {
             {
               title: 'Régularité',
               icon: Clock,
-              text: 'Créneaux fixes sur le corridor Nancy–Metz–Luxembourg, garantis sans surcharge et avec une place réservée.',
+              text: 'Créneaux fixes sur le corridor Luxembourg–Grande Région, garantis sans surcharge et avec une place réservée.',
             },
             {
               title: 'Exclusivité',
@@ -110,7 +110,7 @@ export default async function BloomConnectPage({ params }: PageProps) {
             {[
               {
                 title: 'Le frontalier régulier',
-                text: 'Vous faites Metz/Nancy → Luxembourg plusieurs fois par semaine et voulez utiliser ce temps utilement.',
+                text: 'Vous traversez la Grande Région plusieurs fois par semaine et voulez utiliser ce temps utilement.',
               },
               {
                 title: 'Le professionnel en déplacement',

@@ -13,11 +13,11 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: 'Cavalier Studio | Ateliers 360',
     description:
-      'Cavalier Studio développe des sites, applications, intégrations IA et conseil numérique pour les structures éducatives, associatives et territoriales du Grand Est.',
+      'Cavalier Studio développe des sites, applications, intégrations IA et conseil numérique pour les structures éducatives, associatives et territoriales du Luxembourg.',
     openGraph: {
       title: 'Cavalier Studio | Ateliers 360',
       description:
-        'Sites web, applications mobiles, intelligence artificielle et conseil numérique depuis Metz pour le Grand Est, le Luxembourg et la Wallonie.',
+        'Sites web, applications mobiles, intelligence artificielle et conseil numérique au Luxembourg pour les structures éducatives, associatives et territoriales.',
       url: `https://www.ateliers360.fr/${locale}/cavalier-studio`,
     },
   };
@@ -73,8 +73,8 @@ export default async function CavalierStudioPage({ params }: PageProps) {
             </h1>
             <p className="text-xl leading-8 text-slate-300">
               Sites web, applications, intelligence artificielle et conseil numérique.
-              Un studio basé à Metz qui accompagne les associations, collectivités,
-              écoles et PME du Grand Est, du Luxembourg et de la Wallonie.
+              Un studio actif au Luxembourg qui accompagne les associations, collectivités,
+              écoles et PME de la région.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -141,7 +141,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
               },
               {
                 icon: Globe,
-                title: 'Grand Est · Luxembourg · Wallonie',
+                title: 'Luxembourg · Grande Région',
               },
               {
                 icon: Users,
@@ -169,7 +169,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
               <p className="text-sm uppercase tracking-[0.24em] text-accent-600">Pourquoi Cavalier Studio</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Une approche locale, transparente et utile</h2>
               <p className="text-slate-700 leading-8">
-                Basé à Metz, Cavalier Studio comprend les usages des établissements scolaires,
+                Basé au Luxembourg, Cavalier Studio comprend les usages des établissements scolaires,
                 des associations, des collectivités et des entreprises. Nous construisons des
                 outils qui simplifient la vie des équipes sans créer de surcoût technique.
               </p>
@@ -179,7 +179,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
               {[
                 {
                   title: 'Ancré dans le territoire',
-                  text: 'Nous savons travailler avec les acteurs du Grand Est, du Luxembourg et de la Wallonie.',
+                  text: 'Nous savons travailler avec les acteurs du Luxembourg et de la Grande Région.',
                 },
                 {
                   title: 'Des projets adaptés',

@@ -198,7 +198,7 @@ export default function ContactPage() {
           <div className="max-w-5xl mx-auto">
             <div className="aspect-video rounded-lg overflow-hidden border shadow-md">
               <iframe
-                src="https://www.google.com/maps?q=France&output=embed"
+                src="https://www.google.com/maps?q=Luxembourg&output=embed"
                 width="100%"
                 height="100%"
                 className="border-0"

@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
   return {
-    title: 'Demander une démo | Ateliers 360 — Metz, Grand Est',
+    title: 'Demander une démo | Ateliers 360 — Luxembourg',
     description:
       'Réservez une démonstration gratuite d’un atelier scientifique avec Ateliers 360. Présentiel, visio ou kit décideur sur mesure pour votre établissement.',
     openGraph: {
-      title: 'Demander une démo | Ateliers 360 — Metz, Grand Est',
+      title: 'Demander une démo | Ateliers 360 — Luxembourg',
       description:
         'Réservez une démonstration gratuite d’un atelier scientifique avec Ateliers 360. Présentiel, visio ou kit décideur sur mesure pour votre établissement.',
       url: `https://www.ateliers360.fr/${locale}/demo`,
@@ -70,7 +70,7 @@ export default async function DemoPage({ params }: PageProps) {
               {[
                 {
                   title: 'Démo atelier en présentiel',
-                  subtitle: 'Venez voir un atelier en action dans nos locaux à Metz',
+                  subtitle: 'Venez voir un atelier en action dans nos locaux au Luxembourg',
                   icon: Camera,
                   description:
                     'Une séquence de 20 à 30 minutes, visite de l’espace et échange personnalisé pour répondre à toutes vos questions.',
@@ -138,17 +138,17 @@ export default async function DemoPage({ params }: PageProps) {
               {
                 quote:
                   'J’étais sceptique sur le format escape game pour mes 5e. La démo nous a convaincus en 20 minutes.',
-                author: 'Professeur de mathématiques, collège Metz',
+                author: 'Professeur de mathématiques, collège luxembourgeois',
               },
               {
                 quote:
                   'La démo vidéo suffisait à répondre à toutes mes questions. J’ai signé le devis dans la foulée.',
-                author: 'Directrice d’école primaire, agglomération messine',
+                author: 'Directrice d’école primaire, Luxembourg',
               },
               {
                 quote:
                   'La démo nous a permis de valider rapidement le format et le contenu pédagogique.',
-                author: 'Parent d’élève, Metz',
+                author: 'Parent d’élève, Luxembourg',
               },
             ].map((item) => (
               <Card key={item.author} className="border-slate-200">

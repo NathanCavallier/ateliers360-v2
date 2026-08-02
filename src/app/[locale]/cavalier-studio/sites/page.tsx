@@ -13,11 +13,11 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: 'Sites internet & présences numériques | Cavalier Studio',
     description:
-      'Création de sites vitrines, associatifs et plateformes métiers pour les structures du Grand Est et du Luxembourg.',
+      'Création de sites vitrines, associatifs et plateformes métiers pour les structures du Luxembourg.',
     openGraph: {
       title: 'Sites internet & présences numériques | Cavalier Studio',
       description:
-        'Création de sites vitrines, associatifs et plateformes métiers pour les structures du Grand Est et du Luxembourg.',
+        'Création de sites vitrines, associatifs et plateformes métiers pour les structures du Luxembourg.',
       url: `https://www.ateliers360.fr/${locale}/cavalier-studio/sites`,
     },
   };

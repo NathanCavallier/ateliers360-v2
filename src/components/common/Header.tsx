@@ -139,7 +139,7 @@ const Header = () => {
               {/* Mobile-only info banner */}
               <div className="mb-6 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
                 <p className="font-semibold">Ateliers 360</p>
-                <p className="mt-1">Ateliers pédagogiques STEM et solutions éducatives à Metz.</p>
+                <p className="mt-1">Ateliers pédagogiques STEM et solutions éducatives au Luxembourg.</p>
               </div>
 
               <nav className="space-y-3">
