@@ -12,9 +12,9 @@ Le contenu actuel indique :
 
 À remplacer par les informations réelles de l'activité, par exemple :
 
-> « Ateliers 360 intervient principalement dans le Grand Est, avec Metz comme point d'ancrage, ainsi que dans les régions transfrontalières (Luxembourg, Wallonie). »
-> « Siège social : Metz, Grand Est »
-> « Zones d'intervention : Grand Est, Luxembourg, Wallonie »
+> « Ateliers 360 intervient principalement au Luxembourg, avec Metz comme point d'ancrage administratif, ainsi que dans les régions transfrontalières. »
+> « Siège social : Metz »
+> « Zones d'intervention : Luxembourg, Wallonie »
 
 Ce champ doit rester cohérent avec l'adresse SIREN réelle de la micro-entreprise.
 

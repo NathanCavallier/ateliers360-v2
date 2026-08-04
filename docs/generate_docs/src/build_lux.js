@@ -216,7 +216,7 @@ const doc = new Document({
       sectionHeader("2. Le projet Ateliers 360 — Trois pôles complémentaires"),
       new Paragraph({ spacing: { after: 100 }, children: [] }),
 
-      p("Ateliers 360 est une activité d'animation pédagogique scientifique et numérique exercée en tant que travailleur indépendant. Je conçois et anime des ateliers pratiques dans les écoles fondamentales, lycées, maisons relais, ASBL et communes du Luxembourg, avec une extension naturelle vers la Grande Région (Grand Est, Wallonie). Le projet se déploie en deux phases, autour de trois pôles complémentaires.", { size: 20, after: 160 }),
+      p("Ateliers 360 est une activité d'animation pédagogique scientifique et numérique exercée en tant que travailleur indépendant. Je conçois et anime des ateliers pratiques dans les écoles fondamentales, lycées, maisons relais, ASBL et communes du Luxembourg, avec une extension naturelle vers la Grande Région (Wallonie et régions limitrophes). Le projet se déploie en deux phases, autour de trois pôles complémentaires.", { size: 20, after: 160 }),
 
       // Phase 1 label
       new Paragraph({

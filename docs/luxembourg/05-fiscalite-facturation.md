@@ -4,11 +4,11 @@ Ce document identifie des points à faire valider par un expert-comptable avant 
 
 ## 1. Régime actuel affiché sur le site
 
-La page Mentions Légales indique : « Régime fiscal : Franchise en base (art. 293 B CGI), TVA non applicable ». Ce régime s'applique en principe aux ventes réalisées en France.
+La page Mentions Légales indique : « Régime fiscal : Franchise en base (art. 293 B CGI), TVA non applicable ». Ce régime s'applique en principe aux ventes réalisées depuis le pays d'établissement et doit être clarifié pour les prestations réalisées au Luxembourg.
 
 ## 2. Question à faire trancher par un comptable
 
-Pour les prestations de services facturées à des clients professionnels établis au Luxembourg (écoles privées, associations, entreprises), la règle générale de TVA intracommunautaire B2B prévoit que la taxe est due dans le pays du client (mécanisme d'autoliquidation), même lorsque le prestataire relève par ailleurs de la franchise en base en France. Cela peut impliquer :
+Pour les prestations de services facturées à des clients professionnels établis au Luxembourg (écoles privées, associations, entreprises), la règle générale de TVA intracommunautaire B2B prévoit que la taxe est due dans le pays du client (mécanisme d'autoliquidation), même lorsque le prestataire relève par ailleurs d'un régime de franchise en base. Cela peut impliquer :
 
 - l'obtention d'un numéro de TVA intracommunautaire, y compris pour une micro-entreprise en franchise de base,
 - l'émission de factures mentionnant ce numéro et la mention légale d'autoliquidation,
@@ -37,7 +37,7 @@ Vérifier que le module de devis ou de paiement en ligne du site, s'il existe, g
 
 ## 5. Documents à préparer en parallèle du site
 
-Indépendamment du site web, prévoir un modèle de facture spécifique « Client Luxembourg » distinct du modèle France standard, afin d'éviter toute erreur de mention de TVA lors de l'émission manuelle d'une facture.
+Indépendamment du site web, prévoir un modèle de facture spécifique « Client Luxembourg » distinct du modèle standard, afin d'éviter toute erreur de mention de TVA lors de l'émission manuelle d'une facture.
 
 ## 6. Recommandation finale
 

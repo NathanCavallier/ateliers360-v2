@@ -4,9 +4,9 @@ Ces ajustements ne sont pas des obligations légales mais des recommandations po
 
 ## 1. Contenu et positionnement
 
-- [ ] Ajouter une mention explicite « Interventions au Luxembourg » dans la section « Pourquoi choisir Ateliers 360 » ou équivalent, actuellement centrée sur « Basé à Metz, au cœur du Grand Est, entre Nancy et Luxembourg ». Cette phrase existe déjà et positionne bien la proximité géographique ; elle peut être complétée par une mention plus directe de disponibilité pour des interventions transfrontalières.
+- [ ] Ajouter une mention explicite « Interventions au Luxembourg » dans la section « Pourquoi choisir Ateliers 360 » ou équivalent, actuellement centrée sur « Basé à Metz, à proximité du Luxembourg ». Cette phrase existe déjà et positionne bien la proximité géographique ; elle peut être complétée par une mention plus directe de disponibilité pour des interventions transfrontalières.
 - [ ] Créer, si ce n'est pas déjà fait, une page ou une section dédiée aux écoles et institutions luxembourgeoises, présentant l'offre adaptée (langue, cadre horaire, exemples de références locales si disponibles).
-- [ ] Vérifier la cohérence de toutes les mentions géographiques du site (page d'accueil, page contact, page pour les écoles) avec le positionnement Grand Est réel, en lien avec la correction du document 01.
+- [ ] Vérifier la cohérence de toutes les mentions géographiques du site (page d'accueil, page contact, page pour les écoles) avec le positionnement luxembourgeois réel, en lien avec la correction du document 01.
 
 ## 2. Langue
 
@@ -29,7 +29,7 @@ Ces ajustements ne sont pas des obligations légales mais des recommandations po
 
 ## 6. Cookies et bandeau de consentement
 
-- [ ] Vérifier que le bandeau de gestion des cookies du site respecte les standards applicables dans toute l'UE (ce qui est déjà le cas si le site est conforme RGPD pour la France), sans ajustement spécifique nécessaire pour le Luxembourg au-delà de la cohérence avec le document 03.
+- [ ] Vérifier que le bandeau de gestion des cookies du site respecte les standards applicables dans toute l'UE (ce qui est déjà le cas si le site est conforme RGPD pour le Luxembourg), sans ajustement spécifique nécessaire pour le Luxembourg au-delà de la cohérence avec le document 03.
 
 ## 7. Suivi
 

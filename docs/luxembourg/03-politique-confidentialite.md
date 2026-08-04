@@ -4,7 +4,7 @@ Page concernée : <https://www.ateliers360.fr/fr/politique-confidentialite>
 
 ## Contexte
 
-Le RGPD (règlement UE 2016/679) s'applique de façon uniforme en France et au Luxembourg. Aucune refonte majeure n'est donc nécessaire sur le fond. Quelques précisions sont toutefois recommandées pour un public luxembourgeois, notamment institutionnel (écoles, communes).
+Le RGPD (règlement UE 2016/679) s'applique de façon uniforme au Luxembourg et dans le reste de l'Union européenne. Aucune refonte majeure n'est donc nécessaire sur le fond. Quelques précisions sont toutefois recommandées pour un public luxembourgeois, notamment institutionnel (écoles, communes).
 
 ## 1. Mention de l'autorité de contrôle luxembourgeoise
 

@@ -98,7 +98,7 @@ Le client est responsable de la discipline et de la sécurité des participants 
 
 ARTICLE 11 : PROTECTION DES DONNÉES PERSONNELLES
 
-Dans le cadre de ses prestations, Ateliers 360 peut être amené à traiter des données personnelles des participants (prénom, niveau scolaire, productions). Ces traitements sont effectués conformément au Règlement Général sur la Protection des Données (RGPD, UE 2016/679), applicable de façon identique en France et au Luxembourg.
+Dans le cadre de ses prestations, Ateliers 360 peut être amené à traiter des données personnelles des participants (prénom, niveau scolaire, productions). Ces traitements sont effectués conformément au Règlement Général sur la Protection des Données (RGPD, UE 2016/679), applicable de façon identique au Luxembourg et dans le reste de l'Union européenne.
 
 Les données sont collectées uniquement aux fins de réalisation de la prestation et de production du bilan pédagogique, conservées pour une durée maximale d'un an scolaire, puis supprimées ou anonymisées. Elles ne sont jamais cédées à des tiers.
 

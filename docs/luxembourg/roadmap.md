@@ -6,8 +6,8 @@ Préparer le site Ateliers 360 pour une prospection et des interventions crédib
 
 ## Priorité 1 — Corrections urgentes (à faire en premier)
 
-- [x] Corriger les mentions légales actuelles pour remplacer l’ancrage Côte d’Azur / Nice par un positionnement réel basé à Metz, Grand Est.
-- [x] Clarifier le positionnement géographique du site (Grand Est, Luxembourg, Wallonie).
+- [x] Corriger les mentions légales actuelles pour remplacer l’ancrage Côte d’Azur / Nice par un positionnement réel centré sur le Luxembourg.
+- [x] Clarifier le positionnement géographique du site (Luxembourg, Wallonie).
 - [x] Ajouter une section explicite sur l’activité exercée au Luxembourg dans la page Mentions Légales.
 - [x] Rendre la gestion des cookies plus visible et plus accessible depuis le site.
 

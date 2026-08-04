@@ -7,7 +7,7 @@ Page concernée : <https://www.ateliers360.fr/fr/cgv>
 Les CGV actuelles semblent rédigées pour un cadre franco-français. Il est recommandé d'ajouter une clause précisant explicitement le champ d'application géographique :
 
 ```
-## Article X : Prestations réalisées hors de France
+## Article X : Prestations réalisées au Luxembourg
 
 Les présentes CGV s'appliquent également aux prestations commandées par des
 clients établis au Luxembourg ou dans toute autre juridiction de l'Union
@@ -46,7 +46,7 @@ européenne est également accessible : https://ec.europa.eu/consumers/odr
 
 ## 4. Annulation et report pour interventions au Luxembourg
 
-Si des frais de déplacement spécifiques (distance Metz, Grand Est vers le Luxembourg) sont facturés, prévoir une clause dédiée précisant :
+Si des frais de déplacement spécifiques (distance Metz vers le Luxembourg) sont facturés, prévoir une clause dédiée précisant :
 
 - le mode de calcul des frais de déplacement,
 - les conditions d'annulation propres à une intervention transfrontalière (délai de prévenance éventuellement allongé compte tenu de l'organisation logistique).

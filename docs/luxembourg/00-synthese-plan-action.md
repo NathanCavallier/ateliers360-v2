@@ -5,7 +5,7 @@ Site analysé : <https://www.ateliers360.fr>
 
 ## Constat préalable importanti
 
-L'audit du site en ligne fait apparaître une incohérence à corriger en priorité, indépendamment du sujet Luxembourg : la page Mentions Légales actuelle indique une implantation « Côte d'Azur, Académie de Nice (06 et 83) » avec des zones d'intervention limitées aux Alpes-Maritimes et au Var. Cette information ne correspond pas à l'ancrage réel du projet (Metz, Grand Est). Il s'agit probablement d'un reliquat de contenu de démonstration ou d'une ancienne version du template. Cette page doit être corrigée avant toute autre démarche, faute de quoi les mentions légales publiées sont juridiquement inexactes.
+L'audit du site en ligne fait apparaître une incohérence à corriger en priorité, indépendamment du sujet Luxembourg : la page Mentions Légales actuelle indique une implantation « Côte d'Azur, Académie de Nice (06 et 83) » avec des zones d'intervention limitées aux Alpes-Maritimes et au Var. Cette information ne correspond pas au positionnement réel du projet, qui vise prioritairement le Luxembourg. Il s'agit probablement d'un reliquat de contenu de démonstration ou d'une ancienne version du template. Cette page doit être corrigée avant toute autre démarche, faute de quoi les mentions légales publiées sont juridiquement inexactes.
 
 ## Pourquoi ces ajustements sont nécessaires
 
