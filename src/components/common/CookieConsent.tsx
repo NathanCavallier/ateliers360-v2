@@ -44,6 +44,7 @@ export function CookieConsent() {
       if (window.gtag) {
         window.gtag("consent", "update", {
           analytics_storage: "granted",
+          ad_storage: "granted",
         });
       }
     }
@@ -61,6 +62,7 @@ export function CookieConsent() {
       if (window.gtag) {
         window.gtag("consent", "update", {
           analytics_storage: "denied",
+          ad_storage: "denied",
         });
       }
     }

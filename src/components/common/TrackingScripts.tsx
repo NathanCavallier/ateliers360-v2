@@ -46,10 +46,22 @@ function loadGtmScript() {
 function updateConsent(status: "accepted" | "declined") {
   ensureDataLayer();
   if (status === "accepted") {
-    pushDataLayer({ event: "cookie_consent", consent_status: "granted" });
+    pushDataLayer({ event: "cookieConsentChange", consent_status: "granted" });
     pushDataLayer({ event: "optimize.activate" });
+    if (window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "granted",
+        ad_storage: "granted",
+      });
+    }
   } else {
-    pushDataLayer({ event: "cookie_consent", consent_status: "denied" });
+    pushDataLayer({ event: "cookieConsentChange", consent_status: "denied" });
+    if (window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+      });
+    }
   }
 }
 
