@@ -36,11 +36,16 @@ export function CookieConsent() {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
     setShowBanner(false);
 
-    // Initialize analytics/tracking here if needed
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("consent", "update", {
-        analytics_storage: "granted",
-      });
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("cookieConsentChange", { detail: "accepted" })
+      );
+
+      if (window.gtag) {
+        window.gtag("consent", "update", {
+          analytics_storage: "granted",
+        });
+      }
     }
   };
 
@@ -48,11 +53,16 @@ export function CookieConsent() {
     localStorage.setItem(COOKIE_CONSENT_KEY, "declined");
     setShowBanner(false);
 
-    // Disable analytics/tracking
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("consent", "update", {
-        analytics_storage: "denied",
-      });
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("cookieConsentChange", { detail: "declined" })
+      );
+
+      if (window.gtag) {
+        window.gtag("consent", "update", {
+          analytics_storage: "denied",
+        });
+      }
     }
   };
 

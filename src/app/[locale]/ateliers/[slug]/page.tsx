@@ -32,6 +32,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import Image from "next/image";
 import type { WorkshopDB } from "@/lib/types";
+import { getWorkshopOgImage } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -157,7 +158,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: "website",
       locale: params.locale,
       siteName: "Ateliers 360",
-      images: workshop.image_url ? [{ url: workshop.image_url }] : undefined,
+      images: [{ url: getWorkshopOgImage(workshop) }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: view.title,
+      description: description.substring(0, 160),
+      images: [getWorkshopOgImage(workshop)],
     },
     alternates: {
       canonical: `/${params.locale}/ateliers/${workshop.slug}`,

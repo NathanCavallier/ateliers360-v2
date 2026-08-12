@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import "../globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { CookieConsent } from "@/components/common/CookieConsent";
+import TrackingScripts from "@/components/common/TrackingScripts";
 import BottomTabBar from "@/components/common/BottomTabBar";
 import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import MobileRestrictedPage from "@/components/common/MobileRestrictedPage";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import { DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/seo";
+
+const locales = ["en", "fr"];
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ locale: string }>;
 };
-
-// Can be imported from a shared config
-const locales = ["en", "fr"];
 
 export const metadata: Metadata = {
   title: "Ateliers 360",
@@ -25,19 +27,44 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ateliers 360",
     description: "Ateliers Tech et Sciences",
-    url: "https://www.ateliers360.fr",
+    url: SITE_URL,
     siteName: "Ateliers 360",
     images: [
       {
-        url:
-          "https://orzfuxasrbpkcaqvgvah.supabase.co/storage/v1/object/sign/images/logo_Ateliers360.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtl eV80MzVkYjM4Ni1kN2Q5LTQwZWEtYmE5Mi04MTMwOTRhZjg2YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nb19BdGVsaWVyczM2MC5wbmciLCJpYXQiOjE3NzgwMDA3NTYsImV4cCI6MTkzNTY4MDc1Nn0.-cSRdRkuxaaoNV3BCP8-aWNWb4ZGss_JM1_tB1LrSXA", // Lien direct vers l'image dans Supabase Storage (assurez-vous que les permissions sont correctement configurées)
+        url: DEFAULT_OG_IMAGE,
         alt: "Ateliers 360 Logo",
       },
     ],
     locale: "fr_FR",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ateliers 360",
+    description: "Ateliers Tech et Sciences",
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const localeTag = locale === "en" ? "en_US" : "fr_FR";
+
+  return {
+    ...metadata,
+    openGraph: {
+      ...metadata.openGraph,
+      locale: localeTag,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${locale}`,
+      languages: {
+        en: `${SITE_URL}/en`,
+        fr: `${SITE_URL}/fr`,
+      },
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -99,8 +126,19 @@ export default async function RootLayout({
           </div>
           <Toaster />
           <CookieConsent />
+          <TrackingScripts />
           <ServiceWorkerRegister />
         </NextIntlClientProvider>
+        {process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
       </body>
     </html>
   );
