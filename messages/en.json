@@ -142,7 +142,10 @@
     "privacy": "Privacy Policy",
     "cgv": "Terms and Conditions of Sale",
     "terms": "Terms of Service",
-    "rights_reserved": "All rights reserved."
+    "rights_reserved": "All rights reserved.",
+    "contact_email": "Email: contact@ateliers360.fr",
+    "contact_location": "Luxembourg",
+    "contact_phone": "Phone: +33 7 53 61 24 71"
   },
   "HomePage": {
     "title": "Educate, innovate and inspire young people in Luxembourg",
