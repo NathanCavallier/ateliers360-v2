@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { MarkdownContent } from "@/components/common/MarkdownContent";
+import { ShareButtons } from "@/components/social/ShareButtons";
 import {
   ArrowRight,
   Briefcase,
@@ -406,6 +407,16 @@ export default async function WorkshopDetailPage(props: Props) {
                   <MarkdownContent content={view.longDescription} />
                 </div>
               )}
+
+              {/* Share Section */}
+              <div className="py-6 border-y border-gray-200">
+                <ShareButtons
+                  url={`${process.env.NEXT_PUBLIC_SITE_URL || "https://www.ateliers360.fr"}/${params.locale}/ateliers/${workshop.slug}`}
+                  title={view.title}
+                  description={view.shortDescription}
+                  variant="outline"
+                />
+              </div>
 
               {view.objectives.length > 0 && (
                 <div>

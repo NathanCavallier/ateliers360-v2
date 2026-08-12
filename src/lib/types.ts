@@ -284,6 +284,47 @@ export type ProjectDeliverable = {
   created_at: string;
 };
 
+export type Testimonial = {
+  id: number;
+  workshop_id?: number | null;
+  author_name: string;
+  author_role: string; // e.g., "Enseignant", "Parent", "Élève"
+  author_establishment?: string | null; // e.g., school name
+  quote: string;
+  content?: string | null;
+  image_url?: string | null; // avatar or photo
+  video_url?: string | null; // testimonial video
+  rating?: number | null; // 1-5 stars
+  published: boolean;
+  source?: 'form' | 'email' | 'direct_entry' | null;
+  created_at: string;
+  updated_at: string;
+};
+
+export type ImageConsentForm = {
+  id: number;
+  testimonial_id?: number | null;
+  full_name: string;
+  email: string;
+  phone?: string | null;
+  relationship_to_minor: string; // 'parent', 'guardian', 'teacher', 'other'
+  minor_full_name: string;
+  minor_age: number;
+  usage_scope: 'website' | 'social_media' | 'advertising' | 'all';
+  usage_duration: 'permanent' | '1_year' | '2_years' | 'until_withdrawal' | null;
+  allows_photo: boolean;
+  allows_video: boolean;
+  allows_name_publication: boolean;
+  signature_date: string; // ISO date
+  signature_method: 'digital' | 'email_confirmation' | 'physical_form' | null;
+  ip_address?: string | null;
+  user_agent?: string | null;
+  status: 'pending' | 'accepted' | 'declined' | 'revoked';
+  notes?: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
 type SupabaseTable<Row, Insert, Update> = {
   Row: Row;
   Insert: Insert;
