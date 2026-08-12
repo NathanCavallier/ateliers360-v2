@@ -83,7 +83,7 @@ export function CookieConsent() {
       )}
 
       {showBanner && (
-        <div className="fixed bottom-4 right-4 z-50 max-w-sm animate-in slide-in-from-bottom duration-500">
+        <div className="fixed bottom-4 left-4 z-50 max-w-sm animate-in slide-in-from-bottom duration-500">
           <Card className="border-2 shadow-xl bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
             <CardHeader className="pb-2">
               <div className="flex items-start justify-between gap-2">
