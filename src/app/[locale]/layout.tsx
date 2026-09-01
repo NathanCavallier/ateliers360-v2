@@ -21,7 +21,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Ateliers 360",
   description: "Ateliers Tech et Sciences",
   openGraph: {
@@ -51,9 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const localeTag = locale === "en" ? "en_US" : "fr_FR";
 
   return {
-    ...metadata,
+    ...baseMetadata,
     openGraph: {
-      ...metadata.openGraph,
+      ...baseMetadata.openGraph,
       locale: localeTag,
     },
     alternates: {

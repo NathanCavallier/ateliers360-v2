@@ -68,7 +68,7 @@ export const campaigns: Record<string, Campaign> = {
     ],
     callToAction: 'S\'inscrire aux portes ouvertes',
     formType: 'contact',
-    utm_campaign: 'portes_ouvertes_lux',
+    utm_campaign: 'portes_ouvertes_grand_est',
     startDate: '2026-09-15',
     endDate: '2026-09-20',
   },

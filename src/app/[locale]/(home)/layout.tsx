@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getHomeMetadata } from './home-metadata';
+import { getHomeMetadata } from '../home-metadata';
 
 interface Props {
   params: Promise<{ locale: string }>;

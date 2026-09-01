@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { getCampaign } from '@/data/campaigns';
+import { getAllCampaigns, getCampaign } from '@/data/campaigns';
 import { CampaignLandingPage } from '@/components/campaigns/CampaignLandingPage';
 import { notFound } from 'next/navigation';
 import { SITE_URL } from '@/lib/seo';
@@ -47,21 +47,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
+export function generateStaticParams() {
+  const locales = ['fr', 'en'];
 
-  // Import campaigns
-  const { getAllCampaigns } = await import('@/data/campaigns');
-  const campaigns = getAllCampaigns();
-
-  return campaigns.map((campaign) => ({
-    locale,
-    slug: campaign.slug,
-  }));
+  return locales.flatMap((locale) =>
+    getAllCampaigns().map((campaign) => ({
+      locale,
+      slug: campaign.slug,
+    })),
+  );
 }
 
 export default async function CampaignPage({ params }: CampaignPageProps) {
