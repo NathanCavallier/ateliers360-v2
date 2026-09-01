@@ -185,7 +185,7 @@ export default function DemoRequestForm() {
               <FormItem>
                 <FormLabel>Ville</FormLabel>
                 <FormControl>
-                  <Input placeholder="Luxembourg" {...field} disabled={status === "loading"} />
+                  <Input placeholder="Grand Est" {...field} disabled={status === "loading"} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -259,7 +259,7 @@ export default function DemoRequestForm() {
                   className="grid gap-3 sm:grid-cols-3"
                 >
                   {[
-                    { value: 'presentiel', label: 'Démo présentiel au Luxembourg' },
+                    { value: 'presentiel', label: 'Démo présentiel dans le Grand Est' },
                     { value: 'visio', label: 'Visioconférence' },
                     { value: 'kit', label: 'Kit décideur + vidéo' },
                   ].map((option) => (

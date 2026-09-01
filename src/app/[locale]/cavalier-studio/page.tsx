@@ -13,11 +13,11 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: 'Cavalier Studio | Ateliers 360',
     description:
-      'Cavalier Studio développe des sites, applications, intégrations IA et conseil numérique pour les structures éducatives, associatives et territoriales du Luxembourg.',
+      'Cavalier Studio développe des sites, applications, intégrations IA et conseil numérique pour les structures éducatives, associatives et territoriales du Grand Est.',
     openGraph: {
       title: 'Cavalier Studio | Ateliers 360',
       description:
-        'Sites web, applications mobiles, intelligence artificielle et conseil numérique au Luxembourg pour les structures éducatives, associatives et territoriales.',
+        'Sites web, applications mobiles, intelligence artificielle et conseil numérique dans le Grand Est pour les structures éducatives, associatives et territoriales.',
       url: `https://www.ateliers360.fr/${locale}/cavalier-studio`,
     },
   };
@@ -49,7 +49,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
     {
       title: 'Bloom Connect',
       description:
-        'Projet de mobilité premium entre Nancy, Metz et Luxembourg, pensé comme une solution hybride et sur mesure.',
+        'Projet de mobilité premium entre Nancy, Metz et le Grand Est, pensé comme une solution hybride et sur mesure.',
       href: `${basePath}/cavalier-studio/bloom-connect`,
     },
     {
@@ -73,7 +73,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
             </h1>
             <p className="text-xl leading-8 text-slate-300">
               Sites web, applications, intelligence artificielle et conseil numérique.
-              Un studio actif au Luxembourg qui accompagne les associations, collectivités,
+              Un studio actif dans le Grand Est qui accompagne les associations, collectivités,
               écoles et PME de la région.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -141,7 +141,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
               },
               {
                 icon: Globe,
-                title: 'Luxembourg · Grande Région',
+                title: 'Grand Est · France',
               },
               {
                 icon: Users,
@@ -169,7 +169,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
               <p className="text-sm uppercase tracking-[0.24em] text-accent-600">Pourquoi Cavalier Studio</p>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Une approche locale, transparente et utile</h2>
               <p className="text-slate-700 leading-8">
-                Basé au Luxembourg, Cavalier Studio comprend les usages des établissements scolaires,
+                Basé dans le Grand Est, Cavalier Studio comprend les usages des établissements scolaires,
                 des associations, des collectivités et des entreprises. Nous construisons des
                 outils qui simplifient la vie des équipes sans créer de surcoût technique.
               </p>
@@ -179,7 +179,7 @@ export default async function CavalierStudioPage({ params }: PageProps) {
               {[
                 {
                   title: 'Ancré dans le territoire',
-                  text: 'Nous savons travailler avec les acteurs du Luxembourg et de la Grande Région.',
+                  text: 'Nous savons travailler avec les acteurs du Grand Est et de la France.',
                 },
                 {
                   title: 'Des projets adaptés',

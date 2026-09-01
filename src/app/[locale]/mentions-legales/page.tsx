@@ -75,15 +75,15 @@ export default function MentionsLegalesPage() {
 
               <Card className="border border-slate-200 bg-white shadow-sm">
                 <CardHeader>
-                  <CardTitle>{t('luxembourg')}</CardTitle>
+                  <CardTitle>{t('grand_est')}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-slate-600">
-                  <p>{t('luxembourg_desc')}</p>
+                  <p>{t('grand_est_desc')}</p>
                   <ul className="list-disc pl-5 space-y-2">
-                    <li>{t('luxembourg_item1')}</li>
-                    <li>{t('luxembourg_item2')}</li>
+                    <li>{t('grand_est_item1')}</li>
+                    <li>{t('grand_est_item2')}</li>
                   </ul>
-                  <p>{t('luxembourg_disclaimer')}</p>
+                  <p>{t('grand_est_disclaimer')}</p>
                 </CardContent>
               </Card>
 

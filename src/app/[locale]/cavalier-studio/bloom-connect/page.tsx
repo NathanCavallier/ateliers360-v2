@@ -11,13 +11,13 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
   return {
-    title: 'Bloom Connect | Mobilité premium Nancy–Metz–Luxembourg',
+    title: 'Bloom Connect | Mobilité premium Nancy–Metz–Grand Est',
     description:
-      'Bloom Connect est un service de mobilité hybride premium pour les professionnels frontaliers du corridor Nancy–Metz–Luxembourg.',
+      'Bloom Connect est un service de mobilité hybride premium pour les professionnels du corridor Nancy–Metz–Grand Est.',
     openGraph: {
-      title: 'Bloom Connect | Mobilité premium Nancy–Metz–Luxembourg',
+      title: 'Bloom Connect | Mobilité premium Nancy–Metz–Grand Est',
       description:
-        'Bloom Connect est un service de mobilité hybride premium pour les professionnels frontaliers du corridor Nancy–Metz–Luxembourg.',
+        'Bloom Connect est un service de mobilité hybride premium pour les professionnels du corridor Nancy–Metz–Grand Est.',
       url: `https://www.ateliers360.fr/${locale}/cavalier-studio/bloom-connect`,
     },
   };
@@ -51,7 +51,7 @@ export default async function BloomConnectPage({ params }: PageProps) {
               'Réponse sous 48h',
               'Liste d’attente ouverte',
               'Service premium à venir',
-              'Corridor Luxembourg–Grande Région',
+              'Corridor Grand Est–France',
             ].map((item) => (
               <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
                 <p className="font-semibold text-white">{item}</p>
@@ -72,7 +72,7 @@ export default async function BloomConnectPage({ params }: PageProps) {
             {
               title: 'Régularité',
               icon: Clock,
-              text: 'Créneaux fixes sur le corridor Luxembourg–Grande Région, garantis sans surcharge et avec une place réservée.',
+              text: 'Créneaux fixes sur le corridor Grand Est–France, garantis sans surcharge et avec une place réservée.',
             },
             {
               title: 'Exclusivité',

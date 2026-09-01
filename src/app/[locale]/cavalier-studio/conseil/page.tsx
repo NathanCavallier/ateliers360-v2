@@ -13,11 +13,11 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: 'Conseil & accompagnement numérique | Cavalier Studio',
     description:
-      'Sprint stratégique, retainer mensuel et accompagnement à la transformation numérique pour les structures du Luxembourg.',
+      'Sprint stratégique, retainer mensuel et accompagnement à la transformation numérique pour les structures du Grand Est.',
     openGraph: {
       title: 'Conseil & accompagnement numérique | Cavalier Studio',
       description:
-        'Sprint stratégique, retainer mensuel et accompagnement à la transformation numérique pour les structures du Luxembourg.',
+        'Sprint stratégique, retainer mensuel et accompagnement à la transformation numérique pour les structures du Grand Est.',
       url: `https://www.ateliers360.fr/${locale}/cavalier-studio/conseil`,
     },
   };

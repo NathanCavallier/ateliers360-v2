@@ -155,7 +155,7 @@ const faqItemsFr: FAQItem[] = [
     category: 'general',
     question: 'Quels sont vos horaires et votre zone d’intervention ?',
     answer:
-      'Nous sommes présents au Luxembourg et intervenons principalement dans le pays. Les horaires sont adaptés selon le format choisi et la disponibilité des équipes.',
+      'Nous sommes présents dans le Grand Est et intervenons principalement sur ce territoire. Les horaires sont adaptés selon le format choisi et la disponibilité des équipes.',
   },
   {
     category: 'general',
@@ -321,7 +321,7 @@ const faqItemsEn: FAQItem[] = [
     category: 'general',
     question: 'What are your working hours and service area?',
     answer:
-      'We are based in Luxembourg and mainly operate across the country. Schedules are adapted to the chosen format and team availability.',
+      'We are based in Grand Est and mainly operate across the region. Schedules are adapted to the chosen format and team availability.',
   },
   {
     category: 'general',

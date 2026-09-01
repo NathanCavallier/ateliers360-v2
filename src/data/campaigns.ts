@@ -53,12 +53,12 @@ export const campaigns: Record<string, Campaign> = {
     utm_campaign: 'ecologie_ete_2026',
     testimonialCount: 2,
   },
-  'portes-ouvertes-luxembourg': {
-    slug: 'portes-ouvertes-luxembourg',
-    title: 'Portes ouvertes — Luxembourg',
+  'portes-ouvertes-grand-est': {
+    slug: 'portes-ouvertes-grand-est',
+    title: 'Portes ouvertes — Grand Est',
     subtitle: 'Découvrez nos ateliers en personne',
     description:
-      'Venez nous rencontrer et explorer nos ateliers lors d\'une journée portes ouvertes spéciale à Luxembourg.',
+      'Venez nous rencontrer et explorer nos ateliers lors d\'une journée portes ouvertes spéciale dans le Grand Est.',
     targetAudience: 'Familles, enseignants, établissements',
     keyBenefits: [
       'Accès libre à nos espaces',

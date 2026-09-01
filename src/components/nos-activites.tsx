@@ -60,7 +60,7 @@ export default function NosActivites({ locale }: NosActivitesProps) {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  Des ateliers pratiques pour expérimenter, fabriquer, coder et comprendre les sciences par l'action, en écoles, collèges, lycées, associations et entreprises du Luxembourg.
+                  Des ateliers pratiques pour expérimenter, fabriquer, coder et comprendre les sciences par l'action, en écoles, collèges, lycées, associations et entreprises du Grand Est.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {ateliersItems.map((item) => (
